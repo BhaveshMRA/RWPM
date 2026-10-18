@@ -1,0 +1,37 @@
+% Placeholders for every number the scripts generate. results/macros_*.tex
+% overrides them with \renewcommand. If something still shows in red, the
+% matching script has not been run (or its output was not copied into results/).
+\newcommand{\tbd}[1]{\textcolor{red}{\textbf{[#1]}}}
+\newcommand{\defres}[1]{\expandafter\newcommand\csname #1\endcsname{\tbd{#1}}}
+
+% 01_extract.py
+\defres{ResOccTotal}\defres{ResContentsTotal}\defres{ResReposTotal}\defres{ResOwnersTotal}
+\defres{ResWorkContents}\defres{ResWorkOcc}\defres{ResWorkRepos}\defres{ResWorkOwners}
+\defres{ResWorkHistory}\defres{ResWorkSiblings}\defres{ResNamesTwoPlus}
+\defres{ResFunnelZero}\defres{ResFunnelOne}\defres{ResFunnelTwo}\defres{ResFunnelThree}
+\defres{ResFunnelFour}
+% 02_candidates.py
+\defres{ResCandTotal}\defres{ResCandLSH}\defres{ResCandName}\defres{ResCandLSA}
+\defres{ResBandZero}\defres{ResBandOne}\defres{ResBandTwo}\defres{ResBandThree}
+\defres{ResBandFour}\defres{ResBandFive}\defres{ResBandSix}
+% 03_sample_pairs.py
+\defres{ResSampleOne}\defres{ResSampleTwo}\defres{ResSampleThree}\defres{ResSampleFour}
+\defres{ResSampleFive}\defres{ResSampleSix}\defres{ResSampleSeven}\defres{ResSampleTotal}
+% 04_agreement.py
+\defres{ResGoldPairs}\defres{ResGoldDerived}\defres{ResGoldTemplate}\defres{ResGoldUnrelated}
+\defres{ResKappaThree}\defres{ResKappaBin}\defres{ResAgree}\defres{ResDisagree}
+% 05_features.py
+\defres{ResBoilerLines}\defres{ResBoilerK}
+% 06_rq1_rq2.py
+\defres{ResOursName}\defres{ResOursP}\defres{ResOursR}\defres{ResOursF}\defres{ResOursMCC}
+\defres{ResOursHiFP}\defres{ResBaseName}\defres{ResBaseF}\defres{ResBaseHiFP}\defres{ResSRF}
+\defres{ResMacroF}\defres{ResTopAblation}\defres{ResTopAblationDrop}\defres{ResGrouping}
+% 07_rq3.py
+\defres{ResWorkHashes}\defres{ResFamilies}\defres{ResInflation}\defres{ResMultiFamilies}
+\defres{ResLargestFamily}\defres{ResLargestCC}\defres{ResDerivedEdges}\defres{ResCandPairs}
+\defres{ResGiniHash}\defres{ResGiniFam}\defres{ResCrossHash}\defres{ResCrossFam}\defres{ResOrient}
+
+% Include a generated table if it exists, otherwise show a red placeholder.
+\newcommand{\restable}[2]{\IfFileExists{results/#1}{\input{results/#1}}{\tbd{#2}}}
+% Same, but shrinks a generated table to the column width if it is wider (never enlarges).
+\newcommand{\restablefit}[2]{\IfFileExists{results/#1}{\adjustbox{max width=\columnwidth}{\input{results/#1}}}{\tbd{#2}}}

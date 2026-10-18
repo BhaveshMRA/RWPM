@@ -1,0 +1,42 @@
+\section{Introduction}
+\label{sec:intro}
+
+Coding agents such as Claude Code now take part in everyday software work: they edit
+files, run commands, and review changes on a developer's behalf. To make an agent follow a
+team's procedure for a recurring task, developers package that procedure as an
+\emph{agent skill}. A skill is a folder whose \texttt{SKILL.md} file starts with YAML front
+matter, holding a \texttt{name} and a \texttt{description}, followed by instructions written
+in Markdown; the folder may also contain scripts and reference documents~\cite{agentskills_spec,
+destefanis2027gitskills}. The agent first reads only the descriptions of the available skills
+and loads a skill's full instructions when it judges that the current task matches one.
+Anthropic released the format as an open specification in October 2025, and nine months
+later millions of \texttt{SKILL.md} files were sitting in public GitHub
+repositories~\cite{destefanis2027gitskills}.
+
+Skills spread differently from conventional dependencies. A library installed from npm or
+PyPI is declared in a manifest, pinned to a version, and updated through the package manager.
+A skill has no such channel. Developers copy its folder into their own repository, often edit
+it along the way, and nothing records where it came from. The GitSkills dataset shows how
+common this is: of 3,797,117 \texttt{SKILL.md} files collected from 282,200 repositories,
+50.5\% are byte-for-byte copies of another file in the dataset~\cite{destefanis2027gitskills}.
+Copies that were edited after copying are not part of that figure, because any edit produces
+a new content hash.
+
+We use the following terms throughout. An \emph{exact copy} has the same content hash as
+another file. A \emph{derived variant} is a skill produced by copying another skill and then
+editing it: renaming, trimming, extending, rewording, or translating it. Two skills copied
+from a common source are derived variants of each other. A \emph{template sibling} shares only
+generic scaffolding with another skill, such as section headings, boilerplate guidance, or a
+catalog's house style, while its task-specific instructions were written separately. A
+\emph{skill family} is a group of skills connected by derivation, and its \emph{lineage} is
+the order in which its members appeared. These notions follow code-clone research, where
+clones range from identical fragments (Type-1) to fragments with renamed identifiers
+(Type-2) and with added, removed, or changed statements (Type-3)~\cite{roy2009comparison}.
+
+Lineage matters because an agent executes a skill instead of merely displaying it. A person
+reading an outdated README can notice the problem and work around it, whereas an agent acts
+on stale instructions directly~\cite{gao2026registry}. Skills can also carry risk. Security
+audits have found vulnerable and malicious skills in public collections~\cite{liu2026wild},
+and in January 2026 a single campaign planted more than 1,200 malicious skills in the
+OpenClaw skill marketplace~\cite{zhu2026skillreuse}. Once a flawed skill has been copied and
+edited, its relatives are hard to find.

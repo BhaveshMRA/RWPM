@@ -1,0 +1,55 @@
+\section{Related Work}
+\label{sec:related}
+
+\subsection{Reuse and adaptation of agent skills}
+
+Gao et al.~\cite{gao2026registry} present the first study of skills as engineered
+artifacts. They collected 18,463 skills from the skills.sh registry and 23,199 skills from
+5,876 GitHub repositories, and linked a repository skill to a registry skill when both
+carried the same YAML \texttt{name}, using a longest-common-subsequence similarity to choose
+among same-name candidates and to reject pairs below 0.1. This recovered 3,709 reuse links.
+Most reused skills turned out to be near-verbatim copies, 53\% were never modified after
+adoption, and among reused skills that were never updated locally, 40.2\% had a registry
+source that changed afterwards, changes the copies never received. The linkage only sees a
+copy whose source is published on skills.sh and that kept the source's name. The authors
+acknowledge that it misses renamed and heavily edited skills and assumes that reuse flows
+from the registry into repositories; 76\% of the repository skills they collected stayed
+unlinked, and some of those may be undetected reuse.
+
+Wu et al.~\cite{wu2026adaptation} study how downstream developers adapt published skills,
+using public forks of six popular skill repositories as evidence. From 1,126 adaptation
+instances they build a taxonomy of 46 adaptation patterns in 13 families, and they report
+that 18.6\% of adaptations add security-sensitive content to the instruction text. They call
+for tools that detect inconsistent modifications. Because the method relies on GitHub's fork
+relation, it observes only copies made by forking those six repositories. A skill pasted into
+an unrelated repository leaves no fork record.
+
+\subsection{Clone detection for agent skills}
+
+Zhu et al.~\cite{zhu2026skillreuse} propose SkillReuse, the work closest to ours. It
+represents a skill's YAML metadata, prose, and code separately, combines the per-channel
+similarities with a flat TF-IDF similarity and structural features in a logistic regression,
+and reaches an F1 of 0.939 on SkillReuse-Bench, a set of 300 labelled pairs. Applied to
+137,470 skills crawled from the SkillsMP marketplace, it places 66.8\% of skills in at least
+one clone pair, most of them across authors. The authors are explicit about what clone
+detection does not establish. Structural similarity is not derivation, so detected pairs may
+include convergent development; the clone relation is undirected and does not say which skill
+came first; and the analysis uses the \texttt{SKILL.md} file alone, without repository
+history. Two properties of the benchmark also matter for our problem. Half of its 150
+positive pairs are synthetic mutations rather than real edits, and its hard negatives are
+same-category pairs whose similarity lies between 0.15 and 0.45. Highly similar skills that
+were written independently, such as two skills generated from one template, are therefore
+not represented. Finally, families formed as connected components of the clone graph chain
+together: the largest one contains 61,651 skills.
+
+\subsection{Code clones and reuse on GitHub}
+
+Clone detection for source code is a mature field. Roy et al.~\cite{roy2009comparison}
+define the standard clone types and compare detection techniques, and SourcererCC scales
+token-based detection of near-miss clones to large code corpora~\cite{sajnani2016sourcerercc}.
+Lopes et al.~\cite{lopes2017dejavu} showed that file-level duplication is pervasive on GitHub.
+Kim et al.~\cite{kim2005genealogy} introduced clone genealogies, which follow groups of
+clones across versions and separate consistent changes, applied to every member of a group,
+from inconsistent ones. These techniques were designed for source code, where tokens and
+syntax carry most of the evidence. Skills are mostly natural language and are often written
+from shared scaffolds, which makes surface similarity a weaker signal of shared origin.

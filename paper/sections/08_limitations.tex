@@ -1,0 +1,33 @@
+\section{Limitations and Next Steps}
+\label{sec:limitations}
+
+\paragraph{Labels.} Whether two skills are derived is a judgement. The boundary between a
+derived variant and a template sibling is least clear for a series of skills written by one
+author from a personal template. We reduce this risk with a written rubric, independent double
+labelling, an agreement measure, and discussion of every disagreement, but the gold set still
+reflects our reading of the rubric.
+
+\paragraph{Sampling and features.} The labelled pairs are stratified by similarity, so class
+proportions in the gold set do not reflect proportions in the population; we therefore also
+report results per band. The boilerplate threshold is a heuristic, and a widely copied skill
+that is often renamed can push its own lines over it. The same-owner feature may let the model
+learn authors' habits rather than derivation; the ablation shows how much it contributes.
+
+\paragraph{Baseline.} Our SkillReuse baseline is re-implemented from the paper and trained on
+our gold set. Its numbers are not comparable to those reported by Zhu et
+al.~\cite{zhu2026skillreuse}.
+
+\paragraph{Data.} GitSkills covers default branches of public repositories only and is
+itself a lower bound on the population~\cite{destefanis2027gitskills}. Because the official
+sample draws distinct contents uniformly, families are truncated, so RQ3 underestimates
+family-level reuse. Commit history is available for only \ResWorkHistory{} of the
+\ResWorkContents{} skills in our working set, and \texttt{first\_commit\_at} dates the file at
+its current path, so a renamed or moved skill looks newer than it is~\cite{gitskills_sample}.
+
+\paragraph{Phase 3.} We will (i) run the pipeline on the full GitSkills dataset; (ii) answer
+RQ4 by retrieving, for the largest families, the history of the earliest member through the
+GitHub API, hashing each past version, and checking whether copies match the current version,
+an older version, or neither, which separates consistent from inconsistent change
+propagation~\cite{kim2005genealogy}; (iii) fetch commit dates for pairs the dataset cannot
+orient; (iv) add multilingual sentence embeddings to recover reworded and translated copies;
+and (v) compare against SkillReuse's released implementation and on SkillReuse-Bench.

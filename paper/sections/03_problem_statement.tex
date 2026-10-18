@@ -1,0 +1,28 @@
+\section{Problem Statement}
+\label{sec:problem}
+
+Developers reuse agent skills by copying a skill's folder into their own repository, often
+editing it on the way in. No registry entry, manifest, or version pin records this
+relationship, so once a skill is copied its lineage is lost. Three groups pay for this.
+Developers who adopt a skill are never told when its source is fixed or improved, and because
+agents execute skills, a stale copy keeps acting on outdated or unsafe instructions. Skill
+authors cannot see where their work has spread or how it was changed. Security reviewers who
+flag one harmful skill cannot locate its edited relatives.
+
+Existing studies address this only in part. Approaches that trace reuse need an explicit
+record of it: either the copy still carries the name of a skill published on a public
+registry~\cite{gao2026registry}, or it lives in a repository created with GitHub's fork
+feature~\cite{wu2026adaptation}. Copies that were renamed, heavily edited, or taken from an
+unregistered repository are invisible to both. Clone detection for
+skills~\cite{zhu2026skillreuse} removes the need for such records, but it measures
+similarity, not origin. It cannot tell a derived variant from a template sibling, it does not
+order related skills in time, and it has not been evaluated on the highly similar but
+independently written pairs that templates produce.
+
+The result is a gap in what we know. The only study that measured whether copies receive
+updates found that 40.2\% of never-edited reused skills had missed later changes to their
+source~\cite{gao2026registry}, but that measurement covers only the registry-linked minority
+of skills. For skills shared by plain copying, which GitSkills shows to be
+widespread~\cite{destefanis2027gitskills}, we cannot yet say which skills derive from which,
+how concentrated reuse really is once edited copies are counted, or whether changes to an
+original ever reach its copies.

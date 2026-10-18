@@ -1,0 +1,146 @@
+\section{Experiments}
+\label{sec:experiments}
+
+\subsection{Research Questions}
+
+Three research questions assess our solution; a fourth is planned for Phase~3.
+
+\paragraph{RQ1 (Effectiveness).} \emph{How accurately does our approach identify derived skill
+variants, compared with exact hashing, similarity thresholds, and SkillReuse?} This question
+tests whether lineage can be recovered from content at all, and whether our design improves on
+existing detectors on the pairs that matter most: highly similar pairs that are not derived.
+We report precision, recall, F1, and the Matthews correlation coefficient
+(MCC)~\cite{chicco2020mcc} for the \emph{derived} class, computed on pooled out-of-fold
+predictions, together with the standard deviation of F1 across folds. We also report the
+false-positive rate on high-similarity pairs (non-derived pairs in bands B1--B3), precision and
+recall per band, and, for our approach, a three-class confusion matrix and macro-F1.
+
+\paragraph{RQ2 (Contributing signals).} \emph{Which signals contribute most to separating
+derived variants from template siblings and unrelated skills?} We remove one feature group at
+a time, retrain the best model, and report the change in F1 and in the high-similarity
+false-positive rate. We also train a model on lexical features only.
+
+\paragraph{RQ3 (Reuse concentration).} \emph{How concentrated is skill reuse when copies are
+grouped into derivation families rather than by exact content hash?} For both units, exact
+hash and family, we report the number of units, the share of units with a single file
+occurrence, the Gini coefficient of occurrences per unit, the share of occurrences held by
+the top 1\% of units, and the share of units and occurrences spanning two or more owners. We
+also report the inflation ratio (distinct contents per family), the size of the largest
+family, and the share of predicted derivations that commit history can orient in time.
+
+\paragraph{RQ4 (Propagation, Phase 3).} \emph{When an original skill changes, do
+its derived variants follow the change, stay frozen at an older version, or diverge?}
+
+\subsection{Experimental Setup}
+\label{sec:setup}
+
+All experiments use the \ResGoldPairs{} gold pairs. We use five-fold stratified group
+cross-validation; groups are formed by \ResGrouping{}, so no skill contributes to both
+training and testing. We compare four baselines with our approach.
+
+\emph{Normalised-text hash} predicts \emph{derived} only when the two bodies are identical
+after lower-casing and collapsing whitespace, which is what exact hashing sees once trivial
+formatting is ignored. \emph{Shingle Jaccard (MinHash)} thresholds the exact Jaccard similarity
+of word 5-gram shingles, the quantity MinHash estimates. \emph{TF-IDF cosine} thresholds the
+cosine similarity of TF-IDF vectors of the bodies. For both, the threshold that maximises F1
+is chosen on the training folds only. \emph{SkillReuse-style} is our re-implementation of the
+eight features of Zhu et al.~\cite{zhu2026skillreuse}: a flat TF-IDF similarity, LSA cosine
+similarities for the YAML, prose, and code channels (set to zero when a channel is missing),
+their three pairwise products, and a structural similarity over eight document statistics,
+combined by a class-balanced logistic regression whose threshold is again tuned on the
+training folds. It is trained on our gold set, so it is compared with our approach on equal
+terms; it is not the authors' released implementation.
+
+Our approach uses the 19 features of Table~\ref{tab:features} with three classifiers from
+scikit-learn: logistic regression on standardised features, a random forest with 500 trees,
+and histogram-based gradient boosting, all with balanced class weights and no threshold
+tuning. The classifiers are trained on the three classes when the gold set has at least 15
+template pairs, and on derived versus not derived otherwise.
+
+\subsection{RQ1: Effectiveness}
+
+\begin{table*}[t]
+\caption{RQ1: detection of derived variants (pooled out-of-fold predictions; F1 $\pm$
+standard deviation across folds). The last column is the share of non-derived pairs in bands
+B1--B3 that a method labels as derived (lower is better).}
+\label{tab:rq1}
+\small
+\restable{rq1_main.tex}{Run code/06\_rq1\_rq2.py to generate this table.}
+\end{table*}
+
+\begin{table*}[t]
+\caption{RQ1 by similarity band: precision (P) and recall (R) of the strongest baseline and
+of our best model.}
+\label{tab:rq1bands}
+\small
+\restable{rq1_bands.tex}{Run code/06\_rq1\_rq2.py to generate this table.}
+\end{table*}
+
+\begin{table}[t]
+\caption{RQ1: confusion matrix of our best model (out-of-fold).}
+\label{tab:confusion}
+\small
+\restable{rq1_confusion.tex}{Run code/06\_rq1\_rq2.py to generate this table.}
+\end{table}
+
+Table~\ref{tab:rq1} compares all methods. The best configuration of our approach,
+\ResOursName{}, reaches a precision of \ResOursP{}, a recall of \ResOursR{}, and an F1 of
+\ResOursF{} (MCC \ResOursMCC{}) on the derived class. The strongest baseline,
+\ResBaseName{}, reaches an F1 of \ResBaseF{}, and the SkillReuse-style detector \ResSRF{}. On
+high-similarity pairs that annotators judged not derived, our approach labels \ResOursHiFP{}
+as derived, against \ResBaseHiFP{} for the strongest baseline. Across the three classes it
+reaches a macro-F1 of \ResMacroF{} (Table~\ref{tab:confusion}). Table~\ref{tab:rq1bands} shows
+where the differences arise.
+\tbd{Two or three sentences of error analysis from results/rq1\_oof\_predictions.csv: what do
+the false positives and false negatives of the best model look like?}
+
+\begin{quote}
+\textbf{Answer to RQ1:} \tbd{One or two sentences summarising the result.}
+\end{quote}
+
+\subsection{RQ2: Contributing Signals}
+
+\begin{table}[t]
+\caption{RQ2: ablation of feature groups for our best model.}
+\label{tab:rq2}
+\small
+\restablefit{rq2_ablation.tex}{Run code/06\_rq1\_rq2.py to generate this table.}
+\end{table}
+
+Table~\ref{tab:rq2} reports the ablation. Removing the \ResTopAblation{} group causes the
+largest drop in F1 (\ResTopAblationDrop{}).
+\tbd{Report what happens to the high-similarity false-positive rate when the boilerplate-aware
+group is removed; this is the direct test of our design choice. Also compare with the
+lexical-only model.}
+
+\begin{quote}
+\textbf{Answer to RQ2:} \tbd{One or two sentences.}
+\end{quote}
+
+\subsection{RQ3: Reuse Concentration}
+
+\begin{table}[t]
+\caption{RQ3: reuse concentration by exact hash and by derivation family. The last column
+covers the whole in-scope population of the sample at the exact-hash level.}
+\label{tab:rq3}
+\small
+\restablefit{rq3_table.tex}{Run code/07\_rq3.py to generate this table.}
+\end{table}
+
+Scoring all \ResCandPairs{} candidate pairs yields \ResDerivedEdges{} predicted derivations.
+Grouping the \ResWorkHashes{} distinct contents of the working set into families leaves
+\ResFamilies{} units, an inflation ratio of \ResInflation{}. \ResMultiFamilies{} families
+contain two or more distinct contents, and the largest contains \ResLargestFamily{}, compared
+with a largest connected component of \ResLargestCC{} before community detection. The Gini
+coefficient of occurrences per unit moves from \ResGiniHash{} for exact hashes to
+\ResGiniFam{} for families, and the share of units spanning two or more owners from
+\ResCrossHash{} to \ResCrossFam{} (Table~\ref{tab:rq3}). Only \ResOrient{} of the predicted
+derivations can be oriented in time from the dataset's commit history.
+
+These figures are a lower bound. The official sample draws distinct contents uniformly, so most
+members of a large family fall outside it and families appear smaller than they are. Phase~3
+repeats the analysis on the full dataset.
+
+\begin{quote}
+\textbf{Answer to RQ3:} \tbd{One or two sentences.}
+\end{quote}

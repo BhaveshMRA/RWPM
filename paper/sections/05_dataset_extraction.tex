@@ -1,0 +1,71 @@
+\section{Dataset Extraction}
+\label{sec:dataset}
+
+\paragraph{Source.} GitSkills is distributed as a single SQLite file with four tables:
+\texttt{artifacts}, with one row per file occurrence; \texttt{repos}, with repository
+metadata; \texttt{artifact\_\allowbreak siblings}, with the files bundled with each skill; and
+\texttt{mining\_runs}, with collection provenance~\cite{destefanis2027gitskills}. For this phase we use the official
+sample released by the dataset authors~\cite{gitskills_sample}: the \ResContentsTotal{}
+distinct contents with the lowest content hashes, together with every row the full dataset
+holds about them, i.e., \ResOccTotal{} file occurrences in \ResReposTotal{} repositories owned
+by \ResOwnersTotal{} accounts. Because content hashes are effectively uniform, the sample is a
+random sample of distinct skills, and because every content group is complete, its copy counts
+are exact. Queries written for the sample run unchanged on the full 41~GB file, which we will
+use in Phase~3.
+
+\paragraph{Fields.} Table~\ref{tab:fields} lists the fields we extract.
+
+\begin{table}[t]
+\caption{GitSkills fields used in this study.}
+\label{tab:fields}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.55\columnwidth}>{\raggedright\arraybackslash}p{0.35\columnwidth}}
+\toprule
+Field(s) & Use \\
+\midrule
+\texttt{file\_sha}, \texttt{repo\_full\_name}, \texttt{path}, \texttt{location\_class} & occurrences, exact-copy counts \\
+\texttt{filename}, \texttt{dedup\_primary}, \texttt{frontmatter\_valid}, \texttt{body\_chars} & scope filtering \\
+\texttt{content}, \texttt{name}, \texttt{description} & skill text (representatives) \\
+\texttt{first\_commit\_at} & ordering derived pairs \\
+\texttt{artifact\_siblings.entry\_name} & bundled-file similarity \\
+owner (prefix of \texttt{repo\_full\_name}) & same-owner and cross-owner reuse \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Scope.} The filename search behind GitSkills also returns lowercase
+\texttt{skill.md} files and similar names that predate the format, so we keep only
+representatives whose exact basename is \texttt{SKILL.md}. We require valid front matter
+because the name and description are inputs to our classifier, and a body of at least 200
+characters, which removes stubs and symbolic-link skills whose content is only a link target.
+Table~\ref{tab:funnel} shows the effect of each filter.
+
+\begin{table}[t]
+\caption{Scope filters applied to the official GitSkills sample.}
+\label{tab:funnel}
+\small
+\begin{tabular}{lr}
+\toprule
+Filter & Distinct skills \\
+\midrule
+All distinct contents & \ResFunnelZero \\
+Exact basename \texttt{SKILL.md} & \ResFunnelOne \\
+Valid YAML front matter & \ResFunnelTwo \\
+Body $\geq$ 200 characters (dataset field) & \ResFunnelThree \\
+Body $\geq$ 200 characters after our own parsing & \ResFunnelFour \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The resulting working set has \ResWorkContents{} distinct skills with \ResWorkOcc{} file
+occurrences in \ResWorkRepos{} repositories owned by \ResWorkOwners{} accounts. Commit history
+is available for \ResWorkHistory{} of these skills, and \ResWorkSiblings{} bundle at least one
+other file. Already at this scale, \ResNamesTwoPlus{} front-matter names are carried by two or
+more distinct contents.
+
+\paragraph{Decomposition.} For each representative we split the file into its name
+(normalised), description, prose (the body with fenced code removed), code blocks, and
+heading sequence, and attach repository context: the owners of all its occurrences, the name
+of the skill's folder, and the names of its bundled files. The result is stored as a small
+SQLite database with two tables, \texttt{skills} and \texttt{occurrences}, which the remaining
+steps read.

@@ -1,0 +1,37 @@
+\section{Proposed Solution}
+\label{sec:solution}
+
+We propose to recover skill lineage from the content of skills alone and then use it to
+study reuse. The solution has two parts.
+
+First, we build a classifier that decides, for a pair of skills, whether one is a derived
+variant of the other, a template sibling, or unrelated. Separating these classes is the core
+difficulty. Skills are short, mostly written in English, and often scaffolded from the same
+templates, so two independently written skills can share much of their text while a reworded
+or translated copy can share little. No fixed similarity threshold separates these cases, and
+training a model on labels produced by such a threshold would only teach the threshold back to
+the model. We therefore build the ground truth by hand: team members independently label real
+candidate pairs from GitHub against a written rubric, and we measure their agreement. Because
+the pairs are sampled across similarity levels, the labelled set deliberately contains the
+highly similar template siblings that existing benchmarks leave out. Besides lexical
+similarity, the classifier uses signals aimed at the template problem, chiefly a similarity
+computed only over the lines a pair shares that do not recur across many unrelated skills,
+together with front-matter, structural, and repository evidence. We compare it with exact
+hashing, MinHash-style and TF-IDF similarity, and a re-implementation of
+SkillReuse~\cite{zhu2026skillreuse}.
+
+Second, we apply the classifier to candidate pairs drawn from the GitSkills
+dataset~\cite{destefanis2027gitskills}, group skills into families, order family members by
+the first commit of each \texttt{SKILL.md} where that history is available, and measure how
+concentrated reuse is once edited copies are counted. In the next phase we will use these
+families to test whether upstream changes reach their copies, following the genealogy view of
+code clones~\cite{kim2005genealogy}.
+
+The design answers each limitation identified above. It needs no registry entry and no fork
+record, which matters in practice: GitHub code search indexes a fork only when it has more
+stars than its parent, so only three repositories in GitSkills are
+forks~\cite{gitskills_sample}. It separates derivation from template similarity instead of
+treating every similar pair as a clone, and it tests that separation on real pairs rather than
+synthetic mutations. It uses commit history to give derived pairs a direction where possible.
+Finally, it forms families with community detection rather than plain connected components,
+so that a few bridging pairs cannot chain unrelated skills into one giant family.

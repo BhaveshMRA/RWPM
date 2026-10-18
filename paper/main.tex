@@ -1,0 +1,58 @@
+% SSW 625 - Group 8 - Phase 1 (revised) + Phase 2
+% Upload this whole folder to Overleaf. Numbers and tables fill in automatically from
+% results/*.tex, which the scripts in code/ generate. Anything still in red [brackets]
+% is a placeholder you must replace or generate before submitting.
+\documentclass[sigconf,nonacm]{acmart}
+\settopmatter{printacmref=false, printfolios=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\input{macros_defaults}
+\InputIfFileExists{results/macros_extract.tex}{}{}
+\InputIfFileExists{results/macros_candidates.tex}{}{}
+\InputIfFileExists{results/macros_sample.tex}{}{}
+\InputIfFileExists{results/macros_agreement.tex}{}{}
+\InputIfFileExists{results/macros_features.tex}{}{}
+\InputIfFileExists{results/macros_rq1.tex}{}{}
+\InputIfFileExists{results/macros_rq3.tex}{}{}
+
+\begin{document}
+
+\title{Beyond Exact Copies: Recovering the Lineage of Reused AI Agent Skills}
+
+\author{Bhavesh Maurya}
+\email{bmaurya@stevens.edu}
+\affiliation{\institution{Stevens Inst. of Tech.}\city{Hoboken}\state{NJ}\country{USA}}
+\author{Abhishek Thakkar}
+\email{athakkar1@stevens.edu}
+\affiliation{\institution{Stevens Inst. of Tech.}\city{Hoboken}\state{NJ}\country{USA}}
+\author{Mahima Jain}
+\email{mjain19@stevens.edu}
+\affiliation{\institution{Stevens Inst. of Tech.}\city{Hoboken}\state{NJ}\country{USA}}
+\author{Pratiksha Vilas Pawar}
+\email{ppawar6@stevens.edu}
+\affiliation{\institution{Stevens Inst. of Tech.}\city{Hoboken}\state{NJ}\country{USA}}
+
+\maketitle
+
+% ---- Phase 1 (revised per instructor feedback) ----
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_problem_statement}
+\input{sections/04_proposed_solution}
+\input{sections/05_dataset_extraction}
+% ---- Phase 2 ----
+\input{sections/06_study_design}
+\input{sections/07_experiments}
+\input{sections/08_limitations}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

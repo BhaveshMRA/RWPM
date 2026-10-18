@@ -1,0 +1,13 @@
+labeling/html/
+work/
+gitskills-sample/
+__pycache__/
+*.pkl
+*.db
+paper/*.aux
+paper/*.log
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.out
