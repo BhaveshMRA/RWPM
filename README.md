@@ -18,7 +18,7 @@ Run from inside `code/`. Outputs go to `../work`, `../labeling`, `../paper/resul
 | 2 | `python 02_candidates.py` | work/candidates.pkl |
 | 3 | already done: the kit is in `labeling/`. No need to run it. | |
 | 4 | label (see below), then `python 04_agreement.py` | labeling/adjudication.csv |
-| 4b | fill `final_label` in adjudication.csv, run `python 04_agreement.py` again | labeling/gold.csv |
+| 4b | If require, fill `final_label` in adjudication.csv, run `python 04_agreement.py` again | labeling/gold.csv |
 | 5 | `python 05_features.py --pairs gold` and `python 05_features.py --pairs all` | work/features_*.pkl |
 | 6 | `python 06_rq1_rq2.py` | RQ1 + RQ2 tables |
 | 7 | `python 07_rq3.py` | RQ3 table |
@@ -35,7 +35,7 @@ steps 5-7 need the `work/` files.
    `confidence` = 1-3; optional `note`. Each pair is assigned to two people
    (Bhavesh + Abhishek, Mahima + Pratiksha), 200 pairs each.
 3. Do not look at each other's sheets until everyone is done.
-4. Run step 4, discuss each disagreement, fill `final_label`, run step 4 again.
+4. Run step 4, discuss each disagreement, fill `final_label`, if require, then run step 4 again.
 5. The "Synthesize" paragraph in Section 6 is the description of why pairs look similar.
 
 `labeling/pairs.csv` holds the similarity band of each pair.
