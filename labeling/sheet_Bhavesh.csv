@@ -59,143 +59,43 @@ P0112,D,3,"D: Same skill (superpowers executing-plans) in two versions; B is an 
 P0114,U,2,"U: Only the shared name 'tdd-workflow' and the generic Red-Green-Refactor topic overlap. No shared template, headings, language or structure. A is Python/uv/pytest with Constitution Article 1 and user approval; B is TypeScript/Vitest with Aurion patterns. Same topic alone is U."
 P0116,T,2,"T: Same name and generic fix-issue flow (gh issue view $ARGUMENTS, minimal fix, tests, stop-and-ask). Skill A is Rust-specific with strict TDD, release and AUR steps; Skill B is generic pytest/commit. Task-specific content differs; overlap is scaffolding."
 P0118,T,2,"T: Both come from the same catalog generator for Berufsrecht Anwälte; the topic name is swapped (Berufsausübungsgesellschaft vs Homeoffice). Overlap is boilerplate (Arbeitsweg, Kaltstart, Prüflogik); the specific norm lists differ and neither has distinctive task content."
-P0120,,,
-P0122,,,
-P0124,,,
-P0126,,,
-P0128,,,
-P0130,,,
-P0132,,,
-P0134,,,
-P0136,,,
-P0138,,,
-P0140,,,
-P0142,,,
-P0144,,,
-P0146,,,
-P0148,,,
-P0150,,,
-P0152,,,
-P0154,,,
-P0156,,,
-P0158,,,
-P0160,,,
-P0162,,,
-P0164,,,
-P0166,,,
-P0168,,,
-P0170,,,
-P0172,,,
-P0174,,,
-P0176,,,
-P0178,,,
-P0180,,,
-P0182,,,
-P0184,,,
-P0186,,,
-P0188,,,
-P0190,,,
-P0192,,,
-P0194,,,
-P0196,,,
-P0198,,,
-P0200,,,
-P0202,,,
-P0204,,,
-P0206,,,
-P0208,,,
-P0210,,,
-P0212,,,
-P0214,,,
-P0216,,,
-P0218,,,
-P0220,,,
-P0222,,,
-P0224,,,
-P0226,,,
-P0228,,,
-P0230,,,
-P0232,,,
-P0234,,,
-P0236,,,
-P0238,,,
-P0240,,,
-P0242,,,
-P0244,,,
-P0246,,,
-P0248,,,
-P0250,,,
-P0252,,,
-P0254,,,
-P0256,,,
-P0258,,,
-P0260,,,
-P0262,,,
-P0264,,,
-P0266,,,
-P0268,,,
-P0270,,,
-P0272,,,
-P0274,,,
-P0276,,,
-P0278,,,
-P0280,,,
-P0282,,,
-P0284,,,
-P0286,,,
-P0288,,,
-P0290,,,
-P0292,,,
-P0294,,,
-P0296,,,
-P0298,,,
-P0300,,,
-P0302,,,
-P0304,,,
-P0306,,,
-P0308,,,
-P0310,,,
-P0312,,,
-P0314,,,
-P0316,,,
-P0318,,,
-P0320,,,
-P0322,,,
-P0324,,,
-P0326,,,
-P0328,,,
-P0330,,,
-P0332,,,
-P0334,,,
-P0336,,,
-P0338,,,
-P0340,,,
-P0342,,,
-P0344,,,
-P0346,,,
-P0348,,,
-P0350,,,
-P0352,,,
-P0354,,,
-P0356,,,
-P0358,,,
-P0360,,,
-P0362,,,
-P0364,,,
-P0366,,,
-P0368,,,
-P0370,,,
-P0372,,,
-P0374,,,
-P0376,,,
-P0378,,,
-P0380,,,
-P0382,,,
-P0384,,,
-P0386,,,
-P0388,,,
-P0390,,,
-P0392,,,
-P0394,,,
-P0396,,,
-P0398,,,
+P0120,U,3,"U: Both are named 'task' but do different things: A routes sub-commands to Claude Code's built-in TaskCreate/TaskList tools with a local tracker hook; B creates Linear issues via MCP and mirrors them as vault notes. No shared distinctive content or scaffolding. Confidence basis: Both documents are fully visible and their workflows, tools, and file paths clearly differ; only the skill name coincides."
+P0122,T,3,"T: Both are generator-produced skills with identical scaffolding; only the capability/domain names (ethical dilemma navigation/eldercare vs handoff contracting/nutrition), engine type and emphasis phrase are swapped. No task-specific instructions are shared beyond boilerplate. Confidence basis: Template text is clearly identical while the capabilities and domains clearly differ; both are generic stubs with no task-specific content."
+P0124,T,3,"T: Both come from the same German legal-skill generator: the identical 'Arbeitsweg' bullets and description template are shared, with only the norm list swapped (VVG/SGB V vs HOAI/BGB). Task-specific content (insurance disclosure duty vs HOAI LPH 3) differs entirely. Confidence basis: Shared boilerplate is verbatim, while the task-specific content clearly differs between insurance law and HOAI planning."
+P0126,T,3,"T: Both come from the same legal-skill catalog generator. Shared Arbeitsweg bullets, Fallweichen questions, and Arbeitsworkflow are identical boilerplate, with only the topic swapped (Familienrecht vs. Datenschutz/TDDDG). Task-specific norms and content differ entirely. Confidence basis: Generic scaffolding is clearly identical while the substantive legal content (family law vs. data protection/TDDDG) clearly differs; both are visible."
+P0128,U,3,"U: Skill A is Astro warehouse schema discovery generating .astro/warehouse.md via dbt/gusty scanning and INFORMATION_SCHEMA queries. Skill B is a Portuguese AgentHub session creator using hub_init.py. Only the name 'init' and slash-command style coincide; no shared steps, headings or text. Confidence basis: Both documents are substantially visible; tasks, commands, paths and structure clearly differ with no copied or scaffold text."
+P0130,T,3,"T: Same catalog generator: capability name, domain, engine (generalist-engine vs incident-response-engine), artifact name, emphasis/tone phrase, and compliance action (evidence-review vs human-approval-router) were swapped. Task-specific instructions differ; only generic scaffolding is shared. Confidence basis: Both fully visible; differences are only swapped names, engine, tone and one guardrail action; no shared task-specific content beyond boilerplate."
+P0132,T,3,"T: Both come from the same generic generator scaffold. Workflow, output format tables, and checklist are identical boilerplate; only the topic name differs (startup board management vs real estate brokerage plan). No task-specific instructions exist in either. Confidence basis: Both are bare scaffold stubs with fully visible text and no task-specific content; only names and descriptions differ."
+P0134,U,3,"U: Skill A is a dev-loop boot tool (portless, emulate, agent-browser, state file). Skill B is a go-to-market launch planning skill (Product Hunt, cold outreach). Different tasks and no copied task-specific content or shared scaffolding. Confidence basis: Both documents are substantial and clearly cover entirely different domains with no overlapping content."
+P0136,T,3,"T: Both come from the SkillGalaxy generator; only the domain name (product vs spatial) and skill number (108 vs 271) are swapped. All other text is generic boilerplate with no task-specific instructions, so the overlap is scaffolding. Confidence basis: Both documents are fully visible and are bare generator stubs that differ only in the swapped name and number."
+P0138,T,3,"T: Both are Composio/Rube MCP catalog-generated skills; only the toolkit name was swapped (Kickbox vs Cdr Platform, slug kickbox vs cdr_platform). All remaining content is generator boilerplate with no distinct task-specific instructions. Confidence basis: Texts are identical boilerplate after name swap; neither contains task-specific content, so same-template sibling rule applies clearly."
+P0140,T,3,"T: Both are catalog-generated from the same scaffold; only the capability and domain names are swapped (experiment design/urban planning vs mentoring and coaching design/R&D labs). Task-specific content is absent, with only generic boilerplate steps, runbook, and guardrails. Confidence basis: Texts are identical after name substitution, with no distinct task-specific instructions in either skill; the template pattern is clear."
+P0142,T,2,"T: Both are ADR-writing skills with generic ADR sections (Context, Decision, Status, Consequences), which is standard ADR structure. Task-specific content differs: A uses .agents/memory paths and a short template; B has a clarifying-question workflow, adr/NNN naming, and extensive guidance. No copied passages. Confidence basis: Overlap is only generic ADR headings; A is short, B is long with no shared distinctive phrasing visible."
+P0144,D,3,"D: Same Maton api-gateway skill in two versions: identical security text, Quick Start, connection management code and service table. B adds newer items (Baserow, Notion MCP, `method` parameter), so one is an edited copy of the other. Confidence basis: Nearly verbatim long passages match; differences are small version updates. Both documents are truncated but the visible overlap is overwhelming."
+P0146,U,3,"U: Skill A is an ontological analysis of symptoms vs. root causes with a 3-layer output. Skill B coaches CBI generalization writing with rubric scoring and a JSON packet. Tasks, content, and structure are entirely different, and no copied passages or shared scaffolding appear. Confidence basis: Both documents are fully visible and clearly address different tasks with no overlapping content."
+P0148,U,3,"U: Skill A covers React state lifting, prop drilling and Context; Skill B covers phylogenetic tree rendering with ggtree and iTOL. The topics, tasks, commands and content are entirely different, with no copied passages or shared scaffolding. Confidence basis: Both documents are clearly visible and cover entirely different domains with no overlapping content, despite B's truncation."
+P0150,T,3,"T: Both come from the same catalog generator for OWASP repos. Only the project name and description differ (Scan IT vs MSTG playground iOS app). Everything else is identical boilerplate (Use When, Input Checklist, Execution Playbook, Guardrails) with no task-specific content. Confidence basis: The boilerplate is identical and the task descriptions clearly cover different projects; no task-specific instructions exist in either skill."
+P0152,T,3,"T: Both share only the generator's description scaffold ('prüft Frist, Form, Zuständigkeit, Rechtsweg und Sofortmaßnahmen; liefert eine Fristen- und Risikoampel') and a similar source-verification rule on case law. Task content differs: election-campaign press correction vs. OWiG § 72 data-protection fines. Section structures and kaltstart questions also differ. Confidence basis: Task-specific content clearly differs; overlap is only the description scaffold and a generic case-law citation rule with slightly different wording."
+P0154,U,2,"U: Same topic (test writing) and both use a describe/it Arrange-Act-Assert structure and cover happy/error/edge cases, but the content is written independently. A adds codebase-specific ObjectId/StrictDB rules and Playwright checks; B has TDD, regression templates, mocking strategy and tool lists. Confidence basis: Both are fully visible; the overlap is generic testing advice, with no copied distinctive passages and no shared scaffold."
+P0156,T,3,"T: Both come from the same Turkish legal-plugin generator. They share the intake/audit/output skeleton, plugin-context paragraph, source rule and disclaimers. Task content differs: tax limitation periods (VUK/AATUHK) versus public procurement contracts (4735). Only the plugin name and topic were swapped. Confidence basis: Boilerplate blocks are verbatim identical, while the task-specific audit content clearly differs across unrelated legal domains."
+P0158,T,3,"T: Both are SkillsHub catalog stubs with identical generated scaffolding (Usage, Standalone, In Agent). Only the skill name, description, and run path were swapped; the tasks (test data generation vs multilingual support) differ entirely. Confidence basis: Both documents are fully visible bare stubs; the tasks clearly differ and only boilerplate overlaps."
+P0160,D,3,"D: The two skills are identical through the visible text: same name, description, ASCII tree, URL pattern tables, Mermaid templates, hub-and-spoke example, and link audit checklist. Only truncation differs, so this is a verbatim copy. Confidence basis: Long verbatim matches across all visible sections; only the truncated tail differs, which does not affect the match."
+P0162,D,3,"D: Skill B is a copy of Skill A with added generic scaffolding (Do not use/Instructions sections) and a Rei Skills footer. The task-specific content is identical: the same resource descriptions, code samples, coverage targets and principles. Confidence basis: Long verbatim identical task-specific passages; only boilerplate additions differ. B's description is truncated but this doesn't affect the judgment."
+P0164,T,3,"T: Both come from the same catalog generator: identical scaffolding (Arbeitsauftrag, Einstieg, Prüfroutine, Ausgabeformat, Qualitätsregel) with only the topic name swapped. Task-specific parts (norms, artifacts, red-team questions) differ: Umweltverbandsklage vs. OWi-Verjährung. Confidence basis: Clear shared boilerplate and clearly different task-specific norms, artifacts and red-team questions; full documents visible."
+P0166,T,3,"T: Both are SkillGalaxy generator stubs; only the topic name was swapped (education expert 230 vs spatial expert 123). No task-specific content exists, just identical boilerplate headings, generic class skeleton, and generic best practices. Confidence basis: Both are bare stubs with identical scaffolding and no task-specific content; the full text is visible and differs only by name."
+P0168,T,3,"T: Both skills are the same generic generator scaffold with only the skill name and one-line description swapped (ai-use-case-prioritizer vs learning-path-creator). There is no task-specific content; the workflow, output tables and checklist are boilerplate. Confidence basis: Texts are identical apart from names and descriptions, and both are clearly bare template stubs with no task-specific instructions."
+P0170,T,3,"T: Both come from the same catalog generator; only the capability name and domain were swapped (A/B rollout governance for civic participation vs uncertainty communication for design research). Task-specific content is absent; the shared text is boilerplate steps, runbook, and guardrails. Confidence basis: Texts are pure generator scaffolding with substituted names; no task-specific instructions in either, so the template-sibling call is clear."
+P0172,T,3,"T: Both are catalog-generated stubs with identical boilerplate (Overview, When to Use, Prerequisites, Output, Error Handling table, Related Skills). Only the topic name (rest endpoint designer vs graphviz dot generator) and domain (API Development vs Visual Content) were swapped; no task-specific content exists. Confidence basis: Both are clearly bare generic stubs with no task-specific instructions; the boilerplate overlap is unambiguous."
+P0174,D,3,"D: Skill A is a lightly edited fork of Skill B. It keeps the same long overview, Clayton Young quote, three-phase mermaid workflow, rules, and pitfalls. Differences are the frontmatter, the AlterLab branding, the dropped 'K-Dense Discord' attribution, and flattened reference paths. Confidence basis: Large verbatim overlap in distinctive content across the visible text; only the truncated tails are unseen."
+P0176,T,3,"T: Both are Membrane-generated catalog skills for different apps (Soci social media vs ScrapeNinja scraping). Overlap is only generator boilerplate (install, login, connection, proxy, best practices) with app names and URLs swapped; the task-specific overview content differs. Confidence basis: Boilerplate is identical, and the app-specific sections clearly describe different products and entities."
+P0178,T,3,"T: Both are SkillGalaxy generator stubs with identical boilerplate; only the topic name was swapped (llm memory vs ai writing assistants). No task-specific instructions exist in either, so the overlap is purely template scaffolding. Confidence basis: Texts are bare generated stubs, identical apart from swapped topic names; no task-specific content in either to suggest copying."
+P0180,T,3,"T: Both are Composio/Rube MCP catalog-generated skills for different toolkits (Hypeauditor vs Dialmycalls). After swapping the toolkit name, only generic boilerplate remains; there are no task-specific instructions, so they are template siblings. Confidence basis: Texts are identical apart from the toolkit name, and neither contains task-specific content. Full documents are visible."
+P0182,T,3,"T: Both are Membrane-generated catalog skills for different apps (KnowBe4 vs ChatBotKit). Overlap is boilerplate: CLI install, login, connection ensure, proxy requests, best practices. App name, URL, overview and action tables differ entirely. Confidence basis: Boilerplate is identical, while task-specific content (actions, entities, URLs) clearly differs between two unrelated apps."
+P0184,D,3,"D: Both are the same PDF skill (Anthropic's pdf skill): identical pypdf, pdfplumber, reportlab, qpdf and pdftk code blocks, same Quick Reference table and Next Steps. B is an edited copy that adds scientific-schematics and K-Dense promo sections. Confidence basis: Large verbatim overlap of task-specific code and structure across both documents; only additions and minor differences distinguish them."
+P0186,T,3,"T: Both are Composio/Rube MCP catalog-generated skills differing only by the swapped toolkit name (Apilio vs Mocean). No task-specific instructions beyond generic RUBE_* scaffolding; different toolkits, so overlap is boilerplate only. Confidence basis: Texts are identical after name swap and contain no toolkit-specific content, which clearly indicates a shared generator template."
+P0188,U,3,"U: Skill A is a German HOAI/BGB construction-planning (LPH 6 tender preparation) legal workflow; Skill B is a Python fuzzy search over SEC 13-F fund filings. Different domains, tasks and content, with no shared scaffolding or copied text. Confidence basis: Content is completely disjoint in topic, language, and structure; both documents are fully visible and clearly unrelated."
+P0190,U,3,"U: Same name 'evolve' but different tasks: A is an autonomous $rpi improvement loop (beads, ao goals, cycles); B analyzes Pi agent usage data to generate EvolutionSuggestions for CLAUDE.md. No copied distinctive content or shared scaffolding. Confidence basis: Both documents show substantial, clearly different task-specific content; A is truncated but its purpose is evident."
+P0192,T,3,"T: Both come from the same ATT&CK skill generator. The shared text is boilerplate (workflow, bundled resources, output pattern) with only the technique name, ID, description and threat lists swapped (T1074 Data Staged vs T1560.003 Archive via Custom Method). Task-specific content differs. Confidence basis: Boilerplate is clearly identical, and the technique-specific descriptions, platforms and threat lists clearly differ."
+P0194,T,3,"T: Both come from the SkillGalaxy generator; only the topic name was swapped (blockchain expert 78 vs climate expert 83, including the class name). All content is generic boilerplate with no task-specific instructions. Confidence basis: Both are bare stubs with identical generic scaffolding and no task-specific content, so the template-sibling call is clear."
+P0196,U,3,"U: Both are Go skills with the same name, but A is a modern-Go syntax/stdlib index pointing to a reference file, while B is generic Go style/error-handling guidance with catalog boilerplate. No copied distinctive content or shared scaffolding. Confidence basis: Both documents are fully visible and their content clearly differs; only the topic (Go) is shared."
+P0198,D,3,"D: Skill B is a near-verbatim copy of Skill A (same name, title, intro, use-when list, instructions, resource path); only the description is truncated and A adds a Knowledge Modules section. Confidence basis: Identical distinctive text across nearly the entire document; differences are only truncation and an appended section."

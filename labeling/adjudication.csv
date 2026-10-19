@@ -1,1 +1,6 @@
 pair_id,ann_1,label_1,ann_2,label_2,final_label
+P0116,Bhavesh,template,Abhishek,unrelated,T
+P0121,Mahima,template,Pratiksha,derived,D
+P0142,Bhavesh,template,Abhishek,unrelated,U
+P0169,Mahima,unrelated,Pratiksha,derived,D
+P0185,Mahima,unrelated,Pratiksha,template,T

@@ -49,56 +49,56 @@ P0092,D,3,"Copy: same email-sequence marketing skill; B find-replaced .claude wi
 P0094,T,3,Catalog house style (Membrane CLI): shared setup boilerplate; app overview differs (Unleash vs Polymer)
 P0096,U,3,Unrelated: Membrane Chatwoot integration vs TypeScript coding principles
 P0098,T,3,Generator template (SkillGalaxy): identical scaffold and code stub; only domain/topic differ
-P0100,,,
-P0102,,,
-P0104,,,
-P0106,,,
-P0108,,,
-P0110,,,
-P0112,,,
-P0114,,,
-P0116,,,
-P0118,,,
-P0120,,,
-P0122,,,
-P0124,,,
-P0126,,,
-P0128,,,
-P0130,,,
-P0132,,,
-P0134,,,
-P0136,,,
-P0138,,,
-P0140,,,
-P0142,,,
-P0144,,,
-P0146,,,
-P0148,,,
-P0150,,,
-P0152,,,
-P0154,,,
-P0156,,,
-P0158,,,
-P0160,,,
-P0162,,,
-P0164,,,
-P0166,,,
-P0168,,,
-P0170,,,
-P0172,,,
-P0174,,,
-P0176,,,
-P0178,,,
-P0180,,,
-P0182,,,
-P0184,,,
-P0186,,,
-P0188,,,
-P0190,,,
-P0192,,,
-P0194,,,
-P0196,,,
-P0198,,,
+P0100,U,3,Same name only: generic debugging/error-recovery process vs ant-colony multi-agent debug pipeline; no shared text
+P0102,T,3,Catalog intake wrapper (awesome-omni-skills): shared provenance/intake boilerplate; different imported skills (social proof vs TDD orchestrator)
+P0104,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0106,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0108,D,3,"Copy-and-edit: superpowers writing-skills; near-identical, B changes ~/.codex/skills to ~/.agents/skills, renames the superpowers: prefix to oto: and superpowers-rule.md to CLAUDE.md"
+P0110,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0112,D,3,"Two versions of superpowers executing-plans: same steps and stop/ask rules; A batch-execution variant, B execute-all with finishing-branch sub-skill"
+P0114,U,3,Same name only: Japanese constitution-based TDD workflow vs English Red-Green-Refactor guide; no shared text
+P0116,U,1,"Same name/task; share only 'Fix a GitHub issue by number', heading and gh issue view $ARGUMENTS (common docs idiom); bodies differ (Rust release flow vs pytest); possible D from a shared starter"
+P0118,T,2,"Catalog house style (German legal catalog, Berufsrecht module): shared Arbeitsweg/Fachkern lines; topics differ (BAG vs Homeoffice)"
+P0120,U,3,Same name only: Claude Code task-list orchestration vs Linear issue + vault mirror; no shared text
+P0122,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0124,T,3,Catalog house style (German legal catalog): shared Arbeitsweg lines; different areas (insurance disclosure duty vs HOAI scheduling)
+P0126,T,3,Catalog house style (German legal catalog): shared intake/checklist lines; different areas (family law edge cases vs TDDDG)
+P0128,U,3,Same name only: Astro warehouse schema init vs AgentHub session init (Portuguese); no shared text
+P0130,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0132,T,3,Generator template (Winbda catalog): identical placeholder body; only name/description differ
+P0134,U,3,Unrelated: dev-loop boot (portless/emulate) vs 187WEB go-to-market skill
+P0136,T,3,Generator template (SkillGalaxy): identical scaffold and code stub; only domain/number differ
+P0138,T,3,Catalog house style (Composio Rube MCP): only toolkit name differs (Kickbox vs Cdr Platform)
+P0140,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0142,U,3,Same name/topic (ADRs) only: short ADR template vs long ADR guide; no shared text beyond standard ADR section names
+P0144,D,3,"Two versions of Maton api-gateway: same proxy instructions and code; A adds GitHub and service list, B adds connection-method docs"
+P0146,U,3,Both Korean but different tasks (ontological self-analysis vs CBI generalization coaching); no shared text
+P0148,U,3,Unrelated: React state lifting (Japanese) vs phylogenetic tree formatting
+P0150,T,3,Generator template (OWASP repo wrappers): identical playbook; only repo name and README blurb differ
+P0152,T,1,Same German legal catalog but different sub-plugin layouts (Wahlkampfrecht vs Datenschutz-OWiG); only description formula shared; T vs U unclear
+P0154,U,3,Same name only: test-writer principles vs different test-suite skill; no shared text
+P0156,T,3,Catalog house style (Turkish law catalog): shared intake and source-citation rules; different topics (tax limitation periods vs public procurement contract)
+P0158,T,3,Generator template (SkillsHub wrapper): identical usage stub; only name/description/run path differ
+P0160,D,3,Copy: same site-architecture marketing skill; text identical in diff view (hash differs only in whitespace/line endings); B appends an extra final #skills line
+P0162,D,3,Copy-and-edit: same temporal-python-testing skill; B swaps When-to-Use for generic Do-not-use/Instructions block
+P0164,T,3,Catalog house style (German legal catalog): shared Einstieg/Quellenanker lines; topics differ (wind park participation vs animal-protection OWi)
+P0166,T,3,Generator template (SkillGalaxy expert series): identical scaffold and code stub; only domain/number differ
+P0168,T,3,Generator template (Winbda catalog): identical placeholder body; only name/description differ
+P0170,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0172,T,3,"Generator template (auto-activating plugin catalog): same Overview/When to Use/Error table, different topics (REST endpoints vs Graphviz)"
+P0174,D,3,Renamed copy: alterlab-mermaid is markdown-mermaid-writing; verbatim philosophy and quoted statement; only reference paths/credit edited
+P0176,T,3,Catalog house style (Membrane CLI): shared setup boilerplate; app overview differs (Soci vs ScrapeNinja)
+P0178,T,3,Generator template (SkillGalaxy guide series): identical scaffold and code stub; only topic differs
+P0180,T,3,Catalog house style (Composio Rube MCP): only toolkit name differs (Hypeauditor vs Dialmycalls)
+P0182,T,3,Catalog house style (Membrane CLI): shared setup boilerplate; app overview differs (KnowBe4 vs ChatBotKit)
+P0184,D,3,"Copy-and-edit of Anthropic pdf skill: same pypdf/reportlab code; B adds scientific-schematics section, A keeps subscript note"
+P0186,T,3,Catalog house style (Composio Rube MCP): only toolkit name differs (Apilio vs Mocean)
+P0188,U,3,Unrelated: German HOAI legal module vs SEC 13-F fuzzy fund search
+P0190,U,3,Same name only: goal-driven compounding loop vs usage-analysis suggestion generator; no shared text
+P0192,T,3,Generator template (MITRE ATT&CK catalog): shared workflow/resources text; different techniques (T1074 vs T1560.003)
+P0194,T,3,Generator template (SkillGalaxy expert series): identical scaffold and code stub; only domain/number differ
+P0196,U,3,Same name only: short Go reference index vs long Go best-practices skill; no shared text
+P0198,D,3,"Copy-and-edit: same typescript-advanced-types skill; A adds fractal sub-skills module list, otherwise identical"
 P0200,,,
 P0202,,,
 P0204,,,

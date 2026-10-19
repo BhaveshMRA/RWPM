@@ -1,30 +1,30 @@
 {
   "overall": {
-    "n": 100,
-    "agreement": 1.0,
-    "kappa_3class": 1.0,
-    "kappa_binary": 1.0
+    "n": 200,
+    "agreement": 0.975,
+    "kappa_3class": 0.9570962759567531,
+    "kappa_binary": 0.9703791469194313
   },
   "Bhavesh+Abhishek": {
-    "n": 50,
-    "agreement": 1.0,
-    "kappa_3class": 1.0,
+    "n": 100,
+    "agreement": 0.98,
+    "kappa_3class": 0.9647887323943662,
     "kappa_binary": 1.0
   },
   "Mahima+Pratiksha": {
-    "n": 50,
-    "agreement": 1.0,
-    "kappa_3class": 1.0,
-    "kappa_binary": 1.0
+    "n": 100,
+    "agreement": 0.97,
+    "kappa_3class": 0.9496981891348089,
+    "kappa_binary": 0.94175888177053
   },
   "label_counts_ann1": {
-    "template": 55,
-    "derived": 26,
-    "unrelated": 19
+    "template": 115,
+    "unrelated": 43,
+    "derived": 42
   },
-  "gold_pairs": 100,
-  "gold_derived": 26,
-  "gold_template": 55,
-  "gold_unrelated": 19,
-  "disagreements": 0
+  "gold_pairs": 200,
+  "gold_derived": 44,
+  "gold_template": 114,
+  "gold_unrelated": 42,
+  "disagreements": 5
 }
