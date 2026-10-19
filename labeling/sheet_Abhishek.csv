@@ -1,0 +1,201 @@
+pair_id,label,confidence,note
+P0000,D,3,"Copy-and-edit: same K-Dense scikit-learn skill; verbatim overview, quirky 'uv uv pip install' block, examples; A longer, descriptions differ"
+P0002,T,3,Generator template (Winbda catalog): identical placeholder body; only name/description differ; no task content
+P0004,T,3,Generator template (Winbda catalog): same placeholder workflow/tables/checklist; only name/description differ
+P0006,D,3,"Copy-and-edit: superpowers finishing-a-development-branch; same steps, git-dir commands, menus; A adds harness-delta preamble"
+P0008,T,3,Generator template (OpenClaw u-series): same scaffold with topic slots substituted
+P0010,D,3,"Copy: Anthropic xlsx skill; body identical, only description rewritten"
+P0012,T,3,Generator template (auto-activating plugin catalog): same Overview/When to Use/Error table with topic slots swapped
+P0014,U,3,Both Korean but different tasks (PRD spec writing vs blog publishing); no shared text
+P0016,T,3,"Catalog house style (Composio Rube MCP): identical boilerplate, only toolkit name differs (Cats vs Basin)"
+P0018,T,3,Catalog house style (Composio Rube MCP): only toolkit name differs (Geoapify vs Codacy)
+P0020,D,3,"Copy-and-edit: B is fstack fork of gstack /freeze; same description, state-file bash, hook text; B adds brain-broadcast section"
+P0022,D,3,Renamed copy of blader/humanizer (A credits original); identical description and pattern catalog
+P0024,U,3,Same topic (UI design systems) only: Hebrew RTL typography vs BIM Verdi brand rules; no shared text
+P0026,D,3,"Copy: same OpenSpec explore skill (tool-installed); near-identical text, B drops title heading"
+P0028,T,3,Catalog house style (Membrane CLI): shared setup/connection boilerplate; app overview differs (Unleash vs SmartRecruiters)
+P0030,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0032,T,3,Catalog house style (Composio Rube MCP): only toolkit name differs (Cats vs Fibery)
+P0034,U,3,Different tasks (multi-agent brainstorming protocol vs system-design interview); no shared text
+P0036,T,3,Catalog house style (German legal catalog): shared checklist/Rueckfragen lines; different statute anchors and topic
+P0038,U,3,Same name only: job-seeker STAR practice vs hiring-side interview plans; no copied content
+P0040,T,3,"Generator template (skill-gen series): identical 4-step blueprint, slot topic differs"
+P0042,T,3,"Generator template (skill-gen series): identical blueprint, slot topic differs"
+P0044,T,3,Catalog house style (Membrane CLI): shared setup boilerplate; app overview differs (Pinecone vs Chatwoot)
+P0046,D,3,Copy-and-edit: same security-and-hardening skill; verbatim three-tier boundary lists; A adds stack-activation gate
+P0048,T,3,"Generator template (OpenClaw u-series, richer variant): shared runbook/guardrail lines; capability and domain differ"
+P0050,U,3,Same name only: MotorMetrics app UI rules vs generic design-token toolkit; no shared text
+P0052,T,2,"One author's generated phase-skill template; identical Use steps, only candidate id and one-line purpose differ"
+P0054,D,3,"Copy-and-edit of grill-me: same distinctive 'interview me relentlessly...design tree' prompt; B renamed, adds wait-for-answer rules"
+P0056,D,3,"Copy-and-edit: same Crane architecture skill; A is trimmed version (reference-file sections removed), descriptions differ"
+P0058,T,2,gstack generator: ~330 shared preamble lines (scaffolding) but different skills (DX audit vs debugging); large shared block could be misread as D
+P0060,D,3,Copy: same get-shit-done gsd-manager command; only install paths and gsd-tools/gsd-sdk differ
+P0062,T,3,Generator template (Winbda catalog): identical placeholder body; only name/description differ
+P0064,T,3,Generator template (SkillGalaxy): identical scaffold and code stub; only domain/number differ
+P0066,T,3,Catalog house style (Membrane CLI): shared setup boilerplate; app overview differs (Oracle Eloqua vs Gpt-trainer)
+P0068,T,3,Generator template (NIST 800-53 catalog): shared assessment steps; different controls (AC-9(3) vs CP-7(2))
+P0070,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0072,T,3,Generator template (Winbda catalog): identical placeholder body; only name/description differ
+P0074,D,3,"Copy: Anthropic skill-creator; body nearly identical, minor description wording change"
+P0076,T,3,Generator template (MITRE ATT&CK catalog): shared workflow/resources text; different techniques (T1098 vs T1560.003)
+P0078,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0080,U,3,Both Portuguese but different tasks (.prompt.md execution gateway vs DDD glossary); no shared text
+P0082,T,3,Catalog house style (Composio Rube MCP): only toolkit name differs (Mezmo vs Blackbaud)
+P0084,U,3,"Same name and topic (refactoring) only; independently written, no shared text"
+P0086,D,3,"Copy-and-edit of caveman: A trimmed into intensity switcher; Rules paragraph, level table, React examples verbatim; B keeps wenyan levels"
+P0088,T,3,GSD adapter scaffold (Cursor vs Windsurf) shared; different commands (remove-workspace vs audit-uat)
+P0090,T,3,"Generator template (OpenClaw u-series): slot-filled scaffold, different capability/domain"
+P0092,D,3,"Copy: same email-sequence marketing skill; B find-replaced .claude with .Codex, otherwise identical"
+P0094,T,3,Catalog house style (Membrane CLI): shared setup boilerplate; app overview differs (Unleash vs Polymer)
+P0096,U,3,Unrelated: Membrane Chatwoot integration vs TypeScript coding principles
+P0098,T,3,Generator template (SkillGalaxy): identical scaffold and code stub; only domain/topic differ
+P0100,,,
+P0102,,,
+P0104,,,
+P0106,,,
+P0108,,,
+P0110,,,
+P0112,,,
+P0114,,,
+P0116,,,
+P0118,,,
+P0120,,,
+P0122,,,
+P0124,,,
+P0126,,,
+P0128,,,
+P0130,,,
+P0132,,,
+P0134,,,
+P0136,,,
+P0138,,,
+P0140,,,
+P0142,,,
+P0144,,,
+P0146,,,
+P0148,,,
+P0150,,,
+P0152,,,
+P0154,,,
+P0156,,,
+P0158,,,
+P0160,,,
+P0162,,,
+P0164,,,
+P0166,,,
+P0168,,,
+P0170,,,
+P0172,,,
+P0174,,,
+P0176,,,
+P0178,,,
+P0180,,,
+P0182,,,
+P0184,,,
+P0186,,,
+P0188,,,
+P0190,,,
+P0192,,,
+P0194,,,
+P0196,,,
+P0198,,,
+P0200,,,
+P0202,,,
+P0204,,,
+P0206,,,
+P0208,,,
+P0210,,,
+P0212,,,
+P0214,,,
+P0216,,,
+P0218,,,
+P0220,,,
+P0222,,,
+P0224,,,
+P0226,,,
+P0228,,,
+P0230,,,
+P0232,,,
+P0234,,,
+P0236,,,
+P0238,,,
+P0240,,,
+P0242,,,
+P0244,,,
+P0246,,,
+P0248,,,
+P0250,,,
+P0252,,,
+P0254,,,
+P0256,,,
+P0258,,,
+P0260,,,
+P0262,,,
+P0264,,,
+P0266,,,
+P0268,,,
+P0270,,,
+P0272,,,
+P0274,,,
+P0276,,,
+P0278,,,
+P0280,,,
+P0282,,,
+P0284,,,
+P0286,,,
+P0288,,,
+P0290,,,
+P0292,,,
+P0294,,,
+P0296,,,
+P0298,,,
+P0300,,,
+P0302,,,
+P0304,,,
+P0306,,,
+P0308,,,
+P0310,,,
+P0312,,,
+P0314,,,
+P0316,,,
+P0318,,,
+P0320,,,
+P0322,,,
+P0324,,,
+P0326,,,
+P0328,,,
+P0330,,,
+P0332,,,
+P0334,,,
+P0336,,,
+P0338,,,
+P0340,,,
+P0342,,,
+P0344,,,
+P0346,,,
+P0348,,,
+P0350,,,
+P0352,,,
+P0354,,,
+P0356,,,
+P0358,,,
+P0360,,,
+P0362,,,
+P0364,,,
+P0366,,,
+P0368,,,
+P0370,,,
+P0372,,,
+P0374,,,
+P0376,,,
+P0378,,,
+P0380,,,
+P0382,,,
+P0384,,,
+P0386,,,
+P0388,,,
+P0390,,,
+P0392,,,
+P0394,,,
+P0396,,,
+P0398,,,

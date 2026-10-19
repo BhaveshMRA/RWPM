@@ -1,0 +1,30 @@
+{
+  "overall": {
+    "n": 100,
+    "agreement": 1.0,
+    "kappa_3class": 1.0,
+    "kappa_binary": 1.0
+  },
+  "Bhavesh+Abhishek": {
+    "n": 50,
+    "agreement": 1.0,
+    "kappa_3class": 1.0,
+    "kappa_binary": 1.0
+  },
+  "Mahima+Pratiksha": {
+    "n": 50,
+    "agreement": 1.0,
+    "kappa_3class": 1.0,
+    "kappa_binary": 1.0
+  },
+  "label_counts_ann1": {
+    "template": 55,
+    "derived": 26,
+    "unrelated": 19
+  },
+  "gold_pairs": 100,
+  "gold_derived": 26,
+  "gold_template": 55,
+  "gold_unrelated": 19,
+  "disagreements": 0
+}

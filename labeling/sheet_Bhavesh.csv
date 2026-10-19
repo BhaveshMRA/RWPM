@@ -1,0 +1,201 @@
+pair_id,label,confidence,note
+P0000,D,3,"D: Both are the same scikit-learn skill (one a condensed version of the other): identical overview, uv install block, 'When to Use' list, and Quick Start code, with matching capability lists. B is a trimmed copy."
+P0002,T,3,"T: Both are generic catalog stubs with identical workflow, output format, and checklist scaffolding; only the skill name, description, and trigger topic were swapped (music-merch-plan vs ai-batch-processing). No task-specific content in either."
+P0004,T,3,"T: Both are generic catalog-generated stubs with identical workflow, output format, and checklist boilerplate; only the skill name/topic (family-tradition-builder vs virtual-classroom-design) was swapped. No task-specific content."
+P0006,D,3,"D: Both are near-identical copies of the superpowers finishing-a-development-branch skill; differences are only the harness/mypowers renaming, a local-rules header, and the worktree path list."
+P0008,T,3,"T: Same catalog generator; only the capability/domain names (public service coordination vs retry and backoff orchestration, arts vs R&D labs) and engine names are swapped. Task-specific content differs; overlap is boilerplate."
+P0010,D,3,"D: Bodies are identical, including the same requirements, color codes, recalc.py workflow and code examples. Only the frontmatter description differs, with B rewritten into a keyword-heavy form. B is a copy of A with an edited description."
+P0012,T,3,"T: Both come from the same auto-generated catalog scaffold; only the topic names are swapped (feature engineering/ML Training vs make scenario creator/Business Automation). No task-specific instructions are shared, just boilerplate."
+P0014,U,3,U: Skill A is a PRD-writing product-owner workflow with miluju-studio principles; Skill B is a blog publishing workflow for mdx files and deploy. Only Korean language and generic markdown structure overlap; task content is entirely different.
+P0016,T,3,"T: Both are Composio/Rube MCP catalog-generated skills; only the toolkit name was swapped (Cats vs Basin). No task-specific instructions beyond generic boilerplate, so they are template siblings, not derived variants."
+P0018,T,3,"T: Both are Composio/Rube MCP catalog-generated skills; only the toolkit name was swapped (Geoapify vs Codacy). No task-specific instructions beyond generic scaffolding, so they are template siblings."
+P0020,D,3,"D: Skill B is a fork of Skill A (gstack renamed to fstack): identical freeze instructions, prompts, and notes, with paths swapped and an added brain broadcast section."
+P0022,D,3,"D: Near-verbatim copies of the blader/humanizer skill; A is a renamed copy (humanize-code) with a credit line. Same patterns, examples and phrasing; B adds a final anti-AI pass step and ASCII dashes."
+P0024,U,3,"U: Different projects: Hebrew/RTL Israeli design system vs. Norwegian BIM Verdi WordPress design system. Only generic design-system topic overlap (color tokens, spacing, Inter font); no copied task-specific content or shared template."
+P0026,D,3,"D: Both are versions of the same OpenSpec explore skill with nearly identical text, diagrams and examples. B is a later edit: it drops the /opsx commands and the `cd docs` prefix, and resolves artifacts through `openspec status`."
+P0028,T,3,"T: Both are Membrane-generated integration skills for different apps (Unleash vs SmartRecruiters). Only the generator boilerplate is shared, with app names, URLs and overview entities swapped; task-specific content differs."
+P0030,T,3,"T: Same generator template with swapped capability/domain names (cost-benefit forecasting/family caregiving vs community feedback harvesting/customer support). Task-specific content differs; only boilerplate steps, runbook, and guardrails are shared."
+P0032,T,3,"T: Both are Composio/Rube MCP catalog-generated skills; only the toolkit name differs (Cats vs Fibery, slug cats vs fibery). No task-specific content beyond generator boilerplate, so same-template siblings, not derived variants."
+P0034,U,3,"U: Skill A specifies a 5-agent parallel brainstorming protocol with a state machine; Skill B is a system design interview that generates a Claude skill. Different tasks, no copied distinctive content, no shared scaffolding."
+P0036,T,3,"T: Same catalog generator scaffold (Normenanker intro, Fallweichen, Arbeitsworkflow) with only the topic name swapped. Task-specific content differs: BRAO/BORA/RVG norms versus BGB/ZPO norms and different topics."
+P0038,U,2,U: Same topic (interview prep) but different tasks: A is candidate-side practice with STAR feedback; B is employer-side structured interview plans with scorecards. Only generic phrases like 'Tell me about a time' overlap; no copied distinctive content.
+P0040,T,3,"T: Same generator scaffold; only the topic name (Dynamic Import Fallback Loader vs WebAuthn Security Bridge), skill number, and category were swapped. No task-specific instructions exist in either skill."
+P0042,T,3,"T: Both come from the same generator; only the topic name (Redis Pipeline Batcher vs AST Syntax Sanitization), skill number and domain were swapped. Task-specific content is absent, leaving only boilerplate."
+P0044,T,3,"T: Both are Membrane-generated catalog skills for different apps (Pinecone vs Chatwoot). Only the generator boilerplate (CLI install, login, connection, action, proxy sections) matches with app names swapped; the task-specific overview content differs."
+P0046,D,3,"D: Nearly identical body text and code examples (Three-Tier Boundary System, OWASP snippets, npm audit decision tree, checklist). A adds a stack activation gate; B adds Common Rationalizations and a different See Also note. Both derive from a common source."
+P0048,T,3,"T: Both come from the same catalog generator; only the capability name, domain, KPIs, method (rule compilation vs hypothesis-driven design), outputs and flag name were swapped. Task-specific content differs; the overlap is boilerplate scaffolding."
+P0050,U,3,"U: Same name and topic, but A is a project-specific HeroUI/Tailwind pill-style rules set for MotorMetrics; B is a generic design-token generator toolkit with Python scripts. No copied distinctive content or shared scaffolding."
+P0052,T,3,"T: Same generator template with swapped phase, candidate_id, skill name, and Purpose line. The Use steps are identical boilerplate. Task-specific purposes (MCP/Playwright posture vs. report density) differ entirely."
+P0054,D,3,"D: Skill B reuses Skill A's core instruction paragraph nearly verbatim and extends it with extra constraints (waiting for answers, not enacting the plan). B is an edited, expanded derivative of A."
+P0056,D,3,"D: Nearly identical Crane architecture skill; same tables, Solidity examples, and text. B is an expanded version with a different description, added reference files and key file list. Same content, lightly edited."
+P0058,T,3,"T: Both are gstack catalog skills generated from SKILL.md.tmpl; the preambles are different generator versions (A has GSTACK_PLAN_MODE block, /spec routing line, BLOCKED fallback, different telemetry wording and repo-name command; B lacks these). Task-specific content (live DX audit vs root-cause debugging) is unrelated."
+P0060,D,3,D: Same gsd-manager skill; the objective and context text is verbatim. Only install paths changed (.github/gsd-core vs .hermes/get-shit-done) and the CLI name (gsd-tools vs gsd-sdk). This is a port or rename of the same skill.
+P0062,T,3,"T: Both are the same generic generator scaffold (workflow, output tables, checklist) with only the skill name and description swapped (learning-path-creator vs pet-sitting-guide). No task-specific content exists in either."
+P0064,T,3,"T: Both come from the SkillGalaxy generator; only the domain name and number were swapped (quantum 293 vs robotics 76). No task-specific content exists, just identical boilerplate stubs."
+P0066,T,3,"T: Both are Membrane-generated catalog skills; the app name (Oracle Eloqua vs Gpt-trainer), URLs and overview/actions differ. The overlap is only generator boilerplate (CLI install, auth, connection, proxy, best practices)."
+P0068,T,3,"T: Same catalog generator for different NIST controls (AC-9(3) vs CP-7(2)); only control IDs/names swapped. Task-specific content differs; overlap is boilerplate headings, generic steps, and an identical irrelevant grep example."
+P0070,T,3,T: Same catalog generator template; only capability/domain names swapped (hypothesis prioritization/healthcare operations vs negotiation strategy/remote team collaboration). Task-specific content is absent beyond names; guardrails differ slightly.
+P0072,T,3,"T: Both are generic catalog stubs with identical workflow, output format, and checklist boilerplate; only the skill name/topic (vehicle-lifecycle-management vs cash-on-cash-calculator) was swapped. No task-specific content."
+P0074,D,3,"D: Near-identical copies of the same skill-creator text; B has minor edits (description says 'the agent's capabilities', 'being used', blank lines). Same steps, examples, commands."
+P0076,T,3,"T: Both are generated from the same ATT&CK skill catalog template; only the technique name, ID, description, platforms and threat lists were swapped. Task-specific ATT&CK content (T1098 vs T1560.003) differs entirely."
+P0078,T,3,T: Same generator template with swapped capability and domain names (A/B rollout governance vs handoff contracting; manufacturing QA vs nutrition) plus swapped emphasis phrases and engine names. Task-specific content is absent in both; only boilerplate overlaps.
+P0080,U,3,"U: Skill A is a project-specific mandatory workflow for executing .prompt.md files (PHP/Laravel, cache clearing, PHPUnit, Postman). Skill B extracts a DDD ubiquitous-language glossary. Both are in Portuguese but share no task content or scaffolding."
+P0082,T,3,"T: Both are Composio-generated Rube MCP skills; only the toolkit name (Mezmo vs Blackbaud) is swapped. No task-specific instructions beyond generic boilerplate, so they are template siblings."
+P0084,U,2,"U: Same topic (behavior-preserving refactoring) and same name, but A is a code-smell catalog with diff examples while B is a test-gated protocol with a coverage gate and checklist. No copied distinctive content or shared scaffolding."
+P0086,D,3,"D: Both are caveman skill variants sharing verbatim Rules paragraph, Pattern line, intensity table rows, React re-render example, and Auto-Clarity text; A is an edited subset of B's source."
+P0088,T,3,T: Both are GSD catalog skills with the same editor-adapter boilerplate (Cursor vs Windsurf name swapped). Task-specific content differs: removing workspaces and worktrees versus auditing UAT items across phases.
+P0090,T,3,"T: Same catalog generator template; swapped capability/domain names (experiment design/urban planning vs equity impact scoring/customer support), runtime profile type (experimentation-engine vs scoring-engine), and 'Why' emphasis. A also has an extra [compliance] approval-gates guardrail that B lacks. Only boilerplate overlaps."
+P0092,D,3,"D: The two skills are near-identical copies. They differ only in B's extra Nitrosend tool row, B's extra lead-magnets related skill, and the `.claude` vs `.Codex` path string. Which one came first cannot be determined from the documents."
+P0094,T,3,"T: Both are Membrane-generated integration skills for different apps (Unleash vs Polymer). Overlap is only catalog boilerplate (CLI install, login, connection, proxy, best practices) with app names/URLs swapped; task-specific overviews differ."
+P0096,U,3,"U: Skill A is a Membrane CLI integration for Chatwoot; Skill B is TypeScript coding principles. Different tasks, no shared content or scaffolding."
+P0098,T,3,T: Both come from the SkillGalaxy generator; only the topic name was swapped (Data Quality Metrics vs Business Specialized Skill 104). All other content is generic boilerplate with no task-specific instructions.
+P0100,U,3,"U: Both are named 'debug' with 6 steps/phases, but A is a single-agent root-cause debugging process (STOP, REPRODUCE, LOCALIZE...), while B is a multi-agent colony pipeline (bug-scout, sentinels, drone). No shared distinctive content."
+P0102,T,3,T: Both come from the same Omni Skills intake generator for antigravity-awesome-skills; the shared text is boilerplate with the skill name swapped. Task-specific content (social proof trust-gap matching vs TDD orchestration) is entirely different.
+P0104,T,1,"T: Same generator template with swapped capability and domain names (scientific hypothesis prioritization/climate adaptation vs explainability narrative design/agriculture). Task-specific content is absent. Only boilerplate steps, runbook and guardrails overlap. B adds a [compliance] guardrail, and the 'Why This Skill Exists' emphasis phrases and 'under ... conditions' wording differ by topic."
+P0106,T,3,"T: Same generator scaffold with swapped capability, domain, engine, artifact and emphasis names (throughput/hyper-productive autonomy vs safety/pro-humanity impact). B adds two extra guardrails (compliance, safety); task-specific content is absent, only boilerplate overlaps."
+P0108,D,3,"D: Near-identical writing-skills text (superpowers skill); B is a renamed copy with small edits: superpowers: namespace swapped to oto:, Codex path changed, CLAUDE.md vs superpowers-rule.md, frontmatter note updated."
+P0110,T,3,"T: Same generator template with swapped capability, domain, and engine names (autonomous workflow authoring/supply chain vs scientific hypothesis prioritization/climate adaptation). 'Why This Skill Exists' differs (A: truth-seeking/falsifiability; B: beauty/aesthetics), and B lacks A's [compliance] guardrail. Only boilerplate overlaps."
+P0112,D,3,"D: Same skill (superpowers executing-plans) in two versions; B is an edited copy with batching removed, sub-skill names changed (finishing-development→finishing-a-development-branch, git-worktrees→using-git-worktrees), and a subagent note added."
+P0114,U,2,"U: Only the shared name 'tdd-workflow' and the generic Red-Green-Refactor topic overlap. No shared template, headings, language or structure. A is Python/uv/pytest with Constitution Article 1 and user approval; B is TypeScript/Vitest with Aurion patterns. Same topic alone is U."
+P0116,T,2,"T: Same name and generic fix-issue flow (gh issue view $ARGUMENTS, minimal fix, tests, stop-and-ask). Skill A is Rust-specific with strict TDD, release and AUR steps; Skill B is generic pytest/commit. Task-specific content differs; overlap is scaffolding."
+P0118,T,2,"T: Both come from the same catalog generator for Berufsrecht Anwälte; the topic name is swapped (Berufsausübungsgesellschaft vs Homeoffice). Overlap is boilerplate (Arbeitsweg, Kaltstart, Prüflogik); the specific norm lists differ and neither has distinctive task content."
+P0120,,,
+P0122,,,
+P0124,,,
+P0126,,,
+P0128,,,
+P0130,,,
+P0132,,,
+P0134,,,
+P0136,,,
+P0138,,,
+P0140,,,
+P0142,,,
+P0144,,,
+P0146,,,
+P0148,,,
+P0150,,,
+P0152,,,
+P0154,,,
+P0156,,,
+P0158,,,
+P0160,,,
+P0162,,,
+P0164,,,
+P0166,,,
+P0168,,,
+P0170,,,
+P0172,,,
+P0174,,,
+P0176,,,
+P0178,,,
+P0180,,,
+P0182,,,
+P0184,,,
+P0186,,,
+P0188,,,
+P0190,,,
+P0192,,,
+P0194,,,
+P0196,,,
+P0198,,,
+P0200,,,
+P0202,,,
+P0204,,,
+P0206,,,
+P0208,,,
+P0210,,,
+P0212,,,
+P0214,,,
+P0216,,,
+P0218,,,
+P0220,,,
+P0222,,,
+P0224,,,
+P0226,,,
+P0228,,,
+P0230,,,
+P0232,,,
+P0234,,,
+P0236,,,
+P0238,,,
+P0240,,,
+P0242,,,
+P0244,,,
+P0246,,,
+P0248,,,
+P0250,,,
+P0252,,,
+P0254,,,
+P0256,,,
+P0258,,,
+P0260,,,
+P0262,,,
+P0264,,,
+P0266,,,
+P0268,,,
+P0270,,,
+P0272,,,
+P0274,,,
+P0276,,,
+P0278,,,
+P0280,,,
+P0282,,,
+P0284,,,
+P0286,,,
+P0288,,,
+P0290,,,
+P0292,,,
+P0294,,,
+P0296,,,
+P0298,,,
+P0300,,,
+P0302,,,
+P0304,,,
+P0306,,,
+P0308,,,
+P0310,,,
+P0312,,,
+P0314,,,
+P0316,,,
+P0318,,,
+P0320,,,
+P0322,,,
+P0324,,,
+P0326,,,
+P0328,,,
+P0330,,,
+P0332,,,
+P0334,,,
+P0336,,,
+P0338,,,
+P0340,,,
+P0342,,,
+P0344,,,
+P0346,,,
+P0348,,,
+P0350,,,
+P0352,,,
+P0354,,,
+P0356,,,
+P0358,,,
+P0360,,,
+P0362,,,
+P0364,,,
+P0366,,,
+P0368,,,
+P0370,,,
+P0372,,,
+P0374,,,
+P0376,,,
+P0378,,,
+P0380,,,
+P0382,,,
+P0384,,,
+P0386,,,
+P0388,,,
+P0390,,,
+P0392,,,
+P0394,,,
+P0396,,,
+P0398,,,

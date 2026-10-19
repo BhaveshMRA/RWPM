@@ -1,0 +1,51 @@
+pair_id,label,confidence,note
+P0001,U,2,"Both address WCAG accessibility, but one is Moodle-specific and the other covers general website accessibility. No convincing distinctive copied instructions."
+P0003,T,3,"The skills share extensive Codex/AI-SDD repository protocols, but worktree creates isolated Git worktrees with worktree.cjs while git-merge validates and merges branches. Shared material is house-protocol boilerplate rather than the same task-specific workflow."
+P0005,U,3,Luxembourg personal taxation versus Taiwan carbon-emissions calculation. No meaningful shared content.
+P0007,T,3,"German legal skills for different legal areas share a highly similar structure, inputs, and standardized procedural instructions."
+P0009,D,3,Two ui-ux-pro-max skills have effectively identical instructions across different repositories. Strong evidence of direct reuse.
+P0011,T,3,Eldercare monitoring and childcare hypothesis-prioritization skills share a standardized generated framework but differ in their specific capabilities.
+P0013,D,3,"Two gsd-docs-update skills share nearly all task-specific instructions, with differences in editor-specific adapters."
+P0015,D,3,"Two email-sequence skills share extensive distinctive email-marketing instructions, with some modifications."
+P0017,U,2,"Both discuss Conventional Commits, but their procedures differ and shared terminology comes from the public specification."
+P0019,T,3,"Mailcheck and Claid AI automation skills use nearly identical Composio/Rube MCP scaffolding, customized for different services."
+P0021,D,3,"Both parallel-agent skills share the same description, task-specific guidance, decision flow, and Task() examples. Skill A adds a Traditional Chinese reference and an introductory line, while Skill B adds a generic Limitations section."
+P0023,T,3,"Responsive Breakpoint Advisor and Test Data Factory use the same SkillsHub usage instructions and command structure, but provide different capabilities."
+P0025,T,3,"Education memory consolidation and manufacturing rollout governance share a generated implementation template, but their specific objectives differ."
+P0027,T,3,"Writing Expert and Blockchain Expert share nearly identical generic sections and Python class scaffolding, with different subjects substituted."
+P0029,T,3,"Seqera and Skyfire automation share Composio/Rube MCP instructions, but use different service-specific toolkits."
+P0031,U,3,"Both are named design-system, but A generates design tokens and components from an SDL architecture blueprint whereas B examines existing theme tokens. Minimal exact instructional overlap and no distinctive reused workflow."
+P0033,T,3,Retry/backoff orchestration and cost-benefit forecasting use the same generated skill structure but serve unrelated domains.
+P0035,U,3,"Skill Synchronizer maintains an AGENTS.md index, while the other skill handles an automatically generated greeting response. No meaningful shared instructions."
+P0037,D,3,"Both Seqera automation skills contain substantially identical service-specific Rube MCP instructions, with limited modifications."
+P0039,T,3,"Supadata and Basin automation share Composio/Rube MCP setup and workflow boilerplate, but target different services."
+P0041,T,3,"MOL Instant Messenger and Baseball skills share the same Python implementation template, generic instructions, and class structure, but target different applications."
+P0043,T,3,"German legal skills share standardized legal workflows, checklists, and procedural instructions, but address different legal matters."
+P0045,T,3,"Mocean and EmailListVerify automation skills share extensive Composio/Rube MCP setup and execution boilerplate, but use different service-specific toolkits."
+P0047,U,3,"Both are named review, but one performs multi-agent GitHub pull-request reviews while the other analyzes coding-rule violations. Their instructions and workflows differ substantially."
+P0049,D,3,"Both plan skills share nearly identical planning instructions, file-saving conventions, and detailed implementation-planning guidance across different repositories."
+P0051,T,3,"Consumer-protection and traffic-law skills share the same German legal analysis framework, but contain different domain-specific legal requirements."
+P0053,D,3,"Both architecture skills share distinctive deep-module terminology, the deletion test, and nearly identical codebase exploration and refactoring procedures, with minor contextual adaptations."
+P0055,T,3,"Both GSD skills share extensive Cursor adapter, prompting and tool-use instructions, but gsd-remove-workspace removes a workspace while gsd-settings configures workflow toggles and model profiles."
+P0057,T,3,"Turkish legal skills share a common legal-document structure and procedural framework, but address different legal subjects."
+P0059,T,3,"Toolset and PingBell skills share extensive Membrane CLI authentication, connection, and integration instructions, but target different services."
+P0061,D,3,"Both copy-editing skills share the distinctive Seven Sweeps Framework, editing principles, and nearly identical procedures. Differences mainly involve agent-specific context paths and metadata."
+P0063,D,3,"Both gsd-sketch skills have the same purpose and description. One adds extensive Codex compatibility instructions, indicating an adapted version of the same skill."
+P0065,T,3,"AI Writing Assistants and Product Skill 13 use nearly identical generated descriptions, Python class scaffolding, and section structures, with different subject names substituted."
+P0067,U,3,"Feature Status counts failing features for an autonomous coding loop, while bkt manages Bitbucket through a CLI. Their task-specific instructions are unrelated."
+P0069,D,3,"Both loadstone-cli skills share distinctive RuneScape Wiki and RuneMetrics workflows, commands, and instructions. One includes additional CLI requirements."
+P0071,T,3,"Stockholm Cafe Skill Test and Email Manager share the same German Quick Start, Usage, Advanced, and References template, but implement different tasks."
+P0073,T,3,"GUI Control and Percept Summarize share a generated Python-engineering framework, code structure, and checklists, but perform different functions."
+P0075,T,3,"SecurionPay and Redis skills share Membrane CLI installation, authentication, and integration boilerplate, but contain different service-specific instructions."
+P0077,U,3,"Family Travel Care provides airline assistance and travel guidance, while the other skill handles Chinese shopping cashback. Their workflows and purposes differ."
+P0079,U,3,"Ramp Install Auth handles OAuth2 authentication for expense-management APIs, while Motion Design Coder develops animations. No distinctive shared workflow."
+P0081,T,3,"Community feedback harvesting and sales root-cause mining share generated implementation steps and deliverable structures, but address different capabilities."
+P0083,U,3,Same deploy name but unrelated n8n workflow deployment and Nomad resource deployment commands.
+P0085,D,3,"Distinctive shared UI color-improvement instructions and frontend-design preparation, with minor wording changes."
+P0087,D,3,Shared requesting-code-review workflow and distinctive instructions with framework-specific adaptations.
+P0089,T,3,Biology and writing skills share generated scaffolding but have different subject-specific instructions.
+P0091,U,3,API-testing gives Hono/Vitest endpoint-test setup and examples; systematic-debugging uses a root-cause-first troubleshooting process. Almost no identical content and no distinctive shared task-specific procedure.
+P0093,D,3,"Substantially overlapping Turborepo-specific build guidance and command workflows, suggesting reuse with modifications."
+P0095,T,3,Shared Membrane CLI integration boilerplate customized for Cognite and Signaturely.
+P0097,T,2,"Nutrition experiment design and accessibility decision-journal maintenance use nearly identical generated production-control procedures, including 0.005 determinism tolerance, fail-closed gates and approval steps, while the named capabilities differ. Extensive overlap makes D versus T worth adjudicating."
+P0099,T,2,"Shared generated procedure and formatting block cover most lines, but the core task sections differ (full examination-file access review versus Erasmus/mobility exam consequences). T remains appropriate; confidence 2 reflects the high overlap."
