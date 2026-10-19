@@ -103,7 +103,13 @@ for label, key, f in spec_rows:
 rows += [r"\bottomrule", r"\end{tabular}"]
 (RESULTS / "rq3_table.tex").write_text("\n".join(rows) + "\n")
 
-mac = {"ResWorkHashes": fmt_int(H["units"]), "ResFamilies": fmt_int(Fm["units"]),
+gd = gold[gold.label == "derived"]
+hidden_gold = float((gd.name_equal == 0).mean()) if len(gd) else float("nan")
+hidden_edges = float((edges.name_equal == 0).mean()) if len(edges) else float("nan")
+cross_edges = float((edges.same_owner == 0).mean()) if len(edges) else float("nan")
+mac = {"ResGoldDerivedDiffName": fmt_pct(hidden_gold), "ResEdgesDiffName": fmt_pct(hidden_edges),
+       "ResEdgesCrossOwner": fmt_pct(cross_edges),
+       "ResWorkHashes": fmt_int(H["units"]), "ResFamilies": fmt_int(Fm["units"]),
        "ResInflation": f"{H['units'] / Fm['units']:.2f}",
        "ResMultiFamilies": fmt_int((sizes >= 2).sum()),
        "ResLargestFamily": fmt_int(sizes.max()), "ResLargestCC": fmt_int(largest_cc),

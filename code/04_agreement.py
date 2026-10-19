@@ -17,12 +17,21 @@ pairs = pd.read_csv(LABEL_DIR / "pairs.csv")
 labels = {}
 for a in sorted(set(pairs.ann_1) | set(pairs.ann_2)):
     sh = pd.read_csv(LABEL_DIR / f"sheet_{a}.csv", dtype=str).fillna("")
+    sh = sh[sh["label"].str.strip() != ""].copy()      # unlabelled rows are skipped
     sh["label"] = sh["label"].str.strip().str.lower().map(MAP)
     bad = sh[sh.label.isna()]
     if len(bad):
         raise SystemExit(f"{a}: {len(bad)} rows missing/invalid label, e.g. {bad.pair_id.head(5).tolist()}")
     labels[a] = dict(zip(sh.pair_id, sh.label))
 
+both = [p in labels[a1] and p in labels[a2]
+        for p, a1, a2 in zip(pairs.pair_id, pairs.ann_1, pairs.ann_2)]
+skipped = len(pairs) - sum(both)
+pairs = pairs[both].reset_index(drop=True)
+if skipped:
+    print(f"{skipped} pairs are not yet labelled by both of their annotators and are left out.")
+if len(pairs) < 50:
+    raise SystemExit(f"Only {len(pairs)} pairs labelled by both annotators; label more first.")
 pairs["label_1"] = [labels[a][p] for a, p in zip(pairs.ann_1, pairs.pair_id)]
 pairs["label_2"] = [labels[a][p] for a, p in zip(pairs.ann_2, pairs.pair_id)]
 
@@ -44,12 +53,16 @@ print(out)
 
 dis = pairs[pairs.label_1 != pairs.label_2]
 adj_path = LABEL_DIR / "adjudication.csv"
-if not adj_path.exists():
-    d = dis[["pair_id", "ann_1", "label_1", "ann_2", "label_2"]].copy()
-    d["final_label"] = ""
-    d.to_csv(adj_path, index=False)
-    print(f"\n{len(dis)} disagreements written to {adj_path}. Discuss each, fill final_label "
-          f"(D/T/U), then run this script again.")
+d = dis[["pair_id", "ann_1", "label_1", "ann_2", "label_2"]].copy()
+d["final_label"] = ""
+if adj_path.exists():   # keep decisions already made, add any new disagreements
+    old = pd.read_csv(adj_path, dtype=str).fillna("")
+    d = pd.concat([old, d[~d.pair_id.isin(old.pair_id)]], ignore_index=True)
+d.to_csv(adj_path, index=False)
+open_items = d[(d.pair_id.isin(dis.pair_id)) & (d.final_label.str.strip() == "")]
+if len(open_items):
+    print(f"\n{len(open_items)} disagreements need a final_label in {adj_path}. Discuss each, "
+          f"fill final_label (D/T/U), then run this script again.")
     raise SystemExit(0)
 
 adj = pd.read_csv(adj_path, dtype=str).fillna("")
