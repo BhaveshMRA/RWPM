@@ -36,8 +36,9 @@ def meta(sha):
 
 
 hdir = LABEL_DIR / "html"
-shutil.rmtree(hdir, ignore_errors=True)
-hdir.mkdir(parents=True)
+hdir.mkdir(parents=True, exist_ok=True)
+for old in hdir.glob("*.html"):
+    old.unlink()
 hd = difflib.HtmlDiff(wrapcolumn=72)
 links = []
 for r in pairs.itertuples():
