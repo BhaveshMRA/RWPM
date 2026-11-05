@@ -3,7 +3,7 @@
 ## 1. Setup
 
 ```bash
-pip install -r code/requirements.txt          # Python 3.14.2
+pip install -r requirements-lock.txt          # Python 3.14.2
 git clone https://github.com/giuseppedestefanis/gitskills-sample
 cd gitskills-sample && unzip agent_skills_sample.zip && cd ..
 ```
