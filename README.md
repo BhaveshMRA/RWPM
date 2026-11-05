@@ -26,6 +26,7 @@ Run from inside `code/`. Outputs go to `../work`, `../labeling`, `../paper/resul
 Steps 1-3 are deterministic: we get exactly 11,009 skills, 8,084 candidate pairs and
 the same 400 pairs as in the shipped kit. Steps 1 and 2 must be run on your machine because
 steps 5-7 need the `work/` files.
+
 The final pipeline skips 05b_embeddings.py; 05b reproduces the Phase 3 embedding experiment in paper/results_phase3_semantic.
 
 ## 3. Labeling
