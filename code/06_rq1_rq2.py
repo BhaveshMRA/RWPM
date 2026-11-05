@@ -41,7 +41,8 @@ hi = F.band.isin(["B1", "B2", "B3"]).values  # high-similarity bands (J >= 0.5)
 
 
 def tune(s, y):
-    cands = np.unique(np.quantile(s, np.linspace(0, 1, 201)))
+    s = np.round(s, 6)
+    cands = np.unique(np.round(np.quantile(s, np.linspace(0, 1, 201)), 6))
     return max(cands, key=lambda t: f1_score(y, s >= t, zero_division=0))
 
 
@@ -49,7 +50,7 @@ def oof_threshold(col):
     p = np.zeros(len(F), int)
     for tr, te in folds:
         t = tune(F[col].values[tr], yb[tr])
-        p[te] = F[col].values[te] >= t
+        p[te] = np.round(F[col].values[te], 6) >= t
     return p
 
 
@@ -62,7 +63,7 @@ def oof_model(make, feats, binary=False, tune_thr=False):
         if binary:
             if tune_thr:
                 t = tune(m.predict_proba(F[feats].values[tr])[:, 1], yb[tr])
-                pb[te] = m.predict_proba(F[feats].values[te])[:, 1] >= t
+                pb[te] = np.round(m.predict_proba(F[feats].values[te])[:, 1], 6) >= t
             else:
                 pb[te] = m.predict(F[feats].values[te])
             pc[te] = np.where(pb[te] == 1, "derived", "other")

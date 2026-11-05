@@ -21,7 +21,7 @@ MIN_BODY_CHARS = 200    # drops stubs and symlink skills (content = link target)
 CLASSES = ["derived", "template", "unrelated"]
 
 _FM = re.compile(r"^\ufeff?---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|$)", re.S)
-_FENCE = re.compile(r"(```|~~~)[^\n]*\n(.*?)(?:\1|\Z)", re.S)
+_OPEN_FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,})(.*)$")
 _HEADING = re.compile(r"^\s{0,3}(#{1,6})\s+(.*\S)\s*$", re.M)
 _WORD = re.compile(r"\w+", re.U)
 _LETTER = re.compile(r"[^\W\d_]", re.U)
@@ -38,10 +38,26 @@ def split_frontmatter(text: str):
 
 
 def split_code(body: str):
-    """Return (prose_without_code, list_of_code_blocks)."""
-    blocks = [m.group(2) for m in _FENCE.finditer(body)]
-    prose = _FENCE.sub("\n", body)
-    return prose, blocks
+    prose, blocks, cur, fence = [], [], [], None
+    for line in (body or "").splitlines():
+        if fence is None:
+            m = _OPEN_FENCE.match(line)
+            if m and not (m.group(1)[0] == "`" and "`" in m.group(2)):
+                fence, cur = m.group(1), []
+                prose.append("")
+                continue
+            prose.append(line)
+        else:
+            s = line.strip()
+            indent = len(line) - len(line.lstrip(" "))
+            if indent <= 3 and len(s) >= len(fence) and set(s) == {fence[0]}:
+                blocks.append("\n".join(cur))
+                fence = None
+                continue
+            cur.append(line)
+    if fence is not None:
+        blocks.append("\n".join(cur))
+    return "\n".join(prose), blocks
 
 
 def headings(prose: str):

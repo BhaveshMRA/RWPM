@@ -71,10 +71,8 @@ skills = skills[skills.sha.isin(pop_shas)].copy()
 
 fm_body = skills["content"].map(split_frontmatter)
 skills["body"] = fm_body.str[1]
-skills["fm_fields"] = fm_body.str[0].map(
-    lambda fm: len(re.findall(r"^[A-Za-z][\w-]*\s*:", fm, re.M)))
-skills["code_langs"] = skills["body"].map(
-    lambda b: sorted(set(x.lower() for x in re.findall(r"^\s*(?:```|~~~)\s*([\w+#-]+)", b, re.M))))
+skills["fm_fields"] = fm_body.str[0].map(lambda fm: len(re.findall(r"^[A-Za-z][\w-]*\s*:", fm, re.M)))
+skills["code_langs"] = skills["body"].map(lambda b: sorted(set(x.lower() for x in re.findall(r"^ {0,3}(?:`{3,}|~{3,})[ \t]*([\w+#-]+)", b, re.M))))
 skills = skills[skills["body"].str.len() >= MIN_BODY_CHARS].copy()
 pc = skills["body"].map(split_code)
 skills["prose"] = pc.str[0]

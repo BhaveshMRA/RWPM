@@ -19,7 +19,7 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import normalize
 
-from common import RESULTS, SEED, WORK, fmt_int, shingles
+from common import LABEL_DIR, RESULTS, SEED, WORK, fmt_int, shingles
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--num-perm", type=int, default=128)
@@ -28,6 +28,8 @@ ap.add_argument("--max-name-pairs", type=int, default=45, help="cap on pairs dra
 ap.add_argument("--lsa-dims", type=int, default=128)
 ap.add_argument("--lsa-k", type=int, default=3)
 ap.add_argument("--lsa-min-cos", type=float, default=0.9)
+ap.add_argument("--rebuild", action="store_true", help="recompute even if labeling/candidates.csv exists")
+ap.add_argument("--freeze-existing", action="store_true", help="save work/candidates.pkl as labeling/candidates.csv and stop")
 args = ap.parse_args()
 rng = np.random.default_rng(SEED)
 t0 = time.time()
@@ -35,6 +37,39 @@ t0 = time.time()
 skills = pd.read_pickle(WORK / "skills.pkl")
 n = len(skills)
 print(f"{n} skills")
+FROZEN = LABEL_DIR / "candidates.csv"
+COLS = ["sha_a", "sha_b", "jac_est", "src_lsh", "src_name", "src_lsa", "lsa_cos", "band"]
+
+def write_outputs(cand):
+    cand.to_pickle(WORK / "candidates.pkl")
+    print(cand["band"].value_counts().sort_index().to_string())
+    vc = cand["band"].value_counts()
+    words = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven"]
+    mac = {"ResCandTotal": len(cand), "ResCandLSH": int(cand.src_lsh.sum()),
+           "ResCandName": int(cand.src_name.sum()), "ResCandLSA": int(cand.src_lsa.sum())}
+    for k in range(7):
+        mac[f"ResBand{words[k]}"] = int(vc.get(f"B{k}", 0))
+    (RESULTS / "macros_candidates.tex").write_text("\n".join(rf"\renewcommand{{\{k}}}{{{fmt_int(v)}}}" for k, v in mac.items()) + "\n")
+
+
+if args.freeze_existing:
+    pd.read_pickle(WORK / "candidates.pkl")[COLS].to_csv(FROZEN, index=False)
+    raise SystemExit(f"froze the existing candidates into {FROZEN}")
+if FROZEN.exists() and not args.rebuild:
+    # The LSA blocker uses randomised SVD, whose last digits depend on the machine.
+    # Reloading the frozen record keeps the candidate set identical everywhere.
+    cand = pd.read_csv(FROZEN)
+    pos = {s: k for k, s in enumerate(skills.sha)}
+    missing = set(cand.sha_a).union(cand.sha_b) - set(pos)
+    if missing:
+        raise SystemExit(f"{len(missing)} skills in {FROZEN} are missing from work/skills.pkl")
+    a, b = cand.sha_a.map(pos), cand.sha_b.map(pos)
+    cand.insert(0, "i", np.minimum(a, b))
+    cand.insert(1, "j", np.maximum(a, b))
+    flip = (a > b).values
+    cand.loc[flip, ["sha_a", "sha_b"]] = cand.loc[flip, ["sha_b", "sha_a"]].values
+    write_outputs(cand)
+    raise SystemExit(f"loaded {len(cand)} frozen candidate pairs from {FROZEN}")
 
 # MinHash LSH
 sh = [shingles(b) for b in skills["body"]]
@@ -111,13 +146,6 @@ def band(r):
 
 
 cand["band"] = cand.apply(band, axis=1)
-cand.to_pickle(WORK / "candidates.pkl")
-print(cand["band"].value_counts().sort_index().to_string())
-vc = cand["band"].value_counts()
-WORDS = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven"]
-mac = {"ResCandTotal": len(cand), "ResCandLSH": int(cand.src_lsh.sum()),
-       "ResCandName": int(cand.src_name.sum()), "ResCandLSA": int(cand.src_lsa.sum())}
-for k in range(7):
-    mac[f"ResBand{WORDS[k]}"] = int(vc.get(f"B{k}", 0))
-(RESULTS / "macros_candidates.tex").write_text("\n".join(rf"\renewcommand{{\{k}}}{{{fmt_int(v)}}}" for k, v in mac.items()) + "\n")
-print(f"done in {time.time() - t0:.0f}s")
+write_outputs(cand)
+cand[COLS].to_csv(FROZEN, index=False)
+print(f"done in {time.time() - t0:.0f}s; frozen record written to {FROZEN}")

@@ -25,7 +25,7 @@ ap.add_argument("--annotators", default="A,B,C,D", help="comma-separated, even c
 ap.add_argument("--targets", default=DEFAULT_TARGETS)
 ap.add_argument("--max-per-skill", type=int, default=2)
 ap.add_argument("--max-per-name", type=int, default=4)
-ap.add_argument("--max-lines", type=int, default=300)
+ap.add_argument("--max-lines", type=int, default=0, help="0 = show complete skills")
 ap.add_argument("--force", action="store_true", help="overwrite an existing labeling kit")
 args = ap.parse_args()
 if (LABEL_DIR / "pairs.csv").exists() and not args.force:
@@ -118,7 +118,10 @@ owners = occ.groupby("sha")["repo"].apply(lambda s: sorted(set(s))[:3])
 def render(idx):
     s = skills.iloc[idx]
     head = f"name: {s['name']}\ndescription: {s.description}\n---\n"
-    return (head + s.body).splitlines()[: args.max_lines]
+    out = (head + s.body).splitlines()
+    if args.max_lines and len(out) > args.max_lines:
+        out = out[: args.max_lines] + [f"[... {len(out) - args.max_lines} more lines not shown ...]"]
+    return out
 
 
 def meta(idx):
