@@ -34,6 +34,8 @@ y = gold.label.values if best["three_class"] else np.where(gold.label == "derive
 model = MAKE[best["best_ours"]]().fit(gold[ALL_FEATURES].values, y)
 allp["pred"] = model.predict(allp[ALL_FEATURES].values)
 edges = allp[allp.pred == "derived"]
+if "sha_a" not in edges.columns:  # full-dataset run (step 13) stores row ids instead of hashes
+    edges = edges.assign(sha_a=skills.sha.values[edges.i.values], sha_b=skills.sha.values[edges.j.values])
 print(f"{len(allp)} candidate pairs scored, {len(edges)} predicted derived")
 
 G = nx.Graph()

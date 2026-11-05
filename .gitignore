@@ -10,3 +10,7 @@ paper/*.blg
 paper/*.fdb_latexmk
 paper/*.fls
 paper/*.out
+
+work_full*/
+work_fulltest/
+paper/results_fulltest/

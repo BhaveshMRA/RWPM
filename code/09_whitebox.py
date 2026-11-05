@@ -8,6 +8,7 @@ Figure 2 (results/fig_model.pdf): what the model relies on. (a) Coefficients of 
 """
 import argparse
 import json
+import pickle
 from collections import defaultdict
 
 import matplotlib
@@ -43,11 +44,14 @@ info = json.load(open(RESULTS / "rq1_rq2.json"))
 # Figure 1: one pair, line by line
 lines = [norm_lines(b) for b in skills.body]
 name_key = [n if n else s for n, s in zip(skills.nname, skills.sha)]
-names_per_line = defaultdict(set)
-for nk, ls in zip(name_key, lines):
-    for ln in ls:
-        names_per_line[ln].add(nk)
-boiler = {ln for ln, s in names_per_line.items() if len(s) >= args.boiler_k}
+if (WORK / "boiler_lines.pkl").exists():  # full-dataset run: boilerplate counted over the whole corpus
+    boiler = pickle.load(open(WORK / "boiler_lines.pkl", "rb"))
+else:
+    names_per_line = defaultdict(set)
+    for nk, ls in zip(name_key, lines):
+        for ln in ls:
+            names_per_line[ln].add(nk)
+    boiler = {ln for ln, s in names_per_line.items() if len(s) >= args.boiler_k}
 
 ids = args.pairs.split(",")
 fig, axes = plt.subplots(1, len(ids), figsize=(7.0, 2.1))
