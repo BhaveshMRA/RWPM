@@ -29,11 +29,10 @@ steps 5-7 need the `work/` files.
 
 ## 3. Labeling
 
-1. Read `labeling/GUIDELINES.md` together and agree on it.
+1. Read `labeling/GUIDELINES.md` together and need to agree on it.
 2. Each person opens `labeling/html/index.html` in a browser and fills **their own**
    `labeling/sheet_<name>.csv`: `label` = D (derived), T (template sibling), U (unrelated);
-   `confidence` = 1-3; optional `note`. Each pair is assigned to two people
-   (Bhavesh + Abhishek, Mahima + Pratiksha), 200 pairs each.
+   `confidence` = 1-3; optional `note`. Each pair is assigned to two people, 200 pairs each.
 3. Do not look at each other's sheets until everyone is done.
 4. Run step 4, discuss each disagreement, fill `final_label`, if require, then run step 4 again.
 5. The "Synthesize" paragraph in Section 6 is the description of why pairs look similar.
@@ -44,3 +43,7 @@ steps 5-7 need the `work/` files.
 
 `01_extract.py` also takes the full SQLite file. Use `--sha-max 1b` for a uniform
 ~10% subset of distinct skills (the same hash-prefix idea the dataset authors used).
+
+## Acknowledgments
+
+We used AI assistance during this project: for brainstorming the research direction; for searching the literature, which led us to the Skill Constellations study~\cite{seddik2026constellations}; for help in debugging the analysis scripts and assisting with the approach overview figure; for reviewing the labels and notes, which suggested some change in confidence values and notes but no labels; and for suggestions during the adjudication of disagreements, where the final decisions were ours. All labels were assigned by the authors, and the authors take full responsibility for the content of this paper.
