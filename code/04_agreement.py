@@ -1,17 +1,14 @@
 """Step 4 - Agreement, adjudication, gold set.
 
-Reads labeling/sheet_*.csv, computes Cohen's kappa (3-class and derived-vs-rest),
-writes labeling/adjudication.csv for the disagreements, and - once every
-disagreement has a final_label - writes labeling/gold.csv.
-Run it twice: once after labeling, once after the team fills adjudication.csv.
+Reads labeling/sheet_*.csv, computes Cohen's kappa (3-class and derived-vs-rest), writes labeling/adjudication.csv for the disagreements, and - once every disagreement has a final_label - writes labeling/gold.csv.
+Need to run it twice: once after labeling, once after the team fills adjudication.csv.
 """
 import pandas as pd
 from sklearn.metrics import cohen_kappa_score
 
 from common import LABEL_DIR, RESULTS, save_json
 
-MAP = {"d": "derived", "derived": "derived", "t": "template", "template": "template",
-       "u": "unrelated", "unrelated": "unrelated"}
+MAP = {"d": "derived", "derived": "derived", "t": "template", "template": "template", "u": "unrelated", "unrelated": "unrelated"}
 
 pairs = pd.read_csv(LABEL_DIR / "pairs.csv")
 labels = {}
@@ -63,6 +60,7 @@ open_items = d[(d.pair_id.isin(dis.pair_id)) & (d.final_label.str.strip() == "")
 if len(open_items):
     print(f"\n{len(open_items)} disagreements need a final_label in {adj_path}. Discuss each, "
           f"fill final_label (D/T/U), then run this script again.")
+    (LABEL_DIR / "gold.csv").unlink(missing_ok=True)
     raise SystemExit(0)
 
 adj = pd.read_csv(adj_path, dtype=str).fillna("")

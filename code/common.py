@@ -118,8 +118,7 @@ def fmt_pct(x, digits=1) -> str:
     return f"{100 * x:.{digits}f}\\%"
 
 
-# Feature groups used by the classifier (steps 5-7). "sr" holds the
-# SkillReuse-style baseline features and is never given to our models.
+# Feature groups used by the classifier. "sr" holds the SkillReuse-style baseline features and is never given to our models.
 FEATURE_GROUPS = {
     "lexical": ["jac_shingle", "cont_shingle", "tfidf_body", "lev_ratio"],
     "boilerplate": ["jac_distinct_lines", "cont_distinct_lines", "jac_boiler_lines",
@@ -129,5 +128,9 @@ FEATURE_GROUPS = {
     "structure": ["head_seq_sim", "len_ratio", "heads_ratio"],
     "repository": ["same_owner", "same_dirname", "siblings_jac"],
 }
+# Phase 3: a "semantic" group of multilingual embedding similarities, used once 05b_embeddings.py has written work/embeddings.npz.
+EMBEDDINGS = WORK / "embeddings.npz"
+if EMBEDDINGS.exists():
+    FEATURE_GROUPS["semantic"] = ["emb_body", "emb_desc"]
 SR_FEATURES = ["sr_flat", "sr_y", "sr_n", "sr_c", "sr_yn", "sr_nc", "sr_yc", "sr_struct"]
 ALL_FEATURES = [f for g in FEATURE_GROUPS.values() for f in g]

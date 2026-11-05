@@ -1,22 +1,17 @@
 """Step 1 - Dataset extraction.
 
-Reads the GitSkills SQLite file (the 277 MB official sample or the full
-41 GB file) and writes:
-  work/skills.pkl       one row per in-scope distinct skill (the representative),
-                        split into channels: name, description, prose, code, headings
-  work/occurrences.pkl  every file occurrence of an in-scope skill (sha, repo, owner)
-  work/extracted.db     the same two tables as SQLite (skills, occurrences)
+Reads the GitSkills SQLite file and writes:
+  work/skills.pkl          one row per in-scope distinct skill (the representative), split into channels: name, description, prose, code, headings
+  work/occurrences.pkl     every file occurrence of an in-scope skill (sha, repo, owner)
+  work/extracted.db        the same two tables as SQLite (skills, occurrences)
   work/extract_stats.json  numbers for the Dataset Extraction section
 
-Scope (population P): representatives whose exact basename is SKILL.md, whose
-front matter is valid, and whose body has at least MIN_BODY_CHARS characters.
-Working set W: P, optionally restricted to file_sha < --sha-max (a uniform,
-reproducible hash-prefix subset, the same idea the dataset authors used for
-their sample). Use --sha-max only on the full dataset.
+Scope (population P): representatives whose exact basename is SKILL.md, whose front matter is valid, and whose body has at least MIN_BODY_CHARS characters.
+Working set W: P, optionally restricted to file_sha < --sha-max (a uniform, reproducible hash-prefix subset, the same idea the dataset authors used for their sample). Use --sha-max only on the full dataset.
 
 Usage:
   python 01_extract.py --db agent_skills_sample.db
-  python 01_extract.py --db gitskills.db --sha-max 1b      # ~10.5% of P
+  python 01_extract.py --db gitskills.db --sha-max 1b
 """
 import argparse
 import json
@@ -27,20 +22,18 @@ import time
 
 import pandas as pd
 
-from common import (MIN_BODY_CHARS, WORK, headings, norm_name, save_json,
-                    split_code, split_frontmatter)
+from common import (MIN_BODY_CHARS, WORK, headings, norm_name, save_json, split_code, split_frontmatter)
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--db", required=True)
-ap.add_argument("--sha-max", default=None,
-                help="keep file_sha < this hex prefix (e.g. 1b), full dataset only")
+ap.add_argument("--sha-max", default=None, help="keep file_sha < this hex prefix (e.g. 1b), full dataset only")
 args = ap.parse_args()
 
 t0 = time.time()
 con = sqlite3.connect(f"file:{args.db}?mode=ro", uri=True)
 stats = {}
 
-# ---- 1. all occurrences (no content) ---------------------------------------
+# 1. all occurrences (no content)
 occ = pd.read_sql_query(
     "SELECT file_sha AS sha, repo_full_name AS repo, filename, location_class, "
     "dedup_primary, frontmatter_valid, body_chars FROM artifacts", con)
@@ -65,16 +58,14 @@ pop_occ.to_pickle(WORK / "population_occurrences.pkl")
 stats["population_contents"] = len(pop_shas)
 stats["population_occurrences"] = len(pop_occ)
 
-# ---- 2. representatives of the working set, with text ------------------------
-where = ("dedup_primary = 1 AND filename = 'SKILL.md' AND frontmatter_valid = 1 "
-         "AND content IS NOT NULL")
+# 2. representatives of the working set, with text
+where = ("dedup_primary = 1 AND filename = 'SKILL.md' AND frontmatter_valid = 1 AND content IS NOT NULL")
 params = []
 if args.sha_max:
     where += " AND file_sha < ?"
     params.append(args.sha_max.lower())
 skills = pd.read_sql_query(
-    "SELECT file_sha AS sha, repo_full_name AS repo, path, location_class, name, "
-    "description, content, first_commit_at, history_fetched, has_scripts, "
+    "SELECT file_sha AS sha, repo_full_name AS repo, path, location_class, name, description, content, first_commit_at, history_fetched, has_scripts, "
     f"has_references FROM artifacts WHERE {where}", con, params=params)
 skills = skills[skills.sha.isin(pop_shas)].copy()
 
@@ -99,7 +90,7 @@ if args.sha_max:
 elif len(skills) != funnel[-1][1]:
     funnel.append(("Body still >= threshold after re-parsing front matter", len(skills)))
 
-# ---- 3. bundled file names of each representative ----------------------------
+# 3. bundled file names of each representative
 sib = pd.read_sql_query(
     "SELECT repo_full_name AS repo, artifact_path AS path, entry_name FROM artifact_siblings",
     con)

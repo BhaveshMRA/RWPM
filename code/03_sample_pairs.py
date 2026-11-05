@@ -1,7 +1,6 @@
 """Step 3 - Sample candidate pairs for manual labeling.
 
-Draws a stratified sample across similarity bands (plus random easy negatives),
-assigns every pair to two annotators, and writes a labeling kit:
+Draws a stratified sample across similarity bands (plus random easy negatives), assigns every pair to two annotators, and writes a labeling kit:
   labeling/pairs.csv              pair list with assignment (keep private: has bands)
   labeling/sheet_<annotator>.csv  one sheet per annotator (blind to bands/scores)
   labeling/html/index.html        side-by-side viewer, one page per pair
@@ -22,8 +21,7 @@ from common import LABEL_DIR, RESULTS, SEED, WORK
 DEFAULT_TARGETS = "B1:60,B2:80,B3:80,B4:80,B5:50,B6:30,B7:20"
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--annotators", default="A,B,C,D",
-                help="comma-separated, even count; consecutive names form labeling teams")
+ap.add_argument("--annotators", default="A,B,C,D", help="comma-separated, even count; consecutive names form labeling teams")
 ap.add_argument("--targets", default=DEFAULT_TARGETS)
 ap.add_argument("--max-per-skill", type=int, default=2)
 ap.add_argument("--max-per-name", type=int, default=4)
@@ -31,8 +29,7 @@ ap.add_argument("--max-lines", type=int, default=300)
 ap.add_argument("--force", action="store_true", help="overwrite an existing labeling kit")
 args = ap.parse_args()
 if (LABEL_DIR / "pairs.csv").exists() and not args.force:
-    raise SystemExit(f"{LABEL_DIR}/pairs.csv already exists. Re-running would overwrite the "
-                     "annotators' sheets. Use --force only if nobody has started labeling.")
+    raise SystemExit(f"{LABEL_DIR}/pairs.csv already exists. Re-running would overwrite the annotators' sheets. Use --force only if nobody has started labeling.")
 rng = np.random.default_rng(SEED)
 
 skills = pd.read_pickle(WORK / "skills.pkl")
@@ -86,8 +83,7 @@ for b, (g, k) in report.items():
 WORDS = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven"]
 mac = {f"ResSample{WORDS[int(b[1])]}": g for b, (g, _) in report.items()}
 mac["ResSampleTotal"] = sum(g for g, _ in report.values())
-(RESULTS / "macros_sample.tex").write_text(
-    "\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
+(RESULTS / "macros_sample.tex").write_text("\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
 
 pairs = pd.DataFrame(chosen, columns=["i", "j", "band"])
 pairs = pairs.sample(frac=1, random_state=SEED).reset_index(drop=True)
@@ -112,7 +108,7 @@ for a in ann:
     mine["note"] = ""
     mine.to_csv(LABEL_DIR / f"sheet_{a}.csv", index=False)
 
-# ---- side-by-side viewer -----------------------------------------------------
+# side-by-side viewer
 hdir = LABEL_DIR / "html"
 shutil.rmtree(hdir, ignore_errors=True)
 hdir.mkdir(parents=True)
@@ -149,28 +145,15 @@ for r in pairs.itertuples():
 
 (LABEL_DIR / "GUIDELINES.md").write_text("""# Labeling guidelines: is skill B derived from skill A (or vice versa)?
 
-Open html/<pair_id>.html, read both skills, and fill your sheet with one label.
-Do not look at the other annotator's sheet. Do not use similarity scores.
+Open html/<pair_id>.html, read both skills, and fill the sheet with one label.
 
-D - DERIVED VARIANT. The two skills share *distinctive* content that is unlikely
-    to be written twice independently: verbatim or lightly reworded instruction
-    passages, the same task-specific steps, the same examples, commands, file
-    paths, configuration values, or idiosyncratic phrasing. One is a copied and
-    edited version of the other, or both were copied from a common source.
-    Translations of the same skill count as D. Renamed copies count as D.
+D - DERIVED VARIANT. The two skills share *distinctive* content that is unlikely to be written twice independently: verbatim or lightly reworded instruction passages, the same task-specific steps, the same examples, commands, file paths, configuration values, or idiosyncratic phrasing. One is a copied and edited version of the other, or both were copied from a common source. Translations of the same skill count as D. Renamed copies count as D.
 
-T - TEMPLATE SIBLING. The overlap is limited to generic scaffolding: shared
-    section headings ("When to use this skill", "Quality checklist"), boilerplate
-    guidance lines, placeholder text, or a catalog's house style - while the
-    task-specific instructions are different. Typical sources: skills generated
-    from the same scaffold or the same catalog generator, or one author's
-    personal template applied to different tasks.
+T - TEMPLATE SIBLING. The overlap is limited to generic scaffolding: shared section headings ("When to use this skill", "Quality checklist"), boilerplate guidance lines, placeholder text, or a catalog's house style - while the task-specific instructions are different. Typical sources: skills generated from the same scaffold or the same catalog generator, or one author's personal template applied to different tasks.
 
-U - UNRELATED. Neither of the above. Same topic alone ("both are code-review
-    skills") is U, not D, unless the content itself was copied.
+U - UNRELATED. Neither of the above. Same topic alone ("both are code-review skills") is U, not D, unless the content itself was copied.
 
-Decision order: look for copied distinctive content first (-> D). If the only
-shared material is scaffolding (-> T). Otherwise U.
+Decision order: look for copied distinctive content first (-> D). If the only shared material is scaffolding (-> T). Otherwise U.
 Confidence: 1 unsure, 2 fairly sure, 3 sure. Use the note column for anything
 odd (e.g. one skill is a strict subset of the other, mixed languages).
 """, encoding="utf8")

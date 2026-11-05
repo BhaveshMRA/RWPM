@@ -1,14 +1,11 @@
 """Step 2 - Candidate pair generation.
 
-Comparing every pair of skills is quadratic, so we only score pairs that at
-least one cheap, recall-oriented blocker proposes:
+Comparing every pair of skills is quadratic, so we only score pairs that at least one cheap, recall-oriented blocker proposes:
   * lsh  : MinHash LSH on word 5-gram shingles of the body (estimated Jaccard >= 0.3)
   * name : two distinct contents with the same normalised front-matter name
-  * lsa  : nearest neighbours in an LSA space of the body (cosine >= 0.9);
-           catches reworded or translated copies that share few exact shingles
+  * lsa  : nearest neighbours in an LSA space of the body (cosine >= 0.9); catches reworded or translated copies that share few exact shingles
 
-Output: work/candidates.pkl with one row per unordered pair (i < j) and a
-similarity band used for stratified sampling in step 3:
+Output: work/candidates.pkl with one row per unordered pair (i < j) and a similarity band used for stratified sampling in step 3:
   B1 J>=0.9 | B2 0.7-0.9 | B3 0.5-0.7 | B4 0.3-0.5 | B5 same name, J<0.3
   B6 LSA neighbour, J<0.3 | B0 other (LSH false positive, J<0.3)
 """
@@ -27,8 +24,7 @@ from common import RESULTS, SEED, WORK, fmt_int, shingles
 ap = argparse.ArgumentParser()
 ap.add_argument("--num-perm", type=int, default=128)
 ap.add_argument("--lsh-threshold", type=float, default=0.3)
-ap.add_argument("--max-name-pairs", type=int, default=45,
-                help="cap on pairs drawn from one same-name group")
+ap.add_argument("--max-name-pairs", type=int, default=45, help="cap on pairs drawn from one same-name group")
 ap.add_argument("--lsa-dims", type=int, default=128)
 ap.add_argument("--lsa-k", type=int, default=3)
 ap.add_argument("--lsa-min-cos", type=float, default=0.9)
@@ -40,7 +36,7 @@ skills = pd.read_pickle(WORK / "skills.pkl")
 n = len(skills)
 print(f"{n} skills")
 
-# ---- MinHash LSH -------------------------------------------------------------
+# MinHash LSH
 sh = [shingles(b) for b in skills["body"]]
 mhs = []
 for s in range(0, n, 5000):
@@ -56,7 +52,7 @@ for i, m in enumerate(mhs):
             pairs.setdefault((i, j), set()).add("lsh")
 print(f"lsh pairs: {sum('lsh' in v for v in pairs.values())}  ({time.time() - t0:.0f}s)")
 
-# ---- same-name blocking ------------------------------------------------------
+# same-name blocking
 for name, idx in skills[skills.nname != ""].groupby("nname").indices.items():
     idx = list(idx)
     if len(idx) < 2:
@@ -68,7 +64,7 @@ for name, idx in skills[skills.nname != ""].groupby("nname").indices.items():
         pairs.setdefault((min(a, b), max(a, b)), set()).add("name")
 print(f"after name blocking: {len(pairs)}")
 
-# ---- LSA nearest neighbours --------------------------------------------------
+# LSA nearest neighbours
 tf = TfidfVectorizer(min_df=2, max_df=0.5, sublinear_tf=True, max_features=200_000)
 X = tf.fit_transform(skills["body"])
 dims = min(args.lsa_dims, X.shape[1] - 1, n - 1)
@@ -87,7 +83,7 @@ for s in range(0, n, 2000):
                 lsa_cos[key] = float(S[r, j])
 print(f"after lsa: {len(pairs)}  ({time.time() - t0:.0f}s)")
 
-# ---- assemble ----------------------------------------------------------------
+# assemble
 rows = []
 for (i, j), src in pairs.items():
     est = mhs[i].jaccard(mhs[j])
@@ -123,6 +119,5 @@ mac = {"ResCandTotal": len(cand), "ResCandLSH": int(cand.src_lsh.sum()),
        "ResCandName": int(cand.src_name.sum()), "ResCandLSA": int(cand.src_lsa.sum())}
 for k in range(7):
     mac[f"ResBand{WORDS[k]}"] = int(vc.get(f"B{k}", 0))
-(RESULTS / "macros_candidates.tex").write_text(
-    "\n".join(rf"\renewcommand{{\{k}}}{{{fmt_int(v)}}}" for k, v in mac.items()) + "\n")
+(RESULTS / "macros_candidates.tex").write_text("\n".join(rf"\renewcommand{{\{k}}}{{{fmt_int(v)}}}" for k, v in mac.items()) + "\n")
 print(f"done in {time.time() - t0:.0f}s")

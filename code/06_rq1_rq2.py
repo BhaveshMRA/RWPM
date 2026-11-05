@@ -1,9 +1,6 @@
 """Step 6 - RQ1 (effectiveness) and RQ2 (which signals matter).
 
-5-fold StratifiedGroupKFold on the gold pairs. Groups are connected components
-of the labelled-pair graph, so no skill appears in both a training and a test
-fold. Baselines that output a score get their threshold tuned on the training
-folds only. Writes LaTeX tables + macros into results/.
+5-fold StratifiedGroupKFold on the gold pairs. Groups are connected components of the labelled-pair graph, so no skill appears in both a training and a test fold. Baselines that output a score get their threshold tuned on the training folds only. Writes LaTeX tables + macros into results/.
 """
 import json
 
@@ -12,8 +9,7 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import HistGradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import (confusion_matrix, f1_score, matthews_corrcoef,
-                             precision_score, recall_score)
+from sklearn.metrics import (confusion_matrix, f1_score, matthews_corrcoef, precision_score, recall_score)
 from sklearn.model_selection import StratifiedGroupKFold
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
@@ -21,13 +17,16 @@ from sklearn.preprocessing import StandardScaler
 from common import ALL_FEATURES, FEATURE_GROUPS, RESULTS, SEED, SR_FEATURES, WORK
 
 F = pd.read_pickle(WORK / "features_gold.pkl").reset_index(drop=True)
+missing = [f for f in ALL_FEATURES if f not in F.columns]
+if missing:
+    raise SystemExit(f"features {missing} are missing: rerun 05_features.py (gold and all)")
 y3 = F["label"].values
 yb = (y3 == "derived").astype(int)
 three = (y3 == "template").sum() >= 15
 yc = y3 if three else np.where(yb == 1, "derived", "other")
 print(f"{len(F)} gold pairs, derived={yb.sum()}, three-class mode={three}")
 
-# ---- grouped folds -------------------------------------------------------------
+# grouped folds
 G = nx.Graph()
 G.add_edges_from(zip(F.sha_a, F.sha_b))
 comp = {s: k for k, c in enumerate(nx.connected_components(G)) for s in c}
@@ -83,10 +82,8 @@ def metrics(p):
 
 
 LR = lambda: make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=5000))
-RF = lambda: RandomForestClassifier(n_estimators=500, min_samples_leaf=2, class_weight="balanced_subsample",
-                                    random_state=SEED, n_jobs=-1)
-HGB = lambda: HistGradientBoostingClassifier(max_iter=300, learning_rate=0.05, class_weight="balanced",
-                                             random_state=SEED)
+RF = lambda: RandomForestClassifier(n_estimators=500, min_samples_leaf=2, class_weight="balanced_subsample", random_state=SEED, n_jobs=-1)
+HGB = lambda: HistGradientBoostingClassifier(max_iter=300, learning_rate=0.05, class_weight="balanced", random_state=SEED)
 OURS = {"Ours (logistic regression)": LR, "Ours (random forest)": RF, "Ours (gradient boosting)": HGB}
 
 res, preds = {}, {}
@@ -109,17 +106,19 @@ yc_true = y3 if three else np.where(yb == 1, "derived", "other")
 cm = confusion_matrix(yc_true, cls_preds[best_ours].astype(str), labels=labels)
 macro3 = f1_score(yc_true, cls_preds[best_ours].astype(str), labels=labels, average="macro")
 
-# ---- RQ2: ablation by feature group -------------------------------------------
+# RQ2: ablation by feature group
 abl = {"All features": res[best_ours]}
+abl_preds = {}
 for g, cols in FEATURE_GROUPS.items():
     feats = [f for f in ALL_FEATURES if f not in cols]
-    abl[f"without {g}"] = metrics(oof_model(OURS[best_ours], feats)[0])
+    abl_preds[f"without {g}"] = oof_model(OURS[best_ours], feats)[0]
+    abl[f"without {g}"] = metrics(abl_preds[f"without {g}"])
 for g in ("lexical",):
     abl[f"{g} only"] = metrics(oof_model(OURS[best_ours], FEATURE_GROUPS[g])[0])
 drops = {k: abl["All features"]["F1"] - v["F1"] for k, v in abl.items() if k.startswith("without")}
 top_drop = max(drops, key=drops.get)
 
-# ---- write tables --------------------------------------------------------------
+# write tables
 f3 = lambda x: "--" if x != x else f"{x:.2f}"
 rows = [r"\begin{tabular}{lccccc}", r"\toprule",
         r"Method & P & R & F1 & MCC & FP rate (hi-sim) \\", r"\midrule"]
@@ -179,13 +178,18 @@ mac = {
     "ResMacroF": f"{macro3:.2f}", "ResTopAblation": top_drop.replace("without ", ""),
     "ResTopAblationDrop": f"{drops[top_drop]:.2f}", "ResGrouping": grouping,
 }
-(RESULTS / "macros_rq1.tex").write_text(
-    "\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
-json.dump({"best_ours": best_ours, "three_class": bool(three), "results": res, "ablation": abl,
-           "confusion": cm.tolist(), "labels": labels}, open(RESULTS / "rq1_rq2.json", "w"), indent=2)
+if "semantic" in FEATURE_GROUPS:  # Phase 3 model vs Phase 2 feature set
+    mac["ResPhaseTwoF"] = f"{abl['without semantic']['F1']:.2f}"
+    mac["ResPhaseTwoHiFP"] = f"{abl['without semantic']['hiFP']:.2f}"
+    mac["ResSemanticGain"] = f"{res[best_ours]['F1'] - abl['without semantic']['F1']:+.2f}"
+    print(f"Phase 2 features: F1={abl['without semantic']['F1']:.3f} | with semantic: F1={res[best_ours]['F1']:.3f}")
+(RESULTS / "macros_rq1.tex").write_text("\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
+json.dump({"best_ours": best_ours, "three_class": bool(three), "results": res, "ablation": abl, "confusion": cm.tolist(), "labels": labels}, open(RESULTS / "rq1_rq2.json", "w"), indent=2)
 out = F[["pair_id", "sha_a", "sha_b", "band", "label"]].copy()
 for k in preds:
     out[k] = preds[k]
 out["ours_class"] = cls_preds[best_ours]
+for k, p in abl_preds.items():
+    out[f"ablation: {k}"] = p
 out.to_csv(RESULTS / "rq1_oof_predictions.csv", index=False)
 print(f"best baseline: {best_base} | best ours: {best_ours} | top ablation drop: {top_drop}")

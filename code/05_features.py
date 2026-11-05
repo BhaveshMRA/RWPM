@@ -3,12 +3,7 @@
   python 05_features.py --pairs gold   -> work/features_gold.pkl  (labelled pairs, RQ1/RQ2)
   python 05_features.py --pairs all    -> work/features_all.pkl   (every candidate, RQ3)
 
-Key idea (boilerplate-aware similarity): a line is treated as template
-boilerplate when it appears in skills carrying at least --boiler-k different
-names. A widely copied skill usually keeps one name, so its lines stay
-"distinctive"; scaffold lines recur under many unrelated names. Derived
-variants should share distinctive lines; template siblings mostly share
-boilerplate lines.
+Key idea (boilerplate-aware similarity): a line is treated as template boilerplate when it appears in skills carrying at least --boiler-k different names. A widely copied skill usually keeps one name, so its lines stay "distinctive"; scaffold lines recur under many unrelated names. Derived variants should share distinctive lines; template siblings mostly share boilerplate lines.
 """
 import argparse
 import difflib
@@ -22,8 +17,7 @@ from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import normalize
 
-from common import (LABEL_DIR, RESULTS, SEED, WORK, code_tokens, containment, fmt_int,
-                    jaccard, norm_lines, norm_ws, shingles, tokens)
+from common import (EMBEDDINGS, LABEL_DIR, RESULTS, SEED, WORK, code_tokens, containment, fmt_int, jaccard, norm_lines, norm_ws, shingles, tokens)
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--pairs", choices=["gold", "all"], default="gold")
@@ -43,7 +37,7 @@ P["b"] = P.sha_b.map(idx_of)
 P = P.dropna(subset=["a", "b"]).astype({"a": int, "b": int}).reset_index(drop=True)
 print(f"{len(P)} pairs over {len(skills)} skills")
 
-# ---- per-skill caches --------------------------------------------------------
+# per-skill caches
 body = skills["body"].tolist()
 sh = [shingles(b) for b in body]
 lines = [norm_lines(b) for b in body]
@@ -76,11 +70,16 @@ def tfidf_cos(texts, a, b, **kw):
 
 a, b = P.a.values, P.b.values
 F = pd.DataFrame(index=P.index)
-F["tfidf_body"] = tfidf_cos(body, a, b, min_df=2, max_df=0.5, ngram_range=(1, 2),
-                            max_features=300_000)
+F["tfidf_body"] = tfidf_cos(body, a, b, min_df=2, max_df=0.5, ngram_range=(1, 2), max_features=300_000)
 F["desc_tfidf"] = tfidf_cos(skills.description.tolist(), a, b, min_df=1, max_features=100_000)
+if EMBEDDINGS.exists():  # Phase 3: cosine of multilingual sentence embeddings
+    E = np.load(EMBEDDINGS, allow_pickle=False)
+    if list(E["sha"]) != skills.sha.tolist():
+        raise SystemExit("work/embeddings.npz does not match work/skills.pkl; rerun 05b_embeddings.py")
+    F["emb_body"] = (E["body"][a] * E["body"][b]).sum(axis=1)
+    F["emb_desc"] = (E["desc"][a] * E["desc"][b]).sum(axis=1)
 
-# ---- SkillReuse-style baseline features (Zhu et al., ASE'26), re-implemented ----
+# SkillReuse-style baseline features (Zhu et al., ASE'26), re-implemented
 yaml_txt = (skills["name"].fillna("") + " " + skills.description).tolist()
 nl_txt = skills.prose.tolist()
 code_txt = [" ".join(c) for c in skills.code_blocks]
@@ -89,8 +88,7 @@ F["sr_flat"] = tfidf_cos(flat_txt, a, b, min_df=2, max_features=300_000)
 
 
 def lsa(texts):
-    X = TfidfVectorizer(sublinear_tf=True, min_df=2, max_features=50_000,
-                        token_pattern=r"(?u)\b\w+\b").fit_transform(texts)
+    X = TfidfVectorizer(sublinear_tf=True, min_df=2, max_features=50_000, token_pattern=r"(?u)\b\w+\b").fit_transform(texts)
     d = max(1, min(128, X.shape[1] - 1, X.shape[0] - 1))
     return normalize(TruncatedSVD(n_components=d, random_state=SEED).fit_transform(X))
 
@@ -114,7 +112,7 @@ S = np.column_stack([
 S = (S - S.min(0)) / np.maximum(S.max(0) - S.min(0), 1e-9)
 F["sr_struct"] = 1 - np.abs(S[a] - S[b]).mean(axis=1)
 
-# ---- pairwise loop -----------------------------------------------------------
+# pairwise loop
 rows = []
 for x, y in zip(a, b):
     shared = lines[x] & lines[y]

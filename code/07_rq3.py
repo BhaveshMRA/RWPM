@@ -1,10 +1,6 @@
 """Step 7 - RQ3: how concentrated is reuse once copies are grouped into families?
 
-Trains the best RQ1 model on all gold pairs, scores every candidate pair
-(work/features_all.pkl), keeps predicted-derived edges, and splits the
-resulting graph into families with Louvain community detection (connected
-components alone chain unrelated skills together through a few bridging
-edges). Then compares exact-hash units with family units.
+Trains the best RQ1 model on all gold pairs, scores every candidate pair (work/features_all.pkl), keeps predicted-derived edges, and splits the resulting graph into families with Louvain community detection (connected components alone chain unrelated skills together through a few bridging edges). Then compares exact-hash units with family units.
 """
 import json
 
@@ -19,18 +15,17 @@ from sklearn.preprocessing import StandardScaler
 from common import ALL_FEATURES, RESULTS, SEED, WORK, fmt_int, fmt_pct
 
 MAKE = {
-    "Ours (logistic regression)": lambda: make_pipeline(
-        StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=5000)),
-    "Ours (random forest)": lambda: RandomForestClassifier(
-        n_estimators=500, min_samples_leaf=2, class_weight="balanced_subsample",
-        random_state=SEED, n_jobs=-1),
-    "Ours (gradient boosting)": lambda: HistGradientBoostingClassifier(
-        max_iter=300, learning_rate=0.05, class_weight="balanced", random_state=SEED),
+    "Ours (logistic regression)": lambda: make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=5000)),
+    "Ours (random forest)": lambda: RandomForestClassifier(n_estimators=500, min_samples_leaf=2, class_weight="balanced_subsample", random_state=SEED, n_jobs=-1),
+    "Ours (gradient boosting)": lambda: HistGradientBoostingClassifier(max_iter=300, learning_rate=0.05, class_weight="balanced", random_state=SEED),
 }
 
 best = json.load(open(RESULTS / "rq1_rq2.json"))
 gold = pd.read_pickle(WORK / "features_gold.pkl")
 allp = pd.read_pickle(WORK / "features_all.pkl")
+missing = [f for f in ALL_FEATURES if f not in gold.columns or f not in allp.columns]
+if missing:
+    raise SystemExit(f"features {missing} are missing: rerun 05_features.py (gold and all)")
 skills = pd.read_pickle(WORK / "skills.pkl")
 occ = pd.read_pickle(WORK / "occurrences.pkl")
 pop = pd.read_pickle(WORK / "population_occurrences.pkl")
@@ -84,9 +79,7 @@ orient = float((fa.notna() & fb.notna() & (fa != fb)).mean()) if len(edges) else
 
 top = sorted(comms, key=len, reverse=True)[:10]
 nn = skills.set_index("sha")["nname"]
-pd.DataFrame([{"family_size": len(c), "occurrences": int(occ[occ.sha.isin(c)].shape[0]),
-               "top_names": ", ".join(nn.reindex(list(c)).value_counts().index[:3])} for c in top]
-             ).to_csv(RESULTS / "rq3_top_families.csv", index=False)
+pd.DataFrame([{"family_size": len(c), "occurrences": int(occ[occ.sha.isin(c)].shape[0]), "top_names": ", ".join(nn.reindex(list(c)).value_counts().index[:3])} for c in top]).to_csv(RESULTS / "rq3_top_families.csv", index=False)
 
 rows = [r"\begin{tabular}{lrrr}", r"\toprule",
         r" & \multicolumn{2}{c}{Working set} & Population \\", r"\cmidrule(lr){2-3}",
@@ -119,7 +112,5 @@ mac = {"ResGoldDerivedDiffName": fmt_pct(hidden_gold), "ResEdgesDiffName": fmt_p
        "ResOrient": fmt_pct(orient)}
 (RESULTS / "macros_rq3.tex").write_text(
     "\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
-json.dump({"hash": H, "family": Fm, "population_hash": P, "orientation_coverage": orient,
-           "connected_components": n_cc, "largest_cc": largest_cc}, open(RESULTS / "rq3.json", "w"), indent=2)
-print(json.dumps({"hash": H, "family": Fm, "orient": orient, "largest_cc": largest_cc,
-                  "largest_family": int(sizes.max())}, indent=1))
+json.dump({"hash": H, "family": Fm, "population_hash": P, "orientation_coverage": orient, "connected_components": n_cc, "largest_cc": largest_cc}, open(RESULTS / "rq3.json", "w"), indent=2)
+print(json.dumps({"hash": H, "family": Fm, "orient": orient, "largest_cc": largest_cc, "largest_family": int(sizes.max())}, indent=1))
