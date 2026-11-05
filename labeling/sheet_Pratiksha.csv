@@ -99,3 +99,103 @@ P0193,U,2,"Both manage tasks, but one uses a Korean-language SQLite task queue w
 P0195,T,3,"iOS QA and Context Save share automatically generated gstack preamble and configuration instructions, but their task-specific workflows are different."
 P0197,T,3,"SSD and Climate Advanced 27 share identical SkillGalaxy documentation, Python class scaffolding, and generic instructions, with different subjects substituted."
 P0199,U,3,"Mentor analyzes coding-agent session histories and generates an insights report, while Heady Nonprofit Ops manages nonprofit operations. No meaningful shared instructions."
+P0201,T,3,"Party statute amendment and district meeting skills share the same German party-law intake and procedural checklist, but address different legal actions and provisions."
+P0203,D,3,"Both skill-creator files share distinctive skill drafting, evaluation, and iteration procedures; one adds frontmatter checks while the other expands triggering guidance."
+P0205,T,3,"Accessibility equity-impact scoring and eldercare tool-health monitoring repeat a generated orchestration and validation framework, but implement different capabilities."
+P0207,T,3,"Skyfire and Claid AI automation share Composio/Rube connection and tool-search boilerplate, but target different service operations."
+P0209,T,3,"Dockerfile Validator and Transformers use the same source-mirror discovery stub and three-step usage pattern, but direct users to different underlying skills."
+P0211,T,3,"Product Skill 69 and Quantum Skill 15 share SkillGalaxy implementation scaffolding and generic competency sections, with different specializations substituted."
+P0213,T,3,"Fibery and OpenWeather API automation share Rube MCP setup and schema-discovery instructions, but use different toolkits."
+P0215,D,3,"Both planning-with-files skills share Manus-style persistent planning and the same planning-file workflow, with different recovery and reference-file instructions."
+P0217,D,3,Both multiplayer skills reuse the same game-networking and synchronization guidance; one adds a separate script-based health-monitoring section.
+P0219,D,3,"Both create-issue-gate skills share distinctive GitHub issue creation and acceptance-criteria gating procedures, with minor adapter and reading-rule additions."
+P0221,U,3,CFO cash-flow runway forecasting and upstream skill sharing use unrelated procedures and have no meaningful matching instructions.
+P0223,T,3,"Pet Sitting Guide and Vehicle Lifecycle Management reuse a generic requirements, research, execution, and deliverables template with different tasks."
+P0225,T,3,"Two visual prompt skills share the same image-creation instruction layout and identity-preservation sections, but describe different nightclub and monochrome seascape scenes."
+P0227,D,3,"Both xlsx skills reuse detailed spreadsheet creation, recalculation, and model-validation rules, with only limited local changes."
+P0229,T,3,"Blackbaud and Fireberry automation share the Rube MCP configuration and tool-discovery scaffold, customized for different services."
+P0231,T,3,Secret ballot and district meeting skills share extensive German party-law intake and review steps but involve distinct procedural objectives.
+P0233,T,3,"Business Model Canvas and Exa Search are wrapped in the same upstream-intake, provenance, and review template, but provide different actual workflows."
+P0235,T,3,"AWS Well-Architected and Seller Presentation share a generic requirements-to-deliverable template, with distinct cloud architecture and sales presentation tasks."
+P0237,T,3,"Scientific publishing ideation and personal-finance regression sentinels use the same generated orchestration and validation structure, with different capabilities."
+P0239,T,3,"Forcemanager and Splitwise automation repeat the Rube MCP connection, tool search, and execution scaffold for different services."
+P0241,T,3,"GSD ultraplan phase and new milestone share the same Codex skill adapter and argument handling, but have different planning and milestone workflows."
+P0243,D,3,Deal Strategist and agency-deal-strategist share nearly all distinctive MEDDPICC qualification and deal-planning content; one adds Hermes-specific framing.
+P0245,T,3,"Contract Lifecycle Manager and Commercial Photography Brief share a generic stepwise work template, but deliver unrelated outputs."
+P0247,T,3,"GSD quick task and spike use common argument handling and GSD workflow scaffolding, but differ in execution versus exploration tasks."
+P0249,U,3,Environmental-law routing and German construction-contract change claims use different legal procedures and show no substantive instructional overlap.
+P0251,U,3,Google Workspace audit-report commands and Gitea pull-request review instructions address different systems and share no meaningful content.
+P0253,T,2,"Maritime fuel quality assurance and expeditionary additive-manufacturing quality assurance share an extensive generated military planning shell, but distinct mission-specific goals."
+P0255,T,3,DataFusion and SSD guides repeat a generic expert-skill competency and implementation template with different technical subjects.
+P0257,T,3,"Blockchain Expert 23 and Writing Expert 59 reuse SkillGalaxy expert-guide sections and code scaffolding, but have different specializations."
+P0259,D,3,"Systematic Debugging and Arc Debugging share distinctive root-cause-first principles, diagnostic phases, and troubleshooting guidance with adapted wording."
+P0261,T,2,"Excel Macro Creator and Prisma Schema Helper use common auto-triggered skill-category scaffolding, but the domain-specific descriptions and workflows differ."
+P0263,T,3,Climate Skill 102 and Bio Skill 284 share SkillGalaxy implementation and production-guidance sections with domain substitutions.
+P0265,T,3,"Pharmacy prescription handling and online marketplace payment compliance share German legal intake and evidence-check templates, but cover different regulations."
+P0267,T,3,"HOAI invoice review and BIM documentation share the legal evidence, deadline, and responsibility checklist, but require different deliverables."
+P0269,T,3,"FAQ Writer and Commercial Photography Brief repeat the same generic research, execution, and output framework, but target different writing tasks."
+P0271,T,3,"Agenty and Fireberry automation share the Composio/Rube MCP setup and discovery instructions, but automate different services."
+P0273,D,2,"Both browser-use files have the same description, browser-use CLI commands, persistent-browser workflow, and numbered-element interaction model, but different detailed documentation versions."
+P0275,T,3,"CloudTables and KnowBe4 use a common Membrane integration and CLI authentication template, but describe different services and resources."
+P0277,T,3,"MSG91 and Codacy automation share Rube MCP connection and schema-discovery boilerplate, customized for different service toolkits."
+P0279,U,3,Editorial assignment intake and German electronic-form legal compliance follow different processes with no meaningful shared instructions.
+P0281,T,3,"BMAD test design and BMAD design-thinking skills share the workflow.xml execution wrapper, but load different workflow YAML files and solve different tasks."
+P0283,T,2,"Context Save and Sync Gbrain share an extensive auto-generated gstack preamble and configuration probes, but the main skills save session context versus synchronize code search."
+P0285,U,3,"Specification implementability review and EVM transaction lookups have unrelated inputs, tools, and outputs."
+P0287,T,3,"Neon cyber portrait and Leica monochrome portrait prompts share BetterPrompt image-count and identity-preservation instructions, but specify different visual treatments."
+P0289,D,3,"Code Review and Code Review and Quality share almost identical five-axis review procedures, quality gates, and approval standards with changed descriptions."
+P0291,D,3,"Both writing-plans skills reuse distinctive step-by-step implementation-plan guidance, but store plans differently in files versus tagged tickets."
+P0293,T,3,"Ambient Weather and Mezmo automation share the Composio/Rube MCP connection and tool search template, but target separate services."
+P0295,T,3,WhatsAble and SecurionPay share extensive Membrane CLI authentication and integration scaffolding but have distinct service-specific operations.
+P0297,D,3,Both architecture review skills share distinctive deep-module terminology and refactoring criteria; glossary locations and review framing vary.
+P0299,U,2,"Both are called ui-ux-pro-max, but one is a rule-category design guide and the other a Python-driven design-system search workflow; no distinctive copied instructions are evident."
+P0301,T,3,"Supply-chain workflow authoring and civic-platform rollout governance use identical generated orchestration, policy, and test-gate scaffolding with different purposes."
+P0303,D,3,"Both writing-skills files share extensive TDD-for-documentation procedures, test cycles, and examples; one adds a repository-specific exception."
+P0305,T,2,"Visualization Best Practices and Feature Engineering Helper repeat lightweight automatic-activation scaffolding, but perform different analytics and ML tasks."
+P0307,U,3,Family-law marital property calculations and Prussian legal-code paragraph navigation use unrelated statutory content and procedures.
+P0309,D,3,"Both impeccable skills have virtually identical frontend design workflow instructions, requirements, and quality checks, with limited wording differences."
+P0311,T,3,"PingBell and Cognite share Membrane CLI setup and integration scaffolding, but operate on different service domains."
+P0313,T,2,"PR enhancement and Azure Tables SDK skills share an upstream-intake and provenance wrapper, but their imported task-specific instructions differ substantially."
+P0315,T,3,"Two generated skill-gen entries share an execute-and-verify template, but cover unrelated WebAuthn and serverless optimization tasks."
+P0317,T,3,"Internal Communications and Differential Security Review share the same Omni Skills upstream-intake and provenance framework, but contain distinct task procedures."
+P0319,T,2,"Visualization Best Practices and Zapier Integration Helper use the same auto-activation shell, but their task-specific instructions are different."
+P0321,U,3,"Both skills are named commit, but one enforces staged-file and emoji rules while the other auto-detects conventional commit types and stages broadly."
+P0323,U,3,Issue creation guidance and résumé/CV preparation have unrelated purposes and no meaningful shared workflow.
+P0325,U,2,"Both address Vercel, but one manages authenticated existing deployments and logs while the other documents setup and deployment; shared commands are public CLI conventions."
+P0327,U,2,S7comm protocol analysis and Modbus command-injection detection cover different industrial protocols and exhibit little shared distinctive procedure.
+P0329,T,3,OpenWeather and Route4Me automation reuse Composio/Rube connection and tool-discovery boilerplate for separate services.
+P0331,T,3,"Avaza and Confluence repeat Membrane integration, authentication, and service documentation scaffolding, with different domain functions."
+P0333,T,3,"Berlin information-access review and federal road responsibility review share generic German legal intake and evidence templates, but use different statutes."
+P0335,D,2,"Both agent-browser files share an identical browser automation description, the agent-browser CLI, snapshot references, and browser interaction model; one is a discovery stub and the other a detailed guide."
+P0337,T,3,"Climate Skill 2 and Product Skill 69 share SkillGalaxy production-implementation sections and Python scaffolding, with different subjects substituted."
+P0339,T,2,"Optuna Study Creator and REST Endpoint Designer share generic auto-trigger skill scaffolding, but have different ML and API development objectives."
+P0341,U,2,"Both address Mermaid diagrams, but one emphasizes styled diagrams and the other covers broad inline diagram types with different instructions and no distinctive copying evidence."
+P0343,U,3,"Spanish blog-post generation and analysis of customer sales calls use unrelated inputs and workflows, with no substantial common instructions."
+P0345,T,2,Education Skills 210 and 231 have almost identical SkillGalaxy content and differing generated names; the identical framework does not establish distinct reused capabilities.
+P0347,T,3,"Portable air-traffic surveillance and additive-manufacturing quality assurance share a generated military planning framework, but have different mission objectives."
+P0349,U,3,"Both are named memory-consolidation, but one optimizes general cross-session memory and the other manages nutritionist memory layers with different procedures."
+P0351,T,3,"Transformers and PyHealth use the same source-mirror stub and source-loading steps, but point to different underlying technical workflows."
+P0353,U,2,"Both are called pptx and concern presentations, but their detailed procedures and document-handling instructions differ without distinctive common text."
+P0355,D,3,"Improve Codebase Architecture and Codebase Improve Architecture share extensive deep-module analysis, glossary, and refactoring instructions with path-specific adaptations."
+P0357,T,3,"Publisher documentation-gap analysis and common-law consideration routing share a German legal evidence and deadline framework, but have different legal outputs."
+P0359,T,2,"ArabCulture and BizFinBench evaluations share a benchmark documentation shell for datasets, accuracy metrics, and scoring, but cover different test sets and evaluation recipes."
+P0361,T,3,"LYGO Champion and DAKboard use the same generic Python-engineering checklist and delivery scaffolding, but serve different purposes."
+P0363,T,3,Agenty and Dadata RU automation repeat Composio/Rube MCP setup and schema-discovery instructions for different services.
+P0365,T,3,"Signaturely and SOCi repeat Membrane CLI installation, authentication, and integration template, but handle different services."
+P0367,T,3,"Knowledge-management incident playbooks and accessibility equity scoring share a generated policy-gated orchestration structure, but have different capabilities."
+P0369,D,3,"Both code-review-excellence files share virtually identical review principles, examples, and quality procedures; only a minor code example differs."
+P0371,T,3,"Kickbox and Process Street automation share Rube MCP initialization and tool-search boilerplate, but use different service-specific operations."
+P0373,T,2,"Blockchain developer and browser E2E testing skills share Omni Skills intake and provenance sections, but their original task-specific procedures are unrelated."
+P0375,T,3,"DataFusion and NV-VAE repeat a generated technical skill guide and competency framework, but cover different implementations."
+P0377,T,3,"Healthcare constraint compilation and design-research uncertainty communication share policy, testing, and operational-runbook scaffolding, with distinct capabilities."
+P0379,D,3,"Brainstorm and Brainstorming share distinctive design-approval gates, one-question-at-a-time exploration, and design-document guidance; one extends the handoff pipeline."
+P0381,T,3,Family Tradition Builder and LLM Latency Optimizer use the same generic requirements-analysis and execution template but have unrelated outputs.
+P0383,T,3,"Geoapify and Forcemanager automation repeat Composio/Rube tool connection and search instructions, but automate different services."
+P0385,T,2,"Two quantitative factor skills share nearly identical OHLCV input, compute_factor, signal, and validation contracts, but calculate different factors; shared generator is plausible."
+P0387,U,2,Two brainstorm files share a broad requirements-discovery purpose but use different Trellis interview and gated specification pipelines without distinctive copied instructions.
+P0389,T,3,"Feature Importance and Time Series Analysis repeat a generated technical competence and implementation template, but cover different analytics topics."
+P0391,T,2,"Two OWASP repository skills share almost the whole generic security-project checklist, with only project identifiers changed; the shared content is a boilerplate wrapper."
+P0393,T,2,"React Context Setup and Lazy Loading Implementer share an automatic-trigger frontend skill shell, but solve different component-state and loading tasks."
+P0395,T,2,Spatial Skills 158 and 58 share almost all SkillGalaxy sections and differ mainly in generated numbering; the source gives little task-specific distinction.
+P0397,T,3,IP2Location IO and Mailcheck automation share Composio/Rube MCP setup and tool-discovery scaffolding but target different services.
+P0399,U,2,"Both discuss Flutter performance, but one gives Japanese DevTools and const optimization procedures while the other covers English rebuild and lazy-build guidance; overlap reflects public practices."

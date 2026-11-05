@@ -99,103 +99,103 @@ P0192,T,3,Generator template (MITRE ATT&CK catalog): shared workflow/resources t
 P0194,T,3,Generator template (SkillGalaxy expert series): identical scaffold and code stub; only domain/number differ
 P0196,U,3,Same name only: short Go reference index vs long Go best-practices skill; no shared text
 P0198,D,3,"Copy-and-edit: same typescript-advanced-types skill; A adds fractal sub-skills module list, otherwise identical"
-P0200,,,
-P0202,,,
-P0204,,,
-P0206,,,
-P0208,,,
-P0210,,,
-P0212,,,
-P0214,,,
-P0216,,,
-P0218,,,
-P0220,,,
-P0222,,,
-P0224,,,
-P0226,,,
-P0228,,,
-P0230,,,
-P0232,,,
-P0234,,,
-P0236,,,
-P0238,,,
-P0240,,,
-P0242,,,
-P0244,,,
-P0246,,,
-P0248,,,
-P0250,,,
-P0252,,,
-P0254,,,
-P0256,,,
-P0258,,,
-P0260,,,
-P0262,,,
-P0264,,,
-P0266,,,
-P0268,,,
-P0270,,,
-P0272,,,
-P0274,,,
-P0276,,,
-P0278,,,
-P0280,,,
-P0282,,,
-P0284,,,
-P0286,,,
-P0288,,,
-P0290,,,
-P0292,,,
-P0294,,,
-P0296,,,
-P0298,,,
-P0300,,,
-P0302,,,
-P0304,,,
-P0306,,,
-P0308,,,
-P0310,,,
-P0312,,,
-P0314,,,
-P0316,,,
-P0318,,,
-P0320,,,
-P0322,,,
-P0324,,,
-P0326,,,
-P0328,,,
-P0330,,,
-P0332,,,
-P0334,,,
-P0336,,,
-P0338,,,
-P0340,,,
-P0342,,,
-P0344,,,
-P0346,,,
-P0348,,,
-P0350,,,
-P0352,,,
-P0354,,,
-P0356,,,
-P0358,,,
-P0360,,,
-P0362,,,
-P0364,,,
-P0366,,,
-P0368,,,
-P0370,,,
-P0372,,,
-P0374,,,
-P0376,,,
-P0378,,,
-P0380,,,
-P0382,,,
-P0384,,,
-P0386,,,
-P0388,,,
-P0390,,,
-P0392,,,
-P0394,,,
-P0396,,,
-P0398,,,
+P0200,T,3,"Same awesome-omni-skills intake wrapper (provenance table, Example 1-4 blocks); imported skills differ: threat modelling vs JS testing"
+P0202,D,3,"Both superpowers systematic-debugging: verbatim Iron Law and phase 1 checklist; A renamed arc-debugging, B scoped to env/CI with resilience section"
+P0204,D,3,"Same agent-browser skill: identical description and command reference (snapshot -i, click @e1, fill @e2); A adds when-to-use note, B a Copilot image note"
+P0206,T,3,Winbda placeholder scaffold identical; only name/description differ (FAQ writer vs commercial lease)
+P0208,U,3,German corporate-law module vs insulin-pump backup assessment; no shared text
+P0210,T,3,"luo-kai oc- generator: same Before Starting list, expertise areas, safe_run stub, author tag; core code differs (polars ETL vs classifier)"
+P0212,U,3,Both Korean but different tasks (translationese polishing vs customer demo-app setup); no shared text
+P0214,T,3,"Shared GSD Codex adapter block (AskUserQuestion to request_user_input, Task to spawn_agent); commands differ (verify-work vs set-profile)"
+P0216,T,3,SkillGalaxy specialized scaffold and code stub identical; only domain/number differ
+P0218,T,3,SkillGalaxy guide scaffold and execute() stub identical; only topic differs (time series vs REST API)
+P0220,U,3,Same name test: pytest test-writer command vs opencode wrapper pointing to a UI-testing skill
+P0222,D,3,"Same gstack plan-design-review: identical description and review body; A Korean doc-layer copy, B Codex install with rewritten GSTACK_ROOT paths"
+P0224,T,3,"BetterPromptme CLI wrapper (model discovery, betterprompt run steps) shared; prompts differ (photo restoration vs Leica monochrome)"
+P0226,U,1,"Same name/topic; share one phrase ('setting up monitoring, debugging production issues, or') and similar but separately written pino/readiness-probe code; could be a reworked copy"
+P0228,T,3,Winbda placeholder scaffold; only name/description differ (AI use-case prioritizer vs seller presentation)
+P0230,D,3,"superpowers systematic-debugging again: verbatim phases and red-flag lists; A env-scoped variant (as in P0202), B adds Type: RIGID"
+P0232,T,3,Composio Rube MCP boilerplate; only toolkit differs (Splitwise vs Supadata)
+P0234,U,3,Same name observability: generic SRE logging/metrics guide vs agent-pair interaction-log plane; no shared phrases
+P0236,T,3,Membrane CLI setup/connection boilerplate shared; app overview differs (Confluence vs Redis)
+P0238,D,3,Anthropic skill-creator eval-loop version: 139 of 141 long lines identical incl. eval-viewer/generate_review.py steps
+P0240,T,3,"Auto-activating plugin-catalog scaffold (activates automatically when you:, error table); topics differ (React context vs Graphviz)"
+P0242,T,3,luo-kai oc- generator: same Before Starting/expertise/safe_run stubs; persona helper vs daily.dev feed skill
+P0244,T,3,SkillGalaxy specialized scaffold; only domain/number differ
+P0246,T,3,BetterPromptme wrapper shared; prompts differ (nightlife portrait vs Nano Banana macro shot)
+P0248,T,3,German legal catalog: shared Arbeitsweg lines and Strategische Optionen block; areas differ (§ 650b construction claims vs medical licence revocation)
+P0250,T,3,Winbda placeholder scaffold; only name/description differ (LLM latency vs salary cap)
+P0252,U,3,Both Spanish but different tasks (security audit checklist vs liveness challenge sequencer); no shared text
+P0254,T,1,"Same distinctive GLOBAL PROTOCOLS preamble (modes, Iron Law, rtk prefix) with renames (1-MAN ARMY to Agentic Company, Karpathy to industry experts); task parts differ (remotion stub vs security audit note); preamble dominates both"
+P0256,T,3,awesome-omni-skills intake wrapper shared; imported skills differ (PR enhancement vs python-pro)
+P0258,T,3,Winbda placeholder scaffold; only name/description differ (dairy operations vs logistics cost)
+P0260,T,3,OpenClaw u-series slot-filled scaffold; capability/domain differ
+P0262,T,3,Shared GSD Codex adapter block; commands differ (autonomous vs map-codebase)
+P0264,U,3,GSD check-todos command vs design-service checklist; no shared text
+P0266,T,3,"luo-kai oc- short template: same Before Starting questions, Core Functionality heading, sandbox line; tasks differ (security checker vs file-to-markdown)"
+P0268,D,1,"Same name grill-me; A is a long Chinese rework keeping the core mechanics (iterative interrogation, recommended answer per question, no building until confirmed) but no copied line; A asks 2-4 per round vs one at a time"
+P0270,U,3,Same name tdd: horizontal-slices anti-pattern skill vs TDD facilitation guide; no shared text
+P0272,T,3,"zwright8 warfighter cell series: same section skeleton (Mission Scope, Required output format, External tools) and lightly reworded scope lines; missions differ"
+P0274,T,3,Winbda placeholder scaffold; only name/description differ (cash-on-cash vs logistics cost)
+P0276,T,3,SkillGalaxy expert scaffold and code stub; only domain/number differ
+P0278,T,2,"dankoe-skills generated skeleton (When to Use, Core Logic, steps with 输入/操作/判断标准/输出, same 'description' artefact); different mental models, no shared content"
+P0280,T,3,SkillGalaxy specialized scaffold; only domain/number differ
+P0282,T,3,SkillGalaxy expert scaffold; only domain/number differ
+P0284,T,3,"Harzva journal-skill generator: shared When to use, manuscript map, writing principles boilerplate; venues differ (IEEE TWC vs Elsevier CRediT)"
+P0286,T,3,OpenClaw u-series slot-filled scaffold; capability/domain differ
+P0288,T,3,SkillGalaxy specialized scaffold; only domain/number differ
+P0290,U,3,Same name reviewer: PolkadotApp architecture audit vs findings-first review protocol; no shared text
+P0292,D,3,Renamed copy: iterative-retrieval vs subagent-context-retrieval; 102 of ~109 long lines identical incl. DISPATCH/EVALUATE/REFINE diagram and code; A has Chinese description
+P0294,T,3,Winbda placeholder scaffold; only name/description differ (emergency plan vs incident ops)
+P0296,T,3,"Arabic skills library unfilled template (same placeholder 'اكتب هنا' purpose, keyword stubs); only name differs"
+P0298,T,3,OpenClaw u-series slot-filled scaffold; capability/domain differ
+P0300,T,3,SkillGalaxy specialized scaffold; only domain/number differ
+P0302,T,3,SkillGalaxy expert scaffold; only domain/number differ
+P0304,D,3,"Translated copy: same rust-testing skill; B translates prose into Chinese, code examples (todo!() TDD steps) identical"
+P0306,T,3,SkillGalaxy guide scaffold; only topic differs (antivirus vs Cloud Spanner)
+P0308,D,3,"B extends the OpenClaw 1password skill: A's lines (official get-started, references/get-started.md, op --version, tmux session) all reappear; B adds doc links and secret-reference sections"
+P0310,U,3,Same name test-skill: trivial unit-test fixture vs format-conversion test fixture; no shared text
+P0312,T,3,SkillGalaxy specialized scaffold; only domain/number differ
+P0314,U,3,Same topic (commit messages) only: scope-free atomic commits vs standard Conventional Commits; no shared text
+P0316,T,3,Composio Rube MCP boilerplate; only toolkit differs (Msg91 vs Hypeauditor)
+P0318,T,3,aladicf opencode compatibility wrapper stub; only wrapped skill differs (empty-state vs test)
+P0320,T,3,Winbda placeholder scaffold; only name/description differ (DNS architecture vs contract lifecycle)
+P0322,T,3,awesome-omni-skills intake wrapper shared; imported skills differ (exa-search vs differential security review)
+P0324,D,3,"Same heady-nonprofit-ops skill in one repo: all 54 long lines identical, differences only whitespace"
+P0326,U,3,Explore-agent problem analysis vs Pinia store design rules (Chinese); no shared text
+P0328,U,3,Same name code-review: expert review guidelines vs 5-domain subagent review; one generic shared line
+P0330,T,3,Membrane CLI boilerplate shared; app overview differs (ScrapeNinja vs SPS Commerce)
+P0332,T,3,OpenClaw u-series slot-filled scaffold; capability/domain differ
+P0334,T,3,Arabic skills library unfilled template; only name differs (game analytics vs pnpm)
+P0336,T,3,SkillGalaxy expert scaffold; only domain/number differ
+P0338,U,3,Same name code-reviewer: antigravity-style AI review expert vs automated review tooling; no shared text
+P0340,U,3,Unrelated: Japanese template backport skill vs Drivine4j graph-database client guide
+P0342,T,3,luo-kai oc- generator: same Before Starting/expertise/error-handling stubs; tasks differ (conversation summaries vs personality persistence)
+P0344,D,3,"Two versions of blader humanizer: identical description and pattern catalog; A adds final anti-AI pass, B regroups under CONTENT PATTERNS"
+P0346,U,3,Same name discover: codebase discovery command vs client diagnostic conversation; no shared text
+P0348,D,3,"Renamed copy of superpowers verification-before-completion: verbatim Iron Law, 'evidence before claims', gate steps; A named completion-verification-gate"
+P0350,D,3,superpowers writing-skills: 165 of 168 long lines identical; B adds repository-local override note
+P0352,T,3,Membrane CLI boilerplate shared; app overview differs (Confluence vs ChatBotKit)
+P0354,T,3,luo-kai oc- generator: shared stubs and author tag; tasks differ (MLB stats vs Linux GUI control)
+P0356,T,3,"strmt7 benchmark entrypoint wrapper: identical scope/verification lines; only skill name, description and source path differ"
+P0358,T,3,German legal catalog: shared Arbeitsweg line and autogen Ausformulierungspflicht block; topics differ (medical licence vs contract clause choices)
+P0360,T,3,OpenClaw u-series slot-filled scaffold; capability/domain differ
+P0362,T,3,awesome-omni-skills intake wrapper shared; imported skills differ (JS testing vs business model canvas)
+P0364,D,3,Same grill-me text: description and all four instruction lines identical; differs only in blank lines
+P0366,T,3,Membrane CLI boilerplate shared; app overview differs (Polymer vs SPS Commerce)
+P0368,D,3,Same json-canvas skill: identical spec text and JSON examples; A adds Obsidian vault path and agent-neutral wording
+P0370,D,3,Installer copies of GSD validate-phase: identical objective and three states; only workflow paths and {{GSD_ARGS}}/$ARGUMENTS differ
+P0372,D,3,"Anthropic mcp-builder: 124 of ~137 long lines identical (four phases, SDK fetch steps); B adds Selection Guidance"
+P0374,T,3,Membrane CLI boilerplate shared; app overview differs (Toolset vs SmartRecruiters)
+P0376,D,3,Renamed copy of Anthropic xlsx skill (dokument-xlsx): 164 shared lines incl. formula-error and colour rules; B adds font rule and new description
+P0378,U,3,Both Chinese but unrelated (family flight-care itinerary vs Feynman-style learning assistant)
+P0380,U,3,Same name create-pr: Paddle three-repo PR flow (Chinese) vs JIRA branch PR automation (Japanese); no shared text
+P0382,T,3,SkillGalaxy guide scaffold; only topic differs (feature importance vs climate advanced)
+P0384,D,3,"Same learner skill under different names: verbatim principles ('reusable skills are not code snippets', bad/good examples); slash command oh-my-claudecode vs oh-my-gemini"
+P0386,D,3,"Same documentation-and-adrs skill: identical description and core guidance; A keeps ADR template example, B adds Skillgrid section"
+P0388,T,3,Winbda placeholder scaffold; only name/description differ (commercial lease vs virtual classroom)
+P0390,U,3,Same name code-review: expert guidelines vs atomic-views review document generator; no shared text
+P0392,U,3,Same name sync: French git multi-machine sync vs SiftCoder remote backup; no shared text
+P0394,U,3,Same name plan: repo-local plan template vs Checkpoint-4 architecture plan; no shared text
+P0396,T,3,awesome-omni-skills intake wrapper shared; imported skills differ (internal comms vs UX audit)
+P0398,T,3,"agent-assistant generated router stub (Load CORE.md, spawn agents, resolve skills); commands differ (/cook:fast vs /code) and paths differ (codex vs gemini)"

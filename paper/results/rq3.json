@@ -10,14 +10,14 @@
     "cross_owner_occ": 0.6193369336933693
   },
   "family": {
-    "units": 10579,
+    "units": 10588,
     "occurrences": 26664,
-    "singleton_share": 0.722847150014179,
+    "singleton_share": 0.7237438609746883,
     "max_occurrences": 190,
-    "gini": 0.5434408929124315,
-    "top1pct_share": 0.2309105910591059,
-    "cross_owner_units": 0.2174118536723698,
-    "cross_owner_occ": 0.6428892889288929
+    "gini": 0.5434587281924264,
+    "top1pct_share": 0.23158565856585658,
+    "cross_owner_units": 0.2158103513411409,
+    "cross_owner_occ": 0.6413891389138914
   },
   "population_hash": {
     "units": 11010,
@@ -29,7 +29,7 @@
     "cross_owner_units": 0.20172570390554043,
     "cross_owner_occ": 0.6193137071066942
   },
-  "orientation_coverage": 0.041726618705035974,
-  "connected_components": 10579,
+  "orientation_coverage": 0.03591160220994475,
+  "connected_components": 10588,
   "largest_cc": 11
 }
