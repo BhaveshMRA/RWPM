@@ -14,3 +14,7 @@ paper/*.out
 work_full*/
 work_fulltest/
 paper/results_fulltest/
+gitskills/
+.DS_Store
+*.db-shm
+*.db-wal
