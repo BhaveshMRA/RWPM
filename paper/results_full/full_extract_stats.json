@@ -1,0 +1,38 @@
+{
+  "occurrences_total": 3797117,
+  "distinct_contents_total": 1877981,
+  "repos_total": 282200,
+  "owners_total": 195841,
+  "population_contents": 1586606,
+  "population_occurrences": 3341439,
+  "funnel": [
+    [
+      "Distinct contents (representatives)",
+      1877981
+    ],
+    [
+      "Exact basename SKILL.md",
+      1842600
+    ],
+    [
+      "Valid YAML front matter",
+      1610957
+    ],
+    [
+      "Body >= 200 characters",
+      1586606
+    ],
+    [
+      "Body still >= threshold after re-parsing front matter",
+      1586429
+    ]
+  ],
+  "working_contents": 1586429,
+  "working_occurrences": 3341056,
+  "working_repos": 258245,
+  "working_owners": 181349,
+  "working_with_history": 389594,
+  "working_with_siblings": 577916,
+  "distinct_names_working": 815488,
+  "names_with_2plus_contents": 158210
+}

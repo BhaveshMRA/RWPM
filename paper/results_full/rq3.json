@@ -1,0 +1,35 @@
+{
+  "hash": {
+    "units": 1586429,
+    "occurrences": 3341056,
+    "singleton_share": 0.7960097804566104,
+    "max_occurrences": 1409,
+    "gini": 0.49109870667255817,
+    "top1pct_share": 0.27012986313309323,
+    "cross_owner_units": 0.13422913978501402,
+    "cross_owner_occ": 0.5233138863880162
+  },
+  "family": {
+    "units": 1117691,
+    "occurrences": 3341056,
+    "singleton_share": 0.7427169047616917,
+    "max_occurrences": 6847,
+    "gini": 0.6269520840344696,
+    "top1pct_share": 0.42023509932189107,
+    "cross_owner_units": 0.16212709952929746,
+    "cross_owner_occ": 0.6571356481304115
+  },
+  "population_hash": {
+    "units": 1586606,
+    "occurrences": 3341439,
+    "singleton_share": 0.796011738263942,
+    "max_occurrences": 1409,
+    "gini": 0.4911000690020651,
+    "top1pct_share": 0.27012044810633984,
+    "cross_owner_units": 0.13422803140792358,
+    "cross_owner_occ": 0.5233167506574263
+  },
+  "orientation_coverage": 0.0659445399164851,
+  "connected_components": 1117621,
+  "largest_cc": 4564
+}
