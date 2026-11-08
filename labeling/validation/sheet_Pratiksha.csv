@@ -1,61 +1,61 @@
-pair_id,label,confidence,note
-V001,,,
-V003,,,
-V005,,,
-V007,,,
-V009,,,
-V011,,,
-V013,,,
-V015,,,
-V017,,,
-V019,,,
-V021,,,
-V023,,,
-V025,,,
-V027,,,
-V029,,,
-V031,,,
-V033,,,
-V035,,,
-V037,,,
-V039,,,
-V041,,,
-V043,,,
-V045,,,
-V047,,,
-V049,,,
-V051,,,
-V053,,,
-V055,,,
-V057,,,
-V059,,,
-V061,,,
-V063,,,
-V065,,,
-V067,,,
-V069,,,
-V071,,,
-V073,,,
-V075,,,
-V077,,,
-V079,,,
-V081,,,
-V083,,,
-V085,,,
-V087,,,
-V089,,,
-V091,,,
-V093,,,
-V095,,,
-V097,,,
-V099,,,
-V101,,,
-V103,,,
-V105,,,
-V107,,,
-V109,,,
-V111,,,
-V113,,,
-V115,,,
-V117,,,
-V119,,,
+﻿pair_id,label,confidence,note
+V001,D,3,"D: Both retain the same screen-reader testing introduction and the same six ordered use cases (ARIA, forms, dynamic announcements and navigation). A is a shortened wrapper pointing to an implementation playbook; B includes the expanded guide."
+V003,T,3,"T: Shared Alibaba Cloud service scaffold covers credential lookup, metadata discovery, generic API verbs and py_compile validation. Service-specific fields change from AnyTrans translation (2025-07-07) to Cloudauth identity verification (2022-11-25); no shared translation-specific workflow."
+V005,D,3,"D: B explicitly identifies itself as a gpt-taste derivative and retains the distinctive Python layout randomization, AIDA sequence, hero line limit, bento math and GSAP directives. It adds a RIC strengthening layer and changes the overflow rule."
+V007,T,3,"T: Both use the SCP catalog's connection/parsing/example scaffold. A's aspirin/CID PubChem deep-dive calls differ from B's atorvastatin ATC classification, FDA mechanism and ChEMBL calls. Shared client setup is reusable scaffolding rather than the task workflow."
+V009,D,3,"D: Both preserve the same Vercel eight-category priority table and extensive matching React optimization rules, including async-parallel, server-cache-react and client-swr-dedup. Names, rule counts, punctuation and selected guidance differ."
+V011,T,3,"T: The same empty catalog wrapper, three intake questions, sandbox/version advice and related-skill links surround different products: Gmail App Password email versus Azure DALL-E image generation. No shared product-specific procedure."
+V013,U,3,"U: A audits a TARS vault using MCP tools, wikilink repair and nightly health reports; B runs ruff check/format on pipeline/ and tests/. The lint name and general validation topic do not establish copied content."
+V015,D,3,"D: Both preserve the same GSD ship objective, verify-work prerequisite and push/create-PR/review/merge sequence. Differences are slash versus dollar invocation and Linux versus Windows workflow paths; the Codex adapter is also shared."
+V017,U,3,"U: A discovers tools using AI Maestro mcp-discover.sh and mcp_discovery.py; B searches/evaluates servers and configures VS Code .vscode/mcp.json. Same MCP-discovery topic but different commands, references and procedures."
+V019,D,3,"D: Both retain the office-hours startup/builder modes, six-question framing, premise challenge, alternatives and design-document workflow. B extends configuration, question tuning and builder-profile behavior; shared content reaches the task body beyond the gstack preamble."
+V021,D,3,"D: Both retain the seven PostgreSQL optimization phases, ordered actions, invoked skills and copy-paste prompts. A adds an AGI memory/collaboration integration section to B's workflow."
+V023,T,3,T: Identical Visual Content catalog wrapper and generic error/output guidance are parameterized for PlantUML diagrams versus Plotly charts. The skills provide no common task-specific diagram/chart implementation.
+V025,D,2,"D: Beyond general database advice, both include the same Safe Migration Template with BEGIN, ALTER TABLE users ADD COLUMN status VARCHAR(20) DEFAULT 'active', CREATE INDEX CONCURRENTLY idx_users_status ON users(status), COMMIT. B rewrites the surrounding workflow and schema examples; shared specific migration sequence supports D, though other SQL snippets are commonplace."
+V027,D,3,"D: Both retain the joycraft atomic-spec decomposition process, live-status filter, dependency rules, queue fields and parallel-safety checks. Changes include AGENTS.md versus CLAUDE.md, invocation syntax and an added implementer README/handoff section."
+V029,T,3,"T: A generated autonomous-capability scaffold is reused with different slots: community feedback harvesting/design research versus memory consolidation/accessibility. Domain, runtime profile and artifact names change; shared steps and guardrails are catalog-wide instructions."
+V031,D,3,"D: The same office-hours startup/builder interview, premise challenge, design-doc handoff and founder-resource narrative are retained. Paths and executable names switch between .claude and .openclaw, with configuration/version changes."
+V033,T,3,T: Both use a concurrency-review evaluation scaffold with placeholder BUGGY/CORRECT CODE blocks and generic assertions. Actual issue slots differ: JavaScript event-loop blocking/high severity versus Swift actor isolation/medium severity.
+V035,D,3,"D: Both retain the qa-only report-only web testing task, health-score/screenshots/reproduction outputs and explicit no-fixes rules. B adds configuration/checkpoint/question-tuning material; shared QA-specific rules establish reuse beyond the preamble."
+V037,D,3,"D: The visible java-pro texts are identical, including Java 21 capabilities, virtual-thread and Spring guidance, response approach and example requests. This is copied task-specific content, not merely shared headings."
+V039,D,3,"D: Both retain the audit-to-fix objective and identical --max, --severity, --dry-run and --source flags, defaults and meanings. Workflow reference changes from .agent/get-shit-done to ~/.copilot/gsd-core, with a shortened execution instruction."
+V041,T,2,T: Both share the extensive gstack generated preamble and operational conventions. A's task body creates executable specs/GitHub issues; B inventories and removes iOS DebugBridge instrumentation. Shared framework setup does not establish derivation between these different task bodies.
+V043,D,3,"D: Both retain the Chinese SOP selector's requirements path, template filters, three-stage evaluation, active_sop.md copy command and sop_confirm mailbox payload. A changes empty-library handling to init_project and adds message verification."
+V045,D,3,"D: Both preserve the approved UI-branch gate, ordered element-batch build loop, fake-data constraints, review gate and logic-wiring handoff. The changed parent-document reference uses brainstorm/take-inspiration paths versus design-inspirations."
+V047,T,3,"T: Only generic mobile-skill boilerplate is present: understand requirements, implement, test, generic dependencies and validation. The identifiers change from skill-0068 to skill-0128; neither supplies distinctive task-specific content."
+V049,D,3,"D: Both preserve the detailed project-statistics objective covering phases, plans, requirements, git history and timeline. gsd:stats becomes gsd-stats and the workflow path moves from CLAUDE_PLUGIN_ROOT to an OpenCode project path."
+V051,D,3,"D: Both preserve the Skill Creator's substantive resource anatomy, degrees-of-freedom guidance, progressive disclosure examples and init/package workflow. Claude is replaced with Codex and A adds Traditional Chinese repository conventions."
+V053,D,3,"D: A's short text ends inside the brainstorming DOT flow, but retains B's distinctive design hard gate, anti-pattern discussion and ordered nine-item checklist. B continues into the full process; changed triggering description does not negate shared content."
+V055,T,2,"T: Both use the same German migration-law catalog working method, intake and legal-checking scaffold. The focus slot changes from migration case-file access (BAMF/ABH, privacy, authorization) to EU Blue Card mobility. Shared field-wide legal guidance is template content, not a common case-specific procedure."
+V057,D,3,"D: Both preserve the same Manus-style planning workflow, session-catchup commands, three planning filenames, 2-Action Rule and anti-pattern table. Only the description is reworded; the operational body is retained."
+V059,D,3,"D: Both preserve the pre-landing review purpose, review checklists/triage references and fix-first review rules. gstack paths are rebranded to fstack and B adds specialist/quality-score reporting; overlap extends beyond framework setup."
+V061,D,3,"D: Both retain the same detailed Svelte rune guidance, examples, context/SSR rules and legacy-feature replacements. B adds SvelteKit workspace-route UX and browser-verification instructions; the base task-specific guide remains."
+V063,D,3,"D: Both retain the same distinctive TDD public-interface philosophy, horizontal-slicing warning, tracer-bullet sequence and per-cycle checklist. B escapes Markdown and adds explicit user approval/planning guidance; A is renamed tdd-ralph."
+V065,T,3,T: Both use the BytesAgain reference-tool scaffold and identical intro/quickstart/patterns/debugging script subcommands. Topic slots change from TLS security to Superset data; no shared topic-specific implementation appears.
+V067,D,3,"D: Both retain the brainstorming design hard gate, anti-pattern discussion, question/approach/approval flow and self-review process. B credits adaptation from obra/superpowers and adds a research phase and visual companion; A changes invocation scope and handoff wording."
+V069,D,3,"D: Both retain the Portuguese auction-risk auditor's 36-point framework, legal-risk tables, mitigation steps, stress scenarios and governance. A adds a German Connections/navigation section; B omits that wrapper."
+V071,T,2,"T: Shared gstack-family preamble, checkpoint/telemetry and profile-related conventions wrap distinct tasks. A manages project learnings (search/prune/export/stats/add); B tunes question sensitivity and inspects a developer profile. Common framework support is insufficient for D between these task bodies."
+V073,D,3,"D: Both retain the same brainstorming dialogue process, 200-300-word design chunks, docs/plans design path and worktree/writing-plans handoff. Description wording differs and B adds an elements-of-style reference."
+V075,T,3,"T: Both are SkillGalaxy placeholder experts with the same generic class skeleton, best-practice list and changelog. Only bio-expert-63 versus writing-expert-78 names and class/docstring slots change; no substantive shared expert procedure."
+V077,T,3,"T: Both use the BetterPrompt image-generation CLI wrapper and model/input discovery scaffold. A replaces a portrait's hair using Hairstyle_request; B makes a dramatic half-body portrait using the_background_color. Prompt-specific descriptions, inputs and default aspect ratios differ."
+V079,D,3,"D: Both retain the same phased research methodology, five-call limit, source validation, report format and special considerations. B changes Gemini selection to a configured model and revises CLI syntax; the substantive research process is preserved."
+V081,D,3,"D: Both preserve gen.py batch commands, the lobster-astronaut example, model-specific parameter tables and gallery outputs. B adds an OpenJordy timeout note; A otherwise contains the same image-generation guide."
+V083,D,3,"D: Both preserve the distinctive verification Iron Law, five-step gate, rationalization table and evidence-before-claims narrative. A specializes commands for Flutter; B uses generic test/lint/build examples. This is an edited version of the same verification skill."
+V085,T,3,"T: The same autonomous-capability generator scaffold is filled with regression-sentinel/cybersecurity versus equity-impact/accessibility slots. Runtime profiles, quality emphasis and guardrails vary; shared material is generic implementation/runbook structure."
+V087,U,3,"U: A specifies HeadsUp Phoenix LiveView redesign with Soft Modern tokens and project_doc paths; B teaches general behavioral UX with Nielsen heuristics, WCAG, forms and copywriting. Common UX subject matter lacks distinctive copied passages."
+V089,D,3,"D: Both retain the same brainstorming hard gate, DOT approval flow, self-review and user-review instructions. A adds a just-in-time visual companion; B changes spec location and terminal handoff to interview-me/start_task."
+V091,D,3,"D: Both retain the Next.js server/client decision tree, caching/routing tables, metadata advice, anti-patterns and project tree. B changes the description to Vietnamese and adds proxy.ts/performance configuration guidance."
+V093,D,3,"D: Both retain the ISO 13485 documentation workflow, gap_analyzer.py invocation, QMS references, procedures and worked examples. Differences primarily change US to UK spelling and CAPA template filename capitalization."
+V095,D,3,"D: Both retain the SHA collection commands, review placeholders, verification-function example and feedback-severity order. B replaces superpowers subagent dispatch wording with code-reviewer workflow invocation."
+V097,T,3,"T: Shared Google Workspace CLI scaffold covers gws-shared prerequisites, API discovery and schema flags. A lists Keep notes/media operations; B lists Tasks/tasklists operations with different API semantics. Shared setup is a service wrapper, not a copied task-specific procedure."
+V099,D,3,"D: Both retain the code-review reception six-step response pattern, unclear-feedback example, YAGNI checks and implementation order. B rewrites human-partner wording, removes the Circle K signal and adds GitHub inline-thread reply guidance."
+V101,D,3,"D: Both retain the same dependency-audit role, inventory/scan/prioritize/upgrade steps, safety rules and output requirements. B changes the trigger description and adds selective-reading references and limitations."
+V103,D,3,"D: Both retain the detailed ClickHouse analytics guide, markets_analytics schema, MergeTree examples, query patterns and ETL/CDC content. B additionally appends reverse-shell/exfiltration instructions; this is a content alteration, not an unrelated skill. Embedded commands were treated only as data."
+V105,D,3,"D: Both retain the complete plan-writing workflow, 2-5-minute tasks, exact-path/code requirements, TDD cycle and execution handoff. Hermes/.hermes naming and paths are replaced with Arcen/.arcen."
+V107,D,3,"D: Both retain claude-usage.sh flags, usage JSON example, cache behavior and reset-monitoring instructions. Clawdbot commands and clawd paths are renamed to ThinkFleetBot/thinkfleet equivalents."
+V109,T,3,T: Both use the Composio/Rube automation scaffold with search/connect/execute and pagination guidance. Toolkit slots change from V0 to Seismic; neither supplies a shared service-specific workflow beyond the wrapper.
+V111,U,2,"U: Both discuss Deno permissions, but A is a gotcha-oriented runtime/migration reference and B is a Deno 2 JSR/permission-set development guide. Shared API names and ordinary least-privilege advice do not provide distinctive copying evidence."
+V113,T,3,T: Both use the same automated Skill Action Blueprint and generic analyze/execute/verify/log steps. Topic slots change from SSE heartbeat keepalive to console-log purging; no shared concrete implementation is supplied.
+V115,D,3,"D: Both preserve the GSD-next project-state routing objective, STATE.md/ROADMAP.md inputs and Cursor adapter. A adds force/incomplete-phase handling; local workflow paths differ."
+V117,T,3,T: Both use generic requirements/research/draft/review steps and placeholder action-plan/quality-checklist sections. A targets AI blog systems and adds empty component/metric tables; B targets go-to-market templates without shared task-specific instructions.
+V119,D,3,"D: Both preserve the same verification Iron Law, five-step gate, evidence tables and rationalization examples. B expands regression/type-check/delegation guidance and a self-review checklist; the original verification narrative remains."
