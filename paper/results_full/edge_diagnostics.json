@@ -1,0 +1,97 @@
+{
+  "candidates": 9022502,
+  "predicted_derived": 4058198,
+  "by_band": {
+    "B0": {
+      "candidates": 846557,
+      "derived": 212382
+    },
+    "B1": {
+      "candidates": 1772324,
+      "derived": 1571239
+    },
+    "B2": {
+      "candidates": 1636600,
+      "derived": 922544
+    },
+    "B3": {
+      "candidates": 2077973,
+      "derived": 638567
+    },
+    "B4": {
+      "candidates": 1883753,
+      "derived": 590688
+    },
+    "B5": {
+      "candidates": 805295,
+      "derived": 122778
+    }
+  },
+  "derived_same_name": 0.8202261200660983,
+  "derived_same_owner": 0.07563258372312046,
+  "derived_template_like": 0.301584841350767,
+  "derived_proba_quantiles": {
+    "0.05": 0.9770826333600833,
+    "0.25": 0.9999911617633341,
+    "0.5": 0.9999998018678276,
+    "0.75": 0.9999999742161119
+  },
+  "derived_proba_ge_0.9": 0.9710450303311963,
+  "hubs": {
+    "max_degree_candidates": 5016,
+    "max_degree_derived": 1008,
+    "share_of_derived_links_touching_top_0.1pct_skills": 0.11851590287117583
+  },
+  "largest_components": [
+    {
+      "size": 4564,
+      "links": 158933,
+      "distinct_names": 231,
+      "top_names": "plan-eng-review, plan-ceo-review, review, office-hours, ship",
+      "share_same_name": 0.8700332844657812,
+      "share_template_like": 0.041973661857512286,
+      "median_proba": 0.9999999381321141,
+      "share_links_touching_hubs": 0.007267213228215663
+    },
+    {
+      "size": 3319,
+      "links": 87324,
+      "distinct_names": 271,
+      "top_names": "frontend-design, ui-ux-pro-max, web-design-guidelines, frontend-patterns, design-taste-frontend",
+      "share_same_name": 0.8549539645458293,
+      "share_template_like": 0.798772387888782,
+      "median_proba": 0.9999987664490093,
+      "share_links_touching_hubs": 0.5607965736796299
+    },
+    {
+      "size": 2671,
+      "links": 10636,
+      "distinct_names": 411,
+      "top_names": "similarweb-digitalrank-api-automation, zoho-invoice-automation, zoho-bigin-automation, appdrag-automation, zoho-mail-automation",
+      "share_same_name": 0.7234862730349756,
+      "share_template_like": 0.2753854832643851,
+      "median_proba": 0.9999999718250864,
+      "share_links_touching_hubs": 0.15250094020308386
+    },
+    {
+      "size": 2355,
+      "links": 110090,
+      "distinct_names": 189,
+      "top_names": "skill-creator, writing-skills, skill-development, testing-skills-with-subagents, create-skill",
+      "share_same_name": 0.8430375147606504,
+      "share_template_like": 0.9058315923335453,
+      "median_proba": 0.9999957281155776,
+      "share_links_touching_hubs": 0.798510309746571
+    },
+    {
+      "size": 1371,
+      "links": 46565,
+      "distinct_names": 109,
+      "top_names": "speckit-plan, speckit-specify, speckit-implement, speckit-checklist, speckit-analyze",
+      "share_same_name": 0.7099108772683346,
+      "share_template_like": 0.4976054976913991,
+      "median_proba": 0.9999998530683192,
+      "share_links_touching_hubs": 0.18181037259744443
+    }
+  ]
+}
