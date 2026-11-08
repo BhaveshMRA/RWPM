@@ -153,11 +153,23 @@ if args.score:
            "ResValDecoyDerived": fmt_pct((D.final == "derived").mean()) if len(D) else "--",
            "ResValConfirmedDiffName": fmt_pct((conf.name_equal == 0).mean()) if len(conf) else "--",
            "ResValConfirmedCrossOwner": fmt_pct((conf.same_owner == 0).mean()) if len(conf) else "--"}
+    split = {}
+    for key, mask in (("SameName", E.name_equal == 1), ("DiffName", E.name_equal == 0),
+                      ("HiSim", E.band.isin(["B1", "B2", "B3"])), ("LowSim", ~E.band.isin(["B1", "B2", "B3"]))):
+        sub = E[mask]
+        if len(sub):
+            kk = int((sub.final == "derived").sum())
+            l2, h2 = wilson(kk, len(sub))
+            split[key] = {"n": len(sub), "derived": kk, "precision": kk / len(sub), "ci": [l2, h2]}
+            mac[f"ResValN{key}"] = fmt_int(len(sub))
+            mac[f"ResValPrec{key}"] = f"{kk / len(sub):.2f}"
+            mac[f"ResValPrec{key}Lo"], mac[f"ResValPrec{key}Hi"] = f"{l2:.2f}", f"{h2:.2f}"
+            print(f"  {key:9s}: {kk}/{len(sub)} = {kk / len(sub):.3f} [95% CI {l2:.3f}, {h2:.3f}]")
     (RESULTS / "macros_validation.tex").write_text(
         "\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
     json.dump({"pairs": len(V), "edges": n, "confirmed": k, "precision": k / n, "ci": [lo, hi], "kappa": kappa,
                "decoys_derived": int((D.final == "derived").sum()), "decoys": len(D),
-               "confirmed_diff_name": float((conf.name_equal == 0).mean()) if len(conf) else None},
+               "confirmed_diff_name": float((conf.name_equal == 0).mean()) if len(conf) else None, "split": split},
               open(RESULTS / "validation.json", "w"), indent=2)
     print(f"kappa={kappa:.3f}; precision of predicted links = {k}/{n} = {k / n:.3f} [95% CI {lo:.3f}, {hi:.3f}]; "
           f"derived among decoys = {int((D.final == 'derived').sum())}/{len(D)}")

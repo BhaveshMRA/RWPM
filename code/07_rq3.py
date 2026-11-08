@@ -2,6 +2,7 @@
 
 Trains the best RQ1 model on all gold pairs, scores every candidate pair (work/features_all.pkl), keeps predicted-derived edges, and splits the resulting graph into families with Louvain community detection (connected components alone chain unrelated skills together through a few bridging edges). Then compares exact-hash units with family units.
 """
+import argparse
 import json
 
 import networkx as nx
@@ -13,6 +14,12 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 from common import ALL_FEATURES, RESULTS, SEED, WORK, fmt_int, fmt_pct
+
+ap = argparse.ArgumentParser()
+ap.add_argument("--same-name-only", action="store_true",
+                help="conservative variant: build families only from predicted links between skills with the same name")
+args = ap.parse_args()
+SUF = "_samename" if args.same_name_only else ""
 
 MAKE = {
     "Ours (logistic regression)": lambda: make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=5000)),
@@ -37,6 +44,9 @@ edges = allp[allp.pred == "derived"]
 if "sha_a" not in edges.columns:  # full-dataset run (step 13) stores row ids instead of hashes
     edges = edges.assign(sha_a=skills.sha.values[edges.i.values], sha_b=skills.sha.values[edges.j.values])
 print(f"{len(allp)} candidate pairs scored, {len(edges)} predicted derived")
+if args.same_name_only:
+    edges = edges[edges.name_equal == 1]
+    print(f"same-name variant: {len(edges)} links kept")
 
 G = nx.Graph()
 G.add_nodes_from(skills.sha)
@@ -81,7 +91,7 @@ orient = float((fa.notna() & fb.notna() & (fa != fb)).mean()) if len(edges) else
 
 top = sorted(comms, key=len, reverse=True)[:10]
 nn = skills.set_index("sha")["nname"]
-pd.DataFrame([{"family_size": len(c), "occurrences": int(occ[occ.sha.isin(c)].shape[0]), "top_names": ", ".join(nn.reindex(list(c)).value_counts().index[:3])} for c in top]).to_csv(RESULTS / "rq3_top_families.csv", index=False)
+pd.DataFrame([{"family_size": len(c), "occurrences": int(occ[occ.sha.isin(c)].shape[0]), "top_names": ", ".join(nn.reindex(list(c)).value_counts().index[:3])} for c in top]).to_csv(RESULTS / f"rq3_top_families{SUF}.csv", index=False)
 
 rows = [r"\begin{tabular}{lrrr}", r"\toprule",
         r" & \multicolumn{2}{c}{Working set} & Population \\", r"\cmidrule(lr){2-3}",
@@ -96,7 +106,7 @@ spec_rows = [("Units", "units", fmt_int), ("File occurrences", "occurrences", fm
 for label, key, f in spec_rows:
     rows.append(f"{label} & {f(H[key])} & {f(Fm[key])} & {f(P[key])} \\\\")
 rows += [r"\bottomrule", r"\end{tabular}"]
-(RESULTS / "rq3_table.tex").write_text("\n".join(rows) + "\n")
+(RESULTS / f"rq3_table{SUF}.tex").write_text("\n".join(rows) + "\n")
 
 gd = gold[gold.label == "derived"]
 hidden_gold = float((gd.name_equal == 0).mean()) if len(gd) else float("nan")
@@ -112,7 +122,9 @@ mac = {"ResGoldDerivedDiffName": fmt_pct(hidden_gold), "ResEdgesDiffName": fmt_p
        "ResGiniHash": f"{H['gini']:.2f}", "ResGiniFam": f"{Fm['gini']:.2f}",
        "ResCrossHash": fmt_pct(H["cross_owner_units"]), "ResCrossFam": fmt_pct(Fm["cross_owner_units"]),
        "ResOrient": fmt_pct(orient)}
-(RESULTS / "macros_rq3.tex").write_text(
+if args.same_name_only:
+    mac = {k.replace("Res", "ResSN", 1): v for k, v in mac.items()}
+(RESULTS / f"macros_rq3{SUF}.tex").write_text(
     "\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
-json.dump({"hash": H, "family": Fm, "population_hash": P, "orientation_coverage": orient, "connected_components": n_cc, "largest_cc": largest_cc}, open(RESULTS / "rq3.json", "w"), indent=2)
+json.dump({"hash": H, "family": Fm, "population_hash": P, "orientation_coverage": orient, "connected_components": n_cc, "largest_cc": largest_cc}, open(RESULTS / f"rq3{SUF}.json", "w"), indent=2)
 print(json.dumps({"hash": H, "family": Fm, "orient": orient, "largest_cc": largest_cc, "largest_family": int(sizes.max())}, indent=1))

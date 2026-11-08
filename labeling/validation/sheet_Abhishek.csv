@@ -1,61 +1,61 @@
 pair_id,label,confidence,note
-V000,,,
-V002,,,
-V004,,,
-V006,,,
-V008,,,
-V010,,,
-V012,,,
-V014,,,
-V016,,,
-V018,,,
-V020,,,
-V022,,,
-V024,,,
-V026,,,
-V028,,,
-V030,,,
-V032,,,
-V034,,,
-V036,,,
-V038,,,
-V040,,,
-V042,,,
-V044,,,
-V046,,,
-V048,,,
-V050,,,
-V052,,,
-V054,,,
-V056,,,
-V058,,,
-V060,,,
-V062,,,
-V064,,,
-V066,,,
-V068,,,
-V070,,,
-V072,,,
-V074,,,
-V076,,,
-V078,,,
-V080,,,
-V082,,,
-V084,,,
-V086,,,
-V088,,,
-V090,,,
-V092,,,
-V094,,,
-V096,,,
-V098,,,
-V100,,,
-V102,,,
-V104,,,
-V106,,,
-V108,,,
-V110,,,
-V112,,,
-V114,,,
-V116,,,
-V118,,,
+V000,D,3,"Two versions of spec-kit git feature command: same GIT_BRANCH_NAME override and prefix-bypass text; A renamed speckit-git-feature, B adds worktree and issue-placeholder support"
+V002,T,3,MITRE ATT&CK catalog (santosomar): shared Technique Context/When to use scaffold; different techniques (T1132 vs T1686)
+V004,D,3,"Same setup-matt-pocock-skills: all 63 long lines identical (issue tracker, triage labels, domain docs layout)"
+V006,U,3,Same topic only: short Vietnamese SEOSONA agent-orchestration stub vs long English orchestration-patterns guide; no shared text
+V008,T,3,ClawLink catalog: shared 'Setup in 3 steps' pairing block and images; services differ (GitLab vs Telegram)
+V010,D,3,"Renamed copy (qdrant vs qdrant-vector-search): all 199 long lines of A appear in B incl. description, client code and RAG guidance"
+V012,D,3,Installer copies of GSD explore: identical objective/Socratic routing lines; only Trae execution_context vs Cursor adapter wrapper differ
+V014,D,3,Same prompting skill: all 58 long lines identical (context-engineering principles); differences only in short lines
+V016,T,3,SkillGalaxy guide scaffold and execute() stub identical; only number differs
+V018,T,3,zwright8 warfighter cell series: shared advisory-scope and output-format lines; missions differ (breach routes vs underway replenishment)
+V020,T,3,awesome-omni-skills intake wrapper shared; imported skills differ (Azure hosted agents vs Voice Live SDK)
+V022,D,3,Same map-systems game-studio skill: 226 of 232 long lines identical; only doc paths (docs/framework vs .opencode/docs) and one command name differ
+V024,T,3,NIST 800-53 catalog (CyberStrike): shared assessment scaffold; different controls (AC-4(9) vs PS-3(4))
+V026,T,3,Winbda placeholder scaffold (B a shorter variant); only name/description differ
+V028,T,3,awesome-omni-skills intake wrapper shared; imported skills differ (error handling vs ad creative)
+V030,T,3,"Alibaba Cloud service-skill generator: shared OpenAPI workflow lines; services differ (Quan Miao vs Cloud Backup), env-var names differ"
+V032,D,3,Renamed copy of impeccable distill (design-distill vs i-distill): 83 shared lines incl. Saint-Exupery line; only the referenced parent skill renamed
+V034,D,3,"Two versions of baoyu-post-to-x: same description, Chrome-CDP posting workflow and script tables; B adds permission-check script"
+V036,D,2,"NemoVideo keyword variants: same NEMO_TOKEN/anonymous-token flow, endpoints, routing table and 'five product photos and a logo' example, reworded; could be read as generator T"
+V038,D,3,Same spring-framework skill: all 56 long lines identical
+V040,T,3,German legal catalog (Kartellrecht module): shared Arbeitsweg/Normen lines; topics differ (Iceland authority check vs compliance documentation)
+V042,D,3,Two versions of Maton api-gateway: same proxy code (gateway.maton.ai Slack example); B adds security note and service list
+V044,D,3,Same oc-expanso-json-to-yaml text in two repos: all 70 long lines identical
+V046,U,3,Same name planejar only: roadmap-phase tactical plan vs 8-phase product planning methodology; no shared text
+V048,D,3,Same content-research-writer skill: 270 of 271 long lines identical; B adds article-writing-guide rule
+V050,T,3,Winbda placeholder scaffold; only name/description differ (intent data vs data strategy)
+V052,D,3,"Two versions of changelog-generator: same Tier/Category header, workflows and --from-tag examples; B rewrites description"
+V054,D,3,"Renamed copy: CIRF vs CRIF crypto research framework; 179 of 182 lines identical, acronym swapped"
+V056,D,3,Same arckit-fr-ebios command: all 191 long lines identical
+V058,D,3,Same describe-pr skill adapted: identical template-reading steps; task paths changed (ai_docs/tasks + Linear vs .humanlayer/tasks)
+V060,T,3,GSD Windsurf adapter block shared; commands differ (autonomous vs new-project)
+V062,D,3,"superpowers test-driven-development: verbatim description, Iron Law and 'write the test first' lines; A condensed, B full"
+V064,D,3,B is the omni-skills intake wrapper of the same ai-wrapper-product skill: 285 shared lines of the imported body
+V066,T,3,"Claudeception auto-extracted skill skeleton (same Problem/Use Case prompt, verification lines); different corrections captured"
+V068,D,3,Two versions of portfolio-risk-engine in one repo: 85 of 89 long lines identical
+V070,D,3,Same signup-flow-cro marketing skill: 206 of 207 long lines identical; B adds metadata header
+V072,D,3,Two versions of OpenSpec archive-change: same steps and input rules; delta-spec step reworded (informational vs sync prompt)
+V074,D,3,Same gstack investigate skill: shared description and four-phase method; A is a renamed Windows port (gs:investigate) with python boot script
+V076,D,3,"superpowers subagent-driven-development: same when_to_use digraph and two-stage review; A condensed, B extended"
+V078,T,3,"German legal catalog: shared BGB anchor lines (§§ 241, 242, 280); topics differ (air-passenger edge cases vs law-study methods)"
+V080,D,3,"Renamed copies of the multi-agent review command: 123 shared lines ('Multi-Agent Code Review Orchestration Tool', agent types, code)"
+V082,D,3,Installer copies of GSD ns-project: identical body incl. '#2790' deletion note; only gsd- name prefix differs
+V084,D,3,Two versions of wayfinder: same destination/ticket/map-labelling text; descriptions reworded
+V086,D,2,"Same replayio plugin, pro vs base package: shared worker/critic loop, agent-browser code, auth-wall and install steps; could be a shared plugin section"
+V088,D,3,"Renamed rework of Railway's use-railway: verbatim command block with aligned comments, context-check and reporting rules"
+V090,D,3,B is the omni-skills intake wrapper of the same building-native-ui Expo skill: 151 shared lines
+V092,D,3,Same documentation-templates skill: 64 of 67 long lines identical; B adds an API example
+V094,D,3,"Two versions of speckit-analyze: same analysis steps; A adds extension-hook checks, B adds repo-specific guidance"
+V096,D,3,Same conducting-cloud-penetration-testing skill: all 161 long lines identical
+V098,T,3,zwright8 warfighter cell series: shared output-format lines; missions differ (clearance finances vs military housing)
+V100,T,3,FinClaw fund-skill catalog (Chinese): shared input-requirement lines; tasks differ (filing review vs peer comparison)
+V102,D,3,"Anthropic skill-creator (older version): 159 shared lines ('onboarding guides' framing, anatomy); B adds interactive Q&A mode"
+V104,D,3,Two spec-kit specify installs: 162 shared lines; script paths differ (powershell .specify.specify vs bash)
+V106,D,3,B is the omni-skills intake wrapper of the same monte-carlo-monitor-creation skill: 102 shared lines
+V108,D,3,Same gstack guard skill: identical description and freeze/careful bash; analytics path ~ vs . and safety advisory differ
+V110,D,3,"Two versions of industrial-brutalist-ui: same skill meta, typography and telemetry rules; A adds when-to-use, B adds colour/framing sections"
+V112,U,3,Same name harness-export only: harness.yaml exporter vs oh-my-customcodex export-plan generator; no shared text
+V114,D,3,"Same cloud cost-optimize skill: 21 of 24 long lines identical; A adds Rei Skills branding, B Obsidian tags"
+V116,D,3,Same himalaya email CLI skill: all 98 long lines of A in B; B adds v1.2 folder-alias notes
+V118,D,3,Same impeccable shape skill: identical discovery interview and brief; /impeccable vs $impeccable invocation (Claude vs Codex)
