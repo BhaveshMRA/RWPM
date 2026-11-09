@@ -25,7 +25,8 @@ paper/
   results_full/          results of the full-dataset run: RQ1-RQ3, statistics, provenance, validation, figures
   results_sample_final/  final results of the sample-scale run (sample macros used in Sections 5-6 of the paper)
   results_phase3_semantic/  embedding experiment (Phase 3, not part of the final model)
-  results/               default output folder of the scripts (currently a copy of results_sample_final/)
+  results/               tables, macros and figures the paper includes (copies from results_full/ and results_sample_final/)
+  main.tex, references.bib, Images/   paper source (Overleaf export); main.pdf is the submitted Phase 3 paper
 requirements-full.txt    pinned versions used for all runs
 requirements-lock.txt    complete environment of our Windows machine (sample runs, embedding experiment)
 requirements-mac.txt     complete environment of the machine that ran the full-dataset pipeline

@@ -1,9 +1,0 @@
-pandas>=2.0
-numpy>=1.24
-scikit-learn>=1.2
-scipy>=1.10
-networkx>=3.0
-datasketch>=1.5
-rapidfuzz>=3.0
-sentence-transformers>=2.2
-matplotlib>=3.7
