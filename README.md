@@ -26,7 +26,7 @@ paper/
   results_sample_final/  final results of the sample-scale run (sample macros used in Sections 5-6 of the paper)
   results_phase3_semantic/  embedding experiment (Phase 3, not part of the final model)
   results/               tables, macros and figures the paper includes (copies from results_full/ and results_sample_final/)
-  main.tex, references.bib, Images/   paper source (Overleaf export); main.pdf is the submitted Phase 3 paper
+  main.tex, references.bib, Images/   paper source (Overleaf export); main.pdf is the submitted Phase 3 paper   
 requirements-full.txt    pinned versions used for all runs
 requirements-lock.txt    complete environment of our Windows machine (sample runs, embedding experiment)
 requirements-mac.txt     complete environment of the machine that ran the full-dataset pipeline
@@ -141,6 +141,7 @@ reports the agreement, the precision of the predicted links with a 95% confidenc
 - Fenced code blocks are parsed as in CommonMark (fence length and indentation respected, unclosed fences run to the end).
 - The sample keeps each skill in at most two candidate pairs and each name in at most four; the 20 random pairs were drawn without the skill limit, so one skill appears in a third pair (P0044, P0145, P0096).
 - The version of the code and results reported in the Phase 3 paper is tagged `phase3`.
+- Rerunning the sample pipeline on Linux with the pinned versions gives identical decisions for every baseline and for logistic regression; the tree models differ in one of 400 out-of-fold decisions (gradient boosting: P0141, random forest: P0297) because of floating-point differences between platforms, which moves the sample-scale F1 of gradient boosting from 0.944 to 0.950. All sample values used in the paper are identical.
 
 ## Data
 
