@@ -22,13 +22,13 @@ labeling/
   html/                  side-by-side viewer, one complete page per pair
   validation/            kit for checking predicted links on the full dataset (created by step 15)
 paper/
-  results/               tables, macros and figures the paper includes
-  results_sample_final/  final results of the sample-scale run
-  results_full/          results of the full-dataset run
-  results_phase2_400/    Phase 2 model on 400 pairs (for comparison)
+  results_full/          results of the full-dataset run: RQ1-RQ3, statistics, provenance, validation, figures
+  results_sample_final/  final results of the sample-scale run (sample macros used in Sections 5-6 of the paper)
   results_phase3_semantic/  embedding experiment (Phase 3, not part of the final model)
+  results/               default output folder of the scripts (currently a copy of results_sample_final/)
 requirements-full.txt    pinned versions used for all runs
-requirements-lock.txt    complete environment of our Windows machine, including the embedding experiment
+requirements-lock.txt    complete environment of our Windows machine (sample runs, embedding experiment)
+requirements-mac.txt     complete environment of the machine that ran the full-dataset pipeline
 ```
 
 ## Setup
@@ -106,6 +106,8 @@ mkdir -p "$SKILL_WORK" "$SKILL_RESULTS"
 | 6-9 | `python 06_rq1_rq2.py`, `python 07_rq3.py`, `python 08_stats.py`, `python 09_whitebox.py` | as in Part 1 | 30-60 min |
 | 14 | `python 14_provenance.py --db ~/gitskills/agent_skills_release.db` | provenance evidence for the labelled pairs | 1 min |
 | 15 | `python 15_validate_edges.py --make --annotators Bhavesh,Abhishek,Mahima,Pratiksha` | validation kit for predicted links | minutes |
+| 16 | `python 16_edge_diagnostics.py` | where the predicted links come from: bands, names, hubs, largest components | 10-20 min |
+| 7 | `python 07_rq3.py --same-name-only` | conservative RQ3 variant: families from same-name links only (files `*_samename*`) | 10-20 min |
 
 Differences from the sample run, all deliberate:
 
@@ -135,6 +137,9 @@ reports the agreement, the precision of the predicted links with a 95% confidenc
 - Candidate pairs of the sample run are frozen in `labeling/candidates.csv`; the labelled sample is stored by content hash in `labeling/pairs.csv`.
 - Threshold tuning rounds scores before choosing a threshold, so tiny floating-point differences between machines cannot change baseline decisions.
 - The labelling viewer shows complete skills; `03b_render_viewer.py` rebuilds it from `pairs.csv` without resampling.
+- Fenced code blocks are parsed as in CommonMark (fence length and indentation respected, unclosed fences run to the end).
+- The sample keeps each skill in at most two candidate pairs and each name in at most four; the 20 random pairs were drawn without the skill limit, so one skill appears in a third pair (P0044, P0145, P0096).
+- The version of the code and results reported in the Phase 3 paper is tagged `phase3`.
 
 ## Data
 
@@ -143,4 +148,4 @@ GitSkills: Destefanis, Graziotin, Vaccargiu and Ortu, *GitSkills: A Dataset of A
 
 ## Use of AI tools
 
-We used an AI assistant (Claude Opus 5.5, Anthropic) for brainstorming the research direction; for searching the literature, which led us to the Skill Constellations study (Seddik, arXiv:2610.11169); for help in debugging the analysis scripts, including the full-dataset scripts, and the approach figure; and for suggestions during the adjudication of disagreements, where the final decisions were ours. All labels were assigned by us, and we take full responsibility for the content of this repository and the paper.
+We used an AI assistant (Claude Opus 5.5, Anthropic) for brainstorming the research direction; for searching the literature, which led us to the Skill Constellations study (Seddik, arXiv:2610.11169); for help in debugging the analysis scripts, including the full-dataset scripts, and assisting with the approach overview figure; for a review of labels and notes after the annotators had finished labelling, which changed some confidence values and notes but no labels; and for suggestions during the adjudication of disagreements, where the final decisions were ours. All labels were assigned by the authors, and the authors take full responsibility for the content of this paper.
