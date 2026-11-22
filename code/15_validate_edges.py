@@ -38,8 +38,12 @@ ap.add_argument("--score", action="store_true")
 ap.add_argument("--annotators", default="Bhavesh,Abhishek,Mahima,Pratiksha")
 ap.add_argument("--edges", type=int, default=80)
 ap.add_argument("--decoys", type=int, default=40)
+ap.add_argument("--kit", default="validation", help="kit folder under labeling/ (use a new name for a new round)")
+ap.add_argument("--prefix", default="ResVal", help="macro prefix of the scores")
+ap.add_argument("--id-prefix", default="V", help="first letter of the pair ids")
 args = ap.parse_args()
-VDIR = LABEL_DIR / "validation"
+VDIR = LABEL_DIR / args.kit
+OUT = "validation" if args.kit == "validation" else args.kit
 MAP = {"d": "derived", "derived": "derived", "t": "template", "template": "template",
        "u": "unrelated", "unrelated": "unrelated"}
 
@@ -70,7 +74,7 @@ if args.make:
     V = V.sample(frac=1, random_state=SEED).reset_index(drop=True)
     swap = rng.random(len(V)) < 0.5
     V.loc[swap, ["sha_a", "sha_b"]] = V.loc[swap, ["sha_b", "sha_a"]].values
-    V["pair_id"] = [f"V{k:03d}" for k in range(len(V))]
+    V["pair_id"] = [f"{args.id_prefix}{k:03d}" for k in range(len(V))]
     ann = [a.strip() for a in args.annotators.split(",") if a.strip()]
     teams = [(ann[k], ann[k + 1]) for k in range(0, len(ann), 2)]
     V["ann_1"] = [teams[k % len(teams)][0] for k in range(len(V))]
@@ -165,11 +169,13 @@ if args.score:
             mac[f"ResValPrec{key}"] = f"{kk / len(sub):.2f}"
             mac[f"ResValPrec{key}Lo"], mac[f"ResValPrec{key}Hi"] = f"{l2:.2f}", f"{h2:.2f}"
             print(f"  {key:9s}: {kk}/{len(sub)} = {kk / len(sub):.3f} [95% CI {l2:.3f}, {h2:.3f}]")
-    (RESULTS / "macros_validation.tex").write_text(
+    if args.prefix != "ResVal":
+        mac = {k.replace("ResVal", args.prefix, 1): v for k, v in mac.items()}
+    (RESULTS / f"macros_{OUT}.tex").write_text(
         "\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
     json.dump({"pairs": len(V), "edges": n, "confirmed": k, "precision": k / n, "ci": [lo, hi], "kappa": kappa,
                "decoys_derived": int((D.final == "derived").sum()), "decoys": len(D),
                "confirmed_diff_name": float((conf.name_equal == 0).mean()) if len(conf) else None, "split": split},
-              open(RESULTS / "validation.json", "w"), indent=2)
+              open(RESULTS / f"{OUT}.json", "w"), indent=2)
     print(f"kappa={kappa:.3f}; precision of predicted links = {k}/{n} = {k / n:.3f} [95% CI {lo:.3f}, {hi:.3f}]; "
           f"derived among decoys = {int((D.final == 'derived').sum())}/{len(D)}")

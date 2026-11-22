@@ -21,12 +21,13 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--boiler-k", type=int, default=5)
 ap.add_argument("--num-perm", type=int, default=128)
 ap.add_argument("--chunk", type=int, default=5000)
+ap.add_argument("--boiler-only", action="store_true", help="recompute only the boilerplate lines (keeps minhash.npy untouched)")
 args = ap.parse_args()
 
 t0 = time.time()
 con = sqlite3.connect(WORK / "full_skills.db")
 N = con.execute("SELECT COUNT(*) FROM skills").fetchone()[0]
-sig = np.lib.format.open_memmap(WORK / "minhash.npy", mode="w+", dtype=np.uint64, shape=(N, args.num_perm))
+sig = None if args.boiler_only else np.lib.format.open_memmap(WORK / "minhash.npy", mode="w+", dtype=np.uint64, shape=(N, args.num_perm))
 
 
 def h64(text):
@@ -40,10 +41,11 @@ while True:
     rows = cur.fetchmany(args.chunk)
     if not rows:
         break
-    batch = [[x.encode("utf8") for x in shingles(body)] or [b""] for _, _, _, body in rows]
-    mhs = MinHash.bulk(batch, num_perm=args.num_perm, seed=SEED)
-    ids = [r[0] for r in rows]
-    sig[ids[0]:ids[-1] + 1] = np.vstack([m.hashvalues for m in mhs])
+    if sig is not None:
+        batch = [[x.encode("utf8") for x in shingles(body)] or [b""] for _, _, _, body in rows]
+        mhs = MinHash.bulk(batch, num_perm=args.num_perm, seed=SEED)
+        ids = [r[0] for r in rows]
+        sig[ids[0]:ids[-1] + 1] = np.vstack([m.hashvalues for m in mhs])
     for _, sha, nname, body in rows:
         ls = norm_lines(body)
         if ls:
@@ -53,7 +55,8 @@ while True:
     done += len(rows)
     print(f"\r{done:,}/{N:,} skills hashed ({time.time() - t0:.0f}s)", end="", flush=True)
 print()
-sig.flush()
+if sig is not None:
+    sig.flush()
 
 # boilerplate: lines carried by >= k distinct names
 pairs = np.empty(sum(len(p) for p in line_parts), dtype=[("line", np.uint64), ("name", np.uint64)])
@@ -81,4 +84,4 @@ while True:
 pickle.dump(boiler, open(WORK / "boiler_lines.pkl", "wb"))
 (RESULTS / "macros_full_features.tex").write_text(
     rf"\renewcommand{{\ResFullBoilerLines}}{{{fmt_int(len(boiler))}}}" + "\n")
-print(f"boilerplate lines: {len(boiler):,}; wrote minhash.npy and boiler_lines.pkl in {time.time() - t0:.0f}s")
+print(f"boilerplate lines: {len(boiler):,}; wrote {'' if args.boiler_only else 'minhash.npy and '}boiler_lines.pkl in {time.time() - t0:.0f}s")

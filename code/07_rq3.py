@@ -18,8 +18,10 @@ from common import ALL_FEATURES, RESULTS, SEED, WORK, fmt_int, fmt_pct
 ap = argparse.ArgumentParser()
 ap.add_argument("--same-name-only", action="store_true",
                 help="conservative variant: build families only from predicted links between skills with the same name")
+ap.add_argument("--hub-degree", type=int, default=0,
+                help="limit links through hubs: a skill with more than this many predicted links keeps only its same-name links (0 = off)")
 args = ap.parse_args()
-SUF = "_samename" if args.same_name_only else ""
+SUF = ("_samename" if args.same_name_only else "") + (f"_hub{args.hub_degree}" if args.hub_degree else "")
 
 MAKE = {
     "Ours (logistic regression)": lambda: make_pipeline(StandardScaler(), LogisticRegression(class_weight="balanced", max_iter=5000)),
@@ -46,6 +48,12 @@ if "sha_a" not in edges.columns:  # full-dataset run (step 13) stores row ids in
 print(f"{len(allp)} candidate pairs scored, {len(edges)} predicted derived")
 if args.same_name_only:
     edges = edges[edges.name_equal == 1]
+if args.hub_degree:
+    deg = pd.concat([edges.sha_a, edges.sha_b]).value_counts()
+    hubs = set(deg.index[deg > args.hub_degree])
+    through_hub = edges.sha_a.isin(hubs) | edges.sha_b.isin(hubs)
+    print(f"hub limit {args.hub_degree}: {len(hubs):,} hubs; dropping {int((through_hub & (edges.name_equal == 0)).sum()):,} different-name links through them")
+    edges = edges[~through_hub | (edges.name_equal == 1)]
     print(f"same-name variant: {len(edges)} links kept")
 
 G = nx.Graph()
@@ -122,8 +130,9 @@ mac = {"ResGoldDerivedDiffName": fmt_pct(hidden_gold), "ResEdgesDiffName": fmt_p
        "ResGiniHash": f"{H['gini']:.2f}", "ResGiniFam": f"{Fm['gini']:.2f}",
        "ResCrossHash": fmt_pct(H["cross_owner_units"]), "ResCrossFam": fmt_pct(Fm["cross_owner_units"]),
        "ResOrient": fmt_pct(orient)}
-if args.same_name_only:
-    mac = {k.replace("Res", "ResSN", 1): v for k, v in mac.items()}
+if args.same_name_only or args.hub_degree:
+    pre = ("SN" if args.same_name_only else "") + ("HB" if args.hub_degree else "")
+    mac = {k.replace("Res", "Res" + pre, 1): v for k, v in mac.items()}
 (RESULTS / f"macros_rq3{SUF}.tex").write_text(
     "\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
 json.dump({"hash": H, "family": Fm, "population_hash": P, "orientation_coverage": orient, "connected_components": n_cc, "largest_cc": largest_cc}, open(RESULTS / f"rq3{SUF}.json", "w"), indent=2)

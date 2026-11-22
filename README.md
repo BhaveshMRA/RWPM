@@ -22,7 +22,8 @@ labeling/
   html/                  side-by-side viewer, one complete page per pair
   validation/            kit for checking predicted links on the full dataset (created by step 15)
 paper/
-  results_full/          results of the full-dataset run: RQ1-RQ3, statistics, provenance, validation, figures
+  results_full/          results of the full-dataset run: RQ1-RQ3, statistics, provenance, validation, copy-network comparison, figures
+  results_full_k410/     Phase 4 variant: boilerplate threshold scaled to the corpus (k = 410)
   results_sample_final/  final results of the sample-scale run (sample macros used in Sections 5-6 of the paper)
   results_phase3_semantic/  embedding experiment (Phase 3, not part of the final model)
   results/               tables, macros and figures the paper includes (copies from results_full/ and results_sample_final/)
@@ -119,6 +120,32 @@ Differences from the sample run, all deliberate:
 On the sample database, steps 10-13 reproduce the features of steps 1-5 exactly (same 11,009 skills, 2,476 boilerplate lines, 4,352 MinHash pairs, identical gold features), so the two runs differ only in scale.
 
 If step 12 prints more than about 40 million candidate pairs, rerun it with `--max-bucket 30 --anchors 3` before step 13. If step 13 runs out of memory, lower `--workers`, or delete `work_full/full_models.pkl` and use a smaller `--fit-size`.
+
+## Part 3: Phase 4 analyses
+
+These run on the full-dataset work folder of Part 2. `run_phase4_mac.sh` runs all of them in order, logs every step to `gitskills/phase4_log.txt` and stops at the first error; if the work folder of Part 2 is missing, it rebuilds it first (results of the rebuild go to `paper/results_full_rerun/`, so committed results are never overwritten):
+
+```bash
+caffeinate -i bash code/run_phase4_mac.sh ~/gitskills/agent_skills_release.db
+```
+
+| Step | Command | What it does |
+|---|---|---|
+| 17 | `python 17_copy_network.py --all-links` | joins the gold set, the validation sample and every predicted link with the dated copy network of Seddik (Skill Constellations, release data-v1.0, CC BY 4.0; downloaded once, 591 MB): how many are dated by commits, how many the network connects, time between first appearances |
+| 7 | `python 07_rq3.py --hub-degree 50` | RQ3 with links through hubs limited: a skill with more than 50 predicted links keeps only its same-name links (files `*_hub50*`) |
+| 18 | `python 18_stress_kit.py --make` / `--score` | stress test on cross-language and heavily reworked same-name pairs (30 of each), labelled like the gold set in `labeling/stress/` |
+| 11-17 | see the script | the whole pipeline with the boilerplate threshold scaled to the corpus (5 names on 9,944 names in the sample, so 410 on 815,488 in the release), in its own folders `gitskills/work_full_k410` and `paper/results_full_k410` |
+
+As for the validation kit, do not open `labeling/stress/pairs.csv` while labelling: it contains the model's predictions. It is committed only after scoring.
+
+GitSkills identifies files by their git blob hash (`file_sha` is the SHA-1 of the git blob of the content), as the copy network does, so the two join directly. The variant was compared with a rule fixed before the run: it replaces the k = 5 model only if its gold-set F1 is at least as high and fewer of the five largest all-links components join different skills.
+
+**Finding the edited relatives of a skill.** `find_relatives.py` applies the method of the paper to any skill: give it a skill folder (or its `SKILL.md`), and it lists the skills of the release that are probably edited copies or sources of it, with the probability of the RQ1 model. It uses the same two blockers, step 13's own feature code and the best RQ1 model, so it needs the work folder of a full-pipeline run (on the official sample, steps 10-13 and 6 take about ten minutes):
+
+```bash
+export SKILL_WORK=~/gitskills/work_full SKILL_RESULTS=../paper/results_full
+python find_relatives.py path/to/my-skill/ --top 20 --out relatives.csv
+```
 
 ## Labelling
 
