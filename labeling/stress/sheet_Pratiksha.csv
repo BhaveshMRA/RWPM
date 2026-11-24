@@ -1,31 +1,31 @@
 pair_id,label,confidence,note
-S001,,,
-S003,,,
-S005,,,
-S007,,,
-S009,,,
-S011,,,
-S013,,,
-S015,,,
-S017,,,
-S019,,,
-S021,,,
-S023,,,
-S025,,,
-S027,,,
-S029,,,
-S031,,,
-S033,,,
-S035,,,
-S037,,,
-S039,,,
-S041,,,
-S043,,,
-S045,,,
-S047,,,
-S049,,,
-S051,,,
-S053,,,
-S055,,,
-S057,,,
-S059,,,
+S001,D,3,Chinese localization keeps the call-preparation sequence and the same detailed English account snapshot and agenda output template.
+S003,D,3,Same probability-analysis workflow and command examples. One version expands the SkillPay billing instructions.
+S005,U,3,"Same reset-and-seed goal. One is a project-specific MySQL reset, while the other covers a broader backup and migration workflow."
+S007,D,3,Nearly identical descriptions retain the same checks and three-way verdict. The longer version adapts the checklist for game development.
+S009,U,3,"Same shell-scripting topic. One is a command and recipe catalog, while the other centers on a mandatory ShellCheck editing workflow."
+S011,U,2,Same PDF toolkit title and short catalog description. The setup checklist and post-processing workflow provide no distinctive shared procedure.
+S013,D,3,"Portuguese and Chinese versions retain the same product toolkit, file paths, RICE command, and OKR cascade command."
+S015,U,2,"Both cover gh-aw and its standard conventions. The worked workflows, security guidance, and organization differ."
+S017,D,3,Same detailed Expo networking description and distinctive trigger list. One version condenses the implementation guidance into references.
+S019,U,3,One regenerates an internal AI-OS project digest. The other researches and writes a daily technology news digest.
+S021,U,2,"Both describe scGPT workflows. One gives a specific implementation and troubleshooting guide, while the other focuses on provenance and validation."
+S023,U,3,Both mention standard cache-aside patterns. One is a Python Redis pattern catalog and the other sets .NET conventions and key rules.
+S025,U,3,One delegates to a chain-loaded eight-phase process. The other defines an interactive workflow for writing a seven-section specification.
+S027,D,3,The short installer repeats the distinctive named Guardian components and framing from the longer base-skill guide.
+S029,D,3,"Same sequence of three named audit tiers, corresponding tool levels, and confidence-based triage. The timings and details change."
+S031,D,3,"Both locate an existing outline, gather user and research suggestions in parallel, and merge and deduplicate additions in place."
+S033,U,3,One is a broad Strava endpoint reference. The other gives runnable Python-client examples. Shared API terminology follows the service.
+S035,U,3,"One manages PB-000 artifacts and run histories. The other covers enterprise data governance, quality, and lifecycle management."
+S037,U,2,"Both author phased plans. Their document layouts, file boundaries, and criteria for completing a phase differ."
+S039,U,2,Same title and short catalog description. The body workflows differ and show no distinctive copied instructions.
+S041,D,2,Both reuse the same multi-line Workers and Puppeteer screenshot example with the same browser binding. The longer guide adds extensive reference material.
+S043,D,3,"Both retain the same GSD settings procedure and invocation variables, with different host-tool mappings."
+S045,U,3,One governs when and how to create reusable project skills. The other defines a Chalk-specific ownership and versioning workflow.
+S047,U,3,One specifies planning and validation deliverables. The other implements a detailed Godot save manager.
+S049,U,2,Shared React Native and Expo conventions are standard. One focuses on development references and the other on platform targets and project setup.
+S051,U,2,"The catalog name and short description match, while the detailed configuration example and generic maintenance stub differ."
+S053,D,3,"English and Chinese versions retain the same seven-step workflow, three output modes, and distinctive campfire command example."
+S055,D,3,"Chinese and English versions retain the same package versions, validation examples, and test assertion sequence."
+S057,D,3,"Same description, title, and distinctive limitations text. The shorter version reorganizes the source material into a reference map."
+S059,D,3,"Same detailed reviewer description, diagnostic examples, and review material. One version compresses the substantive guide."

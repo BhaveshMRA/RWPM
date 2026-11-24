@@ -1,31 +1,31 @@
 pair_id,label,confidence,note
-S001,,,
-S003,,,
-S005,,,
-S007,,,
-S009,,,
-S011,,,
-S013,,,
-S015,,,
-S017,,,
-S019,,,
-S021,,,
-S023,,,
-S025,,,
-S027,,,
-S029,,,
-S031,,,
-S033,,,
-S035,,,
-S037,,,
-S039,,,
-S041,,,
-S043,,,
-S045,,,
-S047,,,
-S049,,,
-S051,,,
-S053,,,
-S055,,,
-S057,,,
-S059,,,
+S001,D,3,Chinese translation with identical call preparation workflow and output format.
+S003,D,3,"Same analysis workflow, script commands, pricing and examples; billing instructions modified."
+S005,U,3,Same database reset topic but different configurations and implementation procedures.
+S007,D,3,Expanded adaptation retaining distinctive story-readiness requirements and verdict categories.
+S009,U,3,Common Bash practices but different workflows and objectives.
+S011,U,2,Same name and base description but different generic operational instructions; limited evidence.
+S013,D,3,Portuguese and Chinese versions retain identical toolkit paths and Python commands.
+S015,U,2,Same technology and security concepts but different examples and independently structured guidance.
+S017,D,3,Condensed adaptation retaining Expo networking triggers and topic structure.
+S019,U,3,Same name but different purposes: project snapshot versus AI news digest.
+S021,U,3,Same scGPT model but different technical instructions and analysis workflows.
+S023,U,3,Python Redis implementation versus .NET Redis development standards.
+S025,U,3,"Different specification generation processes, phases and output structures."
+S027,D,3,Abbreviated version retaining distinctive LYGO Guardian terminology.
+S029,D,3,"Same three-tier detection approach, bloat categories and prioritization framework."
+S031,D,3,"Same outline.yaml workflow, parallel candidate collection and deduplication steps."
+S033,U,3,Same Strava API but different authentication and implementation approaches.
+S035,U,3,Project deliverable management versus organizational data governance.
+S037,U,3,"Different planning architectures, document structures and validation mechanisms."
+S039,U,2,Same name and base description but different operational instructions.
+S041,U,2,Same Cloudflare API and conventional code patterns but different instructional structures.
+S043,D,3,Cursor and Codex adaptations of the same GSD settings workflow.
+S045,U,3,"Different skill creation processes, ownership rules and validation requirements."
+S047,U,3,General save-system planning versus specific Godot implementation.
+S049,U,3,Same React Native topic but different architecture recommendations and instructional content.
+S051,U,2,Same metadata description but different substantive instructions.
+S053,D,3,Classical Chinese translation retaining Commander.js examples and seven-step workflow.
+S055,D,3,"Translated adaptation retaining validation examples, package versions and testing patterns."
+S057,D,3,Condensed adaptation preserving distinctive Go-Rod guidance and limitations.
+S059,D,3,"Same PostgreSQL review workflow, diagnostic commands and responsibilities with minor edits."
