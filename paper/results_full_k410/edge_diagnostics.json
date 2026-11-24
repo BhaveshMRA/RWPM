@@ -1,0 +1,97 @@
+{
+  "candidates": 9022502,
+  "predicted_derived": 4294954,
+  "by_band": {
+    "B0": {
+      "candidates": 846557,
+      "derived": 253187
+    },
+    "B1": {
+      "candidates": 1772324,
+      "derived": 1601322
+    },
+    "B2": {
+      "candidates": 1636600,
+      "derived": 981812
+    },
+    "B3": {
+      "candidates": 2077973,
+      "derived": 702469
+    },
+    "B4": {
+      "candidates": 1883753,
+      "derived": 643998
+    },
+    "B5": {
+      "candidates": 805295,
+      "derived": 112166
+    }
+  },
+  "derived_same_name": 0.7720199098756354,
+  "derived_same_owner": 0.09017861425291167,
+  "derived_template_like": 8.149097755179683e-05,
+  "derived_proba_quantiles": {
+    "0.05": 0.9342977229946994,
+    "0.25": 0.9999812828593913,
+    "0.5": 0.9999994776612193,
+    "0.75": 0.9999999557564283
+  },
+  "derived_proba_ge_0.9": 0.9577520504294109,
+  "hubs": {
+    "max_degree_candidates": 5016,
+    "max_degree_derived": 944,
+    "share_of_derived_links_touching_top_0.1pct_skills": 0.11834678555346577
+  },
+  "largest_components": [
+    {
+      "size": 9090,
+      "links": 253335,
+      "distinct_names": 534,
+      "top_names": "gsd-complete-milestone, gsd-debug, gsd-progress, gsd-manager, gsd-review",
+      "share_same_name": 0.7970631772159393,
+      "share_template_like": 5.131545187202716e-05,
+      "median_proba": 0.9999987741342429,
+      "share_links_touching_hubs": 0.04777468569285728
+    },
+    {
+      "size": 4883,
+      "links": 186183,
+      "distinct_names": 275,
+      "top_names": "plan-eng-review, plan-ceo-review, review, office-hours, ship",
+      "share_same_name": 0.7727074974621743,
+      "share_template_like": 1.0742119312719206e-05,
+      "median_proba": 0.9999994565343042,
+      "share_links_touching_hubs": 0.017042372289629022
+    },
+    {
+      "size": 3931,
+      "links": 90488,
+      "distinct_names": 621,
+      "top_names": "frontend-design, ui-ux-pro-max, web-design-guidelines, design-taste-frontend, frontend-slides",
+      "share_same_name": 0.770610467686323,
+      "share_template_like": 0.0,
+      "median_proba": 0.9999980031726455,
+      "share_links_touching_hubs": 0.5405799664043851
+    },
+    {
+      "size": 2733,
+      "links": 126542,
+      "distinct_names": 223,
+      "top_names": "skill-creator, writing-skills, find-skills, skill-development, testing-skills-with-subagents",
+      "share_same_name": 0.7978299694962937,
+      "share_template_like": 0.0,
+      "median_proba": 0.999996605907819,
+      "share_links_touching_hubs": 0.7793301828641874
+    },
+    {
+      "size": 1739,
+      "links": 51521,
+      "distinct_names": 82,
+      "top_names": "impeccable, quieter, animate, colorize, distill",
+      "share_same_name": 0.7292366219599775,
+      "share_template_like": 0.0,
+      "median_proba": 0.9999997923069776,
+      "share_links_touching_hubs": 0.06872925603152112
+    }
+  ]
+}

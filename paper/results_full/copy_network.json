@@ -1,0 +1,70 @@
+{
+  "gold_derived": {
+    "n": 82,
+    "dated": 71,
+    "connected": 10,
+    "median_gap_days": 34.95135416666667,
+    "same_day": 3
+  },
+  "gold_template": {
+    "n": 240,
+    "dated": 239,
+    "connected": 5,
+    "median_gap_days": 0.0,
+    "same_day": 178
+  },
+  "gold_unrelated": {
+    "n": 78,
+    "dated": 68,
+    "connected": 1,
+    "median_gap_days": 44.602048611111115,
+    "same_day": 2
+  },
+  "validation_predicted": {
+    "n": 80,
+    "dated": 77,
+    "connected": 10,
+    "median_gap_days": 32.07414351851852,
+    "same_day": 5
+  },
+  "validation_confirmed": {
+    "n": 79,
+    "dated": 76,
+    "connected": 10,
+    "median_gap_days": 32.12050925925926,
+    "same_day": 4
+  },
+  "validation_confirmed_diffname": {
+    "n": 19,
+    "dated": 17,
+    "connected": 0,
+    "median_gap_days": 34.39068287037037,
+    "same_day": 0
+  },
+  "all_links": {
+    "n": 4058198,
+    "dated": 3681104,
+    "connected": 607375,
+    "median_gap_days": 34.87475694444444,
+    "same_day": 185411
+  },
+  "all_links_samename": {
+    "n": 3328640,
+    "dated": 3021680,
+    "connected": 589011,
+    "median_gap_days": 34.81646990740741,
+    "same_day": 142738
+  },
+  "all_links_diffname": {
+    "n": 729558,
+    "dated": 659424,
+    "connected": 18364,
+    "median_gap_days": 35.346608796296294,
+    "same_day": 42673
+  },
+  "history": {
+    "rows": 16222844,
+    "edit_edges": 5820545,
+    "components": 986381
+  }
+}

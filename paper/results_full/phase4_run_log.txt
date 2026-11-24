@@ -1,0 +1,391 @@
+=== Phase 4 run started Mon Nov 23 15:21:44 EST 2026; base folder /Users/bhavesh_maurya/SSWpaper/RWPM/gitskills/work_full
+=== Mon 15:21:44 : python 17_copy_network.py --all-links
+downloading https://github.com/FahdSeddik/Skill-Constellations/releases/download/data-v1.0/history.parquet (591 MB) ...
+Traceback (most recent call last):
+  File "/Users/bhavesh_maurya/SSWpaper/RWPM/code/17_copy_network.py", line 39, in <module>
+    urllib.request.urlretrieve(URL, hist)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.10/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 248, in urlretrieve
+    raise ContentTooShortError(
+        "retrieval incomplete: got only %i out of %i bytes"
+        % (read, size), result)
+urllib.error.ContentTooShortError: <urlopen error retrieval incomplete: got only 576716800 out of 591010985 bytes>
+=== Phase 4 run started Mon Nov 23 16:07:38 EST 2026; base folder /Users/bhavesh_maurya/SSWpaper/RWPM/gitskills/work_full
+=== Mon 16:07:38 : python 17_copy_network.py --all-links
+4,058,198 predicted links (36s)
+history rows 16,222,844; edit edges 5,820,545; components 986,381 (262s)
+{
+ "gold_derived": {
+  "n": 82,
+  "dated": 71,
+  "connected": 10,
+  "median_gap_days": 34.95135416666667,
+  "same_day": 3
+ },
+ "gold_template": {
+  "n": 240,
+  "dated": 239,
+  "connected": 5,
+  "median_gap_days": 0.0,
+  "same_day": 178
+ },
+ "gold_unrelated": {
+  "n": 78,
+  "dated": 68,
+  "connected": 1,
+  "median_gap_days": 44.602048611111115,
+  "same_day": 2
+ },
+ "validation_predicted": {
+  "n": 80,
+  "dated": 77,
+  "connected": 10,
+  "median_gap_days": 32.07414351851852,
+  "same_day": 5
+ },
+ "validation_confirmed": {
+  "n": 79,
+  "dated": 76,
+  "connected": 10,
+  "median_gap_days": 32.12050925925926,
+  "same_day": 4
+ },
+ "validation_confirmed_diffname": {
+  "n": 19,
+  "dated": 17,
+  "connected": 0,
+  "median_gap_days": 34.39068287037037,
+  "same_day": 0
+ },
+ "all_links": {
+  "n": 4058198,
+  "dated": 3681104,
+  "connected": 607375,
+  "median_gap_days": 34.87475694444444,
+  "same_day": 185411
+ },
+ "all_links_samename": {
+  "n": 3328640,
+  "dated": 3021680,
+  "connected": 589011,
+  "median_gap_days": 34.81646990740741,
+  "same_day": 142738
+ },
+ "all_links_diffname": {
+  "n": 729558,
+  "dated": 659424,
+  "connected": 18364,
+  "median_gap_days": 35.346608796296294,
+  "same_day": 42673
+ }
+}
+wrote copy_network.json, macros_copy_network.tex, copy_network_examples.csv (272s)
+=== Mon 16:12:11 : python 07_rq3.py --hub-degree 50
+9022502 candidate pairs scored, 4058198 predicted derived
+hub limit 50: 39,446 hubs; dropping 369,805 different-name links through them
+same-name variant: 3688393 links kept
+{
+ "hash": {
+  "units": 1586429,
+  "occurrences": 3341056,
+  "singleton_share": 0.7960097804566104,
+  "max_occurrences": 1409,
+  "gini": 0.49109870667255817,
+  "top1pct_share": 0.27012986313309323,
+  "cross_owner_units": 0.13422913978501402,
+  "cross_owner_occ": 0.5233138863880162
+ },
+ "family": {
+  "units": 1123299,
+  "occurrences": 3341056,
+  "singleton_share": 0.7425218040788784,
+  "max_occurrences": 6551,
+  "gini": 0.6249018685561647,
+  "top1pct_share": 0.4157449022105586,
+  "cross_owner_units": 0.1624580810630117,
+  "cross_owner_occ": 0.6555852401157
+ },
+ "orient": 0.06585198486169994,
+ "largest_cc": 2016,
+ "largest_family": 1063
+}
+=== Mon 16:15:11 : python 18_stress_kit.py --make
+cross-language: 151,539 eligible same-name pairs
+reworked: 71,784 eligible same-name pairs
+wrote 60 pairs to /Users/bhavesh_maurya/SSWpaper/RWPM/labeling/stress; 30 pairs per annotator
+=== Mon 16:19:49 : python 11_full_index.py --boiler-only --boiler-k 410
+5,000/1,586,429 skills hashed (0s)10,000/1,586,429 skills hashed (0s)15,000/1,586,429 skills hashed (0s)20,000/1,586,429 skills hashed (0s)25,000/1,586,429 skills hashed (1s)30,000/1,586,429 skills hashed (1s)35,000/1,586,429 skills hashed (1s)40,000/1,586,429 skills hashed (1s)45,000/1,586,429 skills hashed (1s)50,000/1,586,429 skills hashed (1s)55,000/1,586,429 skills hashed (1s)60,000/1,586,429 skills hashed (1s)65,000/1,586,429 skills hashed (2s)70,000/1,586,429 skills hashed (2s)75,000/1,586,429 skills hashed (2s)80,000/1,586,429 skills hashed (2s)85,000/1,586,429 skills hashed (2s)90,000/1,586,429 skills hashed (2s)95,000/1,586,429 skills hashed (3s)100,000/1,586,429 skills hashed (3s)105,000/1,586,429 skills hashed (3s)110,000/1,586,429 skills hashed (3s)115,000/1,586,429 skills hashed (4s)120,000/1,586,429 skills hashed (4s)125,000/1,586,429 skills hashed (4s)130,000/1,586,429 skills hashed (4s)135,000/1,586,429 skills hashed (4s)140,000/1,586,429 skills hashed (5s)145,000/1,586,429 skills hashed (5s)150,000/1,586,429 skills hashed (5s)155,000/1,586,429 skills hashed (5s)160,000/1,586,429 skills hashed (6s)165,000/1,586,429 skills hashed (6s)170,000/1,586,429 skills hashed (6s)175,000/1,586,429 skills hashed (6s)180,000/1,586,429 skills hashed (7s)185,000/1,586,429 skills hashed (7s)190,000/1,586,429 skills hashed (7s)195,000/1,586,429 skills hashed (7s)200,000/1,586,429 skills hashed (8s)205,000/1,586,429 skills hashed (8s)210,000/1,586,429 skills hashed (8s)215,000/1,586,429 skills hashed (9s)220,000/1,586,429 skills hashed (9s)225,000/1,586,429 skills hashed (9s)230,000/1,586,429 skills hashed (10s)235,000/1,586,429 skills hashed (10s)240,000/1,586,429 skills hashed (10s)245,000/1,586,429 skills hashed (11s)250,000/1,586,429 skills hashed (11s)255,000/1,586,429 skills hashed (11s)260,000/1,586,429 skills hashed (12s)265,000/1,586,429 skills hashed (12s)270,000/1,586,429 skills hashed (12s)275,000/1,586,429 skills hashed (13s)280,000/1,586,429 skills hashed (13s)285,000/1,586,429 skills hashed (13s)290,000/1,586,429 skills hashed (14s)295,000/1,586,429 skills hashed (14s)300,000/1,586,429 skills hashed (14s)305,000/1,586,429 skills hashed (15s)310,000/1,586,429 skills hashed (15s)315,000/1,586,429 skills hashed (16s)320,000/1,586,429 skills hashed (16s)325,000/1,586,429 skills hashed (16s)330,000/1,586,429 skills hashed (17s)335,000/1,586,429 skills hashed (17s)340,000/1,586,429 skills hashed (18s)345,000/1,586,429 skills hashed (18s)350,000/1,586,429 skills hashed (18s)355,000/1,586,429 skills hashed (19s)360,000/1,586,429 skills hashed (19s)365,000/1,586,429 skills hashed (20s)370,000/1,586,429 skills hashed (20s)375,000/1,586,429 skills hashed (21s)380,000/1,586,429 skills hashed (21s)385,000/1,586,429 skills hashed (21s)390,000/1,586,429 skills hashed (22s)395,000/1,586,429 skills hashed (22s)400,000/1,586,429 skills hashed (23s)405,000/1,586,429 skills hashed (23s)410,000/1,586,429 skills hashed (24s)415,000/1,586,429 skills hashed (24s)420,000/1,586,429 skills hashed (25s)425,000/1,586,429 skills hashed (25s)430,000/1,586,429 skills hashed (26s)435,000/1,586,429 skills hashed (26s)440,000/1,586,429 skills hashed (27s)445,000/1,586,429 skills hashed (27s)450,000/1,586,429 skills hashed (28s)455,000/1,586,429 skills hashed (28s)460,000/1,586,429 skills hashed (29s)465,000/1,586,429 skills hashed (29s)470,000/1,586,429 skills hashed (30s)475,000/1,586,429 skills hashed (30s)480,000/1,586,429 skills hashed (31s)485,000/1,586,429 skills hashed (31s)490,000/1,586,429 skills hashed (32s)495,000/1,586,429 skills hashed (32s)500,000/1,586,429 skills hashed (33s)505,000/1,586,429 skills hashed (33s)510,000/1,586,429 skills hashed (34s)515,000/1,586,429 skills hashed (34s)520,000/1,586,429 skills hashed (35s)525,000/1,586,429 skills hashed (36s)530,000/1,586,429 skills hashed (36s)535,000/1,586,429 skills hashed (37s)540,000/1,586,429 skills hashed (38s)545,000/1,586,429 skills hashed (38s)550,000/1,586,429 skills hashed (39s)555,000/1,586,429 skills hashed (40s)560,000/1,586,429 skills hashed (41s)565,000/1,586,429 skills hashed (41s)570,000/1,586,429 skills hashed (42s)575,000/1,586,429 skills hashed (43s)580,000/1,586,429 skills hashed (44s)585,000/1,586,429 skills hashed (45s)590,000/1,586,429 skills hashed (45s)595,000/1,586,429 skills hashed (46s)600,000/1,586,429 skills hashed (47s)605,000/1,586,429 skills hashed (48s)610,000/1,586,429 skills hashed (49s)615,000/1,586,429 skills hashed (49s)620,000/1,586,429 skills hashed (50s)625,000/1,586,429 skills hashed (51s)630,000/1,586,429 skills hashed (52s)635,000/1,586,429 skills hashed (53s)640,000/1,586,429 skills hashed (54s)645,000/1,586,429 skills hashed (55s)650,000/1,586,429 skills hashed (55s)655,000/1,586,429 skills hashed (56s)660,000/1,586,429 skills hashed (57s)665,000/1,586,429 skills hashed (58s)670,000/1,586,429 skills hashed (59s)675,000/1,586,429 skills hashed (60s)680,000/1,586,429 skills hashed (61s)685,000/1,586,429 skills hashed (62s)690,000/1,586,429 skills hashed (63s)695,000/1,586,429 skills hashed (64s)700,000/1,586,429 skills hashed (65s)705,000/1,586,429 skills hashed (66s)710,000/1,586,429 skills hashed (67s)715,000/1,586,429 skills hashed (68s)720,000/1,586,429 skills hashed (69s)725,000/1,586,429 skills hashed (70s)730,000/1,586,429 skills hashed (71s)735,000/1,586,429 skills hashed (72s)740,000/1,586,429 skills hashed (73s)745,000/1,586,429 skills hashed (74s)750,000/1,586,429 skills hashed (76s)755,000/1,586,429 skills hashed (77s)760,000/1,586,429 skills hashed (78s)765,000/1,586,429 skills hashed (79s)770,000/1,586,429 skills hashed (80s)775,000/1,586,429 skills hashed (81s)780,000/1,586,429 skills hashed (82s)785,000/1,586,429 skills hashed (84s)790,000/1,586,429 skills hashed (85s)795,000/1,586,429 skills hashed (86s)800,000/1,586,429 skills hashed (87s)805,000/1,586,429 skills hashed (88s)810,000/1,586,429 skills hashed (90s)815,000/1,586,429 skills hashed (91s)820,000/1,586,429 skills hashed (92s)825,000/1,586,429 skills hashed (93s)830,000/1,586,429 skills hashed (94s)835,000/1,586,429 skills hashed (96s)840,000/1,586,429 skills hashed (97s)845,000/1,586,429 skills hashed (98s)850,000/1,586,429 skills hashed (99s)855,000/1,586,429 skills hashed (101s)860,000/1,586,429 skills hashed (102s)865,000/1,586,429 skills hashed (103s)870,000/1,586,429 skills hashed (105s)875,000/1,586,429 skills hashed (106s)880,000/1,586,429 skills hashed (107s)885,000/1,586,429 skills hashed (109s)890,000/1,586,429 skills hashed (110s)895,000/1,586,429 skills hashed (111s)900,000/1,586,429 skills hashed (113s)905,000/1,586,429 skills hashed (114s)910,000/1,586,429 skills hashed (115s)915,000/1,586,429 skills hashed (117s)920,000/1,586,429 skills hashed (118s)925,000/1,586,429 skills hashed (120s)930,000/1,586,429 skills hashed (121s)935,000/1,586,429 skills hashed (123s)940,000/1,586,429 skills hashed (124s)945,000/1,586,429 skills hashed (126s)950,000/1,586,429 skills hashed (127s)955,000/1,586,429 skills hashed (129s)960,000/1,586,429 skills hashed (130s)965,000/1,586,429 skills hashed (132s)970,000/1,586,429 skills hashed (133s)975,000/1,586,429 skills hashed (135s)980,000/1,586,429 skills hashed (137s)985,000/1,586,429 skills hashed (138s)990,000/1,586,429 skills hashed (140s)995,000/1,586,429 skills hashed (141s)1,000,000/1,586,429 skills hashed (143s)1,005,000/1,586,429 skills hashed (145s)1,010,000/1,586,429 skills hashed (146s)1,015,000/1,586,429 skills hashed (148s)1,020,000/1,586,429 skills hashed (150s)1,025,000/1,586,429 skills hashed (152s)1,030,000/1,586,429 skills hashed (153s)1,035,000/1,586,429 skills hashed (155s)1,040,000/1,586,429 skills hashed (157s)1,045,000/1,586,429 skills hashed (159s)1,050,000/1,586,429 skills hashed (160s)1,055,000/1,586,429 skills hashed (162s)1,060,000/1,586,429 skills hashed (164s)1,065,000/1,586,429 skills hashed (166s)1,070,000/1,586,429 skills hashed (168s)1,075,000/1,586,429 skills hashed (170s)1,080,000/1,586,429 skills hashed (171s)1,085,000/1,586,429 skills hashed (173s)1,090,000/1,586,429 skills hashed (175s)1,095,000/1,586,429 skills hashed (177s)1,100,000/1,586,429 skills hashed (179s)1,105,000/1,586,429 skills hashed (181s)1,110,000/1,586,429 skills hashed (183s)1,115,000/1,586,429 skills hashed (185s)1,120,000/1,586,429 skills hashed (187s)1,125,000/1,586,429 skills hashed (189s)1,130,000/1,586,429 skills hashed (191s)1,135,000/1,586,429 skills hashed (193s)1,140,000/1,586,429 skills hashed (195s)1,145,000/1,586,429 skills hashed (197s)1,150,000/1,586,429 skills hashed (199s)1,155,000/1,586,429 skills hashed (201s)1,160,000/1,586,429 skills hashed (204s)1,165,000/1,586,429 skills hashed (206s)1,170,000/1,586,429 skills hashed (208s)1,175,000/1,586,429 skills hashed (210s)1,180,000/1,586,429 skills hashed (212s)1,185,000/1,586,429 skills hashed (215s)1,190,000/1,586,429 skills hashed (217s)1,195,000/1,586,429 skills hashed (219s)1,200,000/1,586,429 skills hashed (222s)1,205,000/1,586,429 skills hashed (224s)1,210,000/1,586,429 skills hashed (227s)1,215,000/1,586,429 skills hashed (229s)1,220,000/1,586,429 skills hashed (232s)1,225,000/1,586,429 skills hashed (234s)1,230,000/1,586,429 skills hashed (237s)1,235,000/1,586,429 skills hashed (239s)1,240,000/1,586,429 skills hashed (242s)1,245,000/1,586,429 skills hashed (245s)1,250,000/1,586,429 skills hashed (247s)1,255,000/1,586,429 skills hashed (250s)1,260,000/1,586,429 skills hashed (253s)1,265,000/1,586,429 skills hashed (255s)1,270,000/1,586,429 skills hashed (258s)1,275,000/1,586,429 skills hashed (261s)1,280,000/1,586,429 skills hashed (264s)1,285,000/1,586,429 skills hashed (266s)1,290,000/1,586,429 skills hashed (269s)1,295,000/1,586,429 skills hashed (272s)1,300,000/1,586,429 skills hashed (275s)1,305,000/1,586,429 skills hashed (278s)1,310,000/1,586,429 skills hashed (281s)1,315,000/1,586,429 skills hashed (284s)1,320,000/1,586,429 skills hashed (288s)1,325,000/1,586,429 skills hashed (291s)1,330,000/1,586,429 skills hashed (295s)1,335,000/1,586,429 skills hashed (298s)1,340,000/1,586,429 skills hashed (302s)1,345,000/1,586,429 skills hashed (305s)1,350,000/1,586,429 skills hashed (309s)1,355,000/1,586,429 skills hashed (312s)1,360,000/1,586,429 skills hashed (316s)1,365,000/1,586,429 skills hashed (320s)1,370,000/1,586,429 skills hashed (323s)1,375,000/1,586,429 skills hashed (327s)1,380,000/1,586,429 skills hashed (331s)1,385,000/1,586,429 skills hashed (334s)1,390,000/1,586,429 skills hashed (338s)1,395,000/1,586,429 skills hashed (342s)1,400,000/1,586,429 skills hashed (347s)1,405,000/1,586,429 skills hashed (351s)1,410,000/1,586,429 skills hashed (355s)1,415,000/1,586,429 skills hashed (359s)1,420,000/1,586,429 skills hashed (363s)1,425,000/1,586,429 skills hashed (368s)1,430,000/1,586,429 skills hashed (372s)1,435,000/1,586,429 skills hashed (377s)1,440,000/1,586,429 skills hashed (382s)1,445,000/1,586,429 skills hashed (386s)1,450,000/1,586,429 skills hashed (391s)1,455,000/1,586,429 skills hashed (397s)1,460,000/1,586,429 skills hashed (402s)1,465,000/1,586,429 skills hashed (407s)1,470,000/1,586,429 skills hashed (413s)1,475,000/1,586,429 skills hashed (419s)1,480,000/1,586,429 skills hashed (426s)1,485,000/1,586,429 skills hashed (433s)1,490,000/1,586,429 skills hashed (440s)1,495,000/1,586,429 skills hashed (449s)1,500,000/1,586,429 skills hashed (458s)1,505,000/1,586,429 skills hashed (469s)1,510,000/1,586,429 skills hashed (484s)1,515,000/1,586,429 skills hashed (490s)1,520,000/1,586,429 skills hashed (491s)1,525,000/1,586,429 skills hashed (492s)1,530,000/1,586,429 skills hashed (493s)1,535,000/1,586,429 skills hashed (494s)1,540,000/1,586,429 skills hashed (495s)1,545,000/1,586,429 skills hashed (496s)1,550,000/1,586,429 skills hashed (498s)1,555,000/1,586,429 skills hashed (499s)1,560,000/1,586,429 skills hashed (500s)1,565,000/1,586,429 skills hashed (501s)1,570,000/1,586,429 skills hashed (502s)1,575,000/1,586,429 skills hashed (503s)1,580,000/1,586,429 skills hashed (505s)1,585,000/1,586,429 skills hashed (506s)1,586,429/1,586,429 skills hashed (506s)
+boilerplate line hashes: 1,866 (592s)
+boilerplate lines: 1,866; wrote boiler_lines.pkl in 1082s
+=== Mon 16:37:51 : python 13_full_features.py --pairs gold
+fitting corpus models ...
+models fitted on 50,601 skills; 1,866 boilerplate lines (149s)
+wrote /Users/bhavesh_maurya/SSWpaper/RWPM/gitskills/work_full_k410/features_gold.pkl (400 rows) in 151s
+=== Mon 16:40:24 : python 06_rq1_rq2.py
+400 gold pairs, derived=82, three-class mode=True
+Normalised-text hash                          P=0.714 R=0.061 F1=0.112 MCC=0.168 F1_sd=0.067 hiFP=0.013
+Shingle Jaccard (MinHash), tuned threshold    P=0.458 R=0.537 F1=0.494 MCC=0.353 F1_sd=0.126 hiFP=0.327
+TF-IDF cosine, tuned threshold                P=0.588 R=0.366 F1=0.451 MCC=0.363 F1_sd=0.081 hiFP=0.132
+SkillReuse-style (re-implemented)             P=0.729 R=0.756 F1=0.743 MCC=0.675 F1_sd=0.049 hiFP=0.101
+Ours (logistic regression)                    P=0.938 R=0.915 F1=0.926 MCC=0.907 F1_sd=0.060 hiFP=0.013
+Ours (random forest)                          P=0.949 R=0.915 F1=0.932 MCC=0.915 F1_sd=0.038 hiFP=0.013
+Ours (gradient boosting)                      P=0.975 R=0.939 F1=0.957 MCC=0.946 F1_sd=0.034 hiFP=0.000
+best baseline: SkillReuse-style (re-implemented) | best ours: Ours (gradient boosting) | top ablation drop: without metadata
+=== Mon 16:41:15 : python 08_stats.py
+Ours (gradient boosting) vs SkillReuse-style (re-implemented): ours right only 38, baseline right only 2, McNemar p=1.5e-09
+F1 difference 95% CI: [0.144, 0.293]
+wrote rq1_stats.tex, macros_stats.tex
+=== Mon 16:41:15 : python 13_full_features.py --pairs all --workers 4
+chunk 1/452 (39s)chunk 2/452 (39s)chunk 3/452 (39s)chunk 4/452 (39s)chunk 5/452 (44s)chunk 6/452 (44s)chunk 7/452 (44s)chunk 8/452 (45s)chunk 9/452 (48s)chunk 10/452 (50s)chunk 11/452 (50s)chunk 12/452 (51s)chunk 13/452 (54s)chunk 14/452 (56s)chunk 15/452 (58s)chunk 16/452 (58s)chunk 17/452 (61s)chunk 18/452 (63s)chunk 19/452 (64s)chunk 20/452 (64s)chunk 21/452 (66s)chunk 22/452 (69s)chunk 23/452 (72s)chunk 24/452 (74s)chunk 25/452 (75s)chunk 26/452 (79s)chunk 27/452 (83s)chunk 28/452 (86s)chunk 29/452 (88s)chunk 30/452 (92s)chunk 31/452 (94s)chunk 32/452 (94s)chunk 33/452 (94s)chunk 34/452 (101s)chunk 35/452 (102s)chunk 36/452 (103s)chunk 37/452 (106s)chunk 38/452 (113s)chunk 39/452 (113s)chunk 40/452 (113s)chunk 41/452 (118s)chunk 42/452 (120s)chunk 43/452 (121s)chunk 44/452 (123s)chunk 45/452 (127s)chunk 46/452 (129s)chunk 47/452 (131s)chunk 48/452 (132s)chunk 49/452 (132s)chunk 50/452 (140s)chunk 51/452 (142s)chunk 52/452 (142s)chunk 53/452 (142s)chunk 54/452 (153s)chunk 55/452 (153s)chunk 56/452 (153s)chunk 57/452 (154s)chunk 58/452 (166s)chunk 59/452 (166s)chunk 60/452 (167s)chunk 61/452 (168s)chunk 62/452 (178s)chunk 63/452 (182s)chunk 64/452 (182s)chunk 65/452 (183s)chunk 66/452 (196s)chunk 67/452 (196s)chunk 68/452 (196s)chunk 69/452 (197s)chunk 70/452 (210s)chunk 71/452 (210s)chunk 72/452 (210s)chunk 73/452 (210s)chunk 74/452 (218s)chunk 75/452 (218s)chunk 76/452 (218s)chunk 77/452 (220s)chunk 78/452 (224s)chunk 79/452 (226s)chunk 80/452 (226s)chunk 81/452 (231s)chunk 82/452 (236s)chunk 83/452 (239s)chunk 84/452 (239s)chunk 85/452 (240s)chunk 86/452 (247s)chunk 87/452 (251s)chunk 88/452 (251s)chunk 89/452 (253s)chunk 90/452 (261s)chunk 91/452 (264s)chunk 92/452 (266s)chunk 93/452 (267s)chunk 94/452 (274s)chunk 95/452 (278s)chunk 96/452 (280s)chunk 97/452 (283s)chunk 98/452 (289s)chunk 99/452 (293s)chunk 100/452 (296s)chunk 101/452 (299s)chunk 102/452 (309s)chunk 103/452 (313s)chunk 104/452 (316s)chunk 105/452 (321s)chunk 106/452 (330s)chunk 107/452 (333s)chunk 108/452 (335s)chunk 109/452 (340s)chunk 110/452 (351s)chunk 111/452 (353s)chunk 112/452 (355s)chunk 113/452 (363s)chunk 114/452 (375s)chunk 115/452 (375s)chunk 116/452 (380s)chunk 117/452 (382s)chunk 118/452 (395s)chunk 119/452 (397s)chunk 120/452 (403s)chunk 121/452 (407s)chunk 122/452 (419s)chunk 123/452 (422s)chunk 124/452 (429s)chunk 125/452 (433s)chunk 126/452 (443s)chunk 127/452 (443s)chunk 128/452 (451s)chunk 129/452 (455s)chunk 130/452 (464s)chunk 131/452 (465s)chunk 132/452 (471s)chunk 133/452 (476s)chunk 134/452 (485s)chunk 135/452 (485s)chunk 136/452 (491s)chunk 137/452 (496s)chunk 138/452 (508s)chunk 139/452 (508s)chunk 140/452 (513s)chunk 141/452 (519s)chunk 142/452 (530s)chunk 143/452 (530s)chunk 144/452 (530s)chunk 145/452 (534s)chunk 146/452 (534s)chunk 147/452 (552s)chunk 148/452 (552s)chunk 149/452 (552s)chunk 150/452 (555s)chunk 151/452 (571s)chunk 152/452 (571s)chunk 153/452 (571s)chunk 154/452 (571s)chunk 155/452 (576s)chunk 156/452 (581s)chunk 157/452 (581s)chunk 158/452 (584s)chunk 159/452 (591s)chunk 160/452 (594s)chunk 161/452 (597s)chunk 162/452 (598s)chunk 163/452 (607s)chunk 164/452 (608s)chunk 165/452 (610s)chunk 166/452 (611s)chunk 167/452 (620s)chunk 168/452 (621s)chunk 169/452 (623s)chunk 170/452 (626s)chunk 171/452 (633s)chunk 172/452 (637s)chunk 173/452 (637s)chunk 174/452 (640s)chunk 175/452 (647s)chunk 176/452 (650s)chunk 177/452 (650s)chunk 178/452 (655s)chunk 179/452 (660s)chunk 180/452 (662s)chunk 181/452 (663s)chunk 182/452 (668s)chunk 183/452 (675s)chunk 184/452 (676s)chunk 185/452 (677s)chunk 186/452 (683s)chunk 187/452 (693s)chunk 188/452 (693s)chunk 189/452 (693s)chunk 190/452 (699s)chunk 191/452 (710s)chunk 192/452 (713s)chunk 193/452 (714s)chunk 194/452 (721s)chunk 195/452 (733s)chunk 196/452 (738s)chunk 197/452 (738s)chunk 198/452 (745s)chunk 199/452 (756s)chunk 200/452 (763s)chunk 201/452 (763s)chunk 202/452 (767s)chunk 203/452 (779s)chunk 204/452 (791s)chunk 205/452 (792s)chunk 206/452 (792s)chunk 207/452 (803s)chunk 208/452 (815s)chunk 209/452 (819s)chunk 210/452 (819s)chunk 211/452 (830s)chunk 212/452 (841s)chunk 213/452 (844s)chunk 214/452 (844s)chunk 215/452 (857s)chunk 216/452 (870s)chunk 217/452 (870s)chunk 218/452 (874s)chunk 219/452 (885s)chunk 220/452 (898s)chunk 221/452 (900s)chunk 222/452 (902s)chunk 223/452 (913s)chunk 224/452 (926s)chunk 225/452 (930s)chunk 226/452 (930s)chunk 227/452 (941s)chunk 228/452 (956s)chunk 229/452 (960s)chunk 230/452 (960s)chunk 231/452 (971s)chunk 232/452 (989s)chunk 233/452 (989s)chunk 234/452 (993s)chunk 235/452 (1001s)chunk 236/452 (1013s)chunk 237/452 (1019s)chunk 238/452 (1024s)chunk 239/452 (1036s)chunk 240/452 (1045s)chunk 241/452 (1053s)chunk 242/452 (1056s)chunk 243/452 (1069s)chunk 244/452 (1079s)chunk 245/452 (1082s)chunk 246/452 (1087s)chunk 247/452 (1100s)chunk 248/452 (1114s)chunk 249/452 (1116s)chunk 250/452 (1126s)chunk 251/452 (1136s)chunk 252/452 (1151s)chunk 253/452 (1154s)chunk 254/452 (1163s)chunk 255/452 (1166s)chunk 256/452 (1189s)chunk 257/452 (1192s)chunk 258/452 (1211s)chunk 259/452 (1212s)chunk 260/452 (1238s)chunk 261/452 (1242s)chunk 262/452 (1262s)chunk 263/452 (1262s)chunk 264/452 (1289s)chunk 265/452 (1289s)chunk 266/452 (1306s)chunk 267/452 (1308s)chunk 268/452 (1334s)chunk 269/452 (1334s)chunk 270/452 (1350s)chunk 271/452 (1350s)chunk 272/452 (1362s)chunk 273/452 (1381s)chunk 274/452 (1381s)chunk 275/452 (1397s)chunk 276/452 (1407s)chunk 277/452 (1427s)chunk 278/452 (1427s)chunk 279/452 (1442s)chunk 280/452 (1455s)chunk 281/452 (1472s)chunk 282/452 (1472s)chunk 283/452 (1492s)chunk 284/452 (1510s)chunk 285/452 (1525s)chunk 286/452 (1525s)chunk 287/452 (1546s)chunk 288/452 (1575s)chunk 289/452 (1586s)chunk 290/452 (1589s)chunk 291/452 (1600s)chunk 292/452 (1630s)chunk 293/452 (1643s)chunk 294/452 (1643s)chunk 295/452 (1652s)chunk 296/452 (1683s)chunk 297/452 (1697s)chunk 298/452 (1697s)chunk 299/452 (1698s)chunk 300/452 (1737s)chunk 301/452 (1744s)chunk 302/452 (1746s)chunk 303/452 (1746s)chunk 304/452 (1796s)chunk 305/452 (1797s)chunk 306/452 (1800s)chunk 307/452 (1805s)chunk 308/452 (1860s)chunk 309/452 (1862s)chunk 310/452 (1862s)chunk 311/452 (1862s)chunk 312/452 (1918s)chunk 313/452 (1918s)chunk 314/452 (1918s)chunk 315/452 (1918s)chunk 316/452 (1963s)chunk 317/452 (1970s)chunk 318/452 (1970s)chunk 319/452 (1970s)chunk 320/452 (2015s)chunk 321/452 (2015s)chunk 322/452 (2016s)chunk 323/452 (2019s)chunk 324/452 (2071s)chunk 325/452 (2078s)chunk 326/452 (2078s)chunk 327/452 (2078s)chunk 328/452 (2142s)chunk 329/452 (2142s)chunk 330/452 (2142s)chunk 331/452 (2144s)chunk 332/452 (2208s)chunk 333/452 (2210s)chunk 334/452 (2213s)chunk 335/452 (2219s)chunk 336/452 (2288s)chunk 337/452 (2292s)chunk 338/452 (2292s)chunk 339/452 (2294s)chunk 340/452 (2359s)chunk 341/452 (2359s)chunk 342/452 (2359s)chunk 343/452 (2359s)chunk 344/452 (2441s)chunk 345/452 (2441s)chunk 346/452 (2442s)chunk 347/452 (2442s)chunk 348/452 (2497s)chunk 349/452 (2497s)chunk 350/452 (2497s)chunk 351/452 (2505s)chunk 352/452 (2576s)chunk 353/452 (2576s)chunk 354/452 (2576s)chunk 355/452 (2576s)chunk 356/452 (2650s)chunk 357/452 (2650s)chunk 358/452 (2650s)chunk 359/452 (2650s)chunk 360/452 (2716s)chunk 361/452 (2726s)chunk 362/452 (2726s)chunk 363/452 (2726s)chunk 364/452 (2789s)chunk 365/452 (2795s)chunk 366/452 (2796s)chunk 367/452 (2796s)chunk 368/452 (2867s)chunk 369/452 (2867s)chunk 370/452 (2867s)chunk 371/452 (2876s)chunk 372/452 (2982s)chunk 373/452 (2982s)chunk 374/452 (2990s)chunk 375/452 (2990s)chunk 376/452 (3115s)chunk 377/452 (3116s)chunk 378/452 (3116s)chunk 379/452 (3116s)chunk 380/452 (3186s)chunk 381/452 (3219s)chunk 382/452 (3219s)chunk 383/452 (3219s)chunk 384/452 (3281s)chunk 385/452 (3282s)chunk 386/452 (3284s)chunk 387/452 (3289s)chunk 388/452 (3420s)chunk 389/452 (3422s)chunk 390/452 (3422s)chunk 391/452 (3422s)chunk 392/452 (3530s)chunk 393/452 (3541s)chunk 394/452 (3541s)chunk 395/452 (3541s)chunk 396/452 (3653s)chunk 397/452 (3654s)chunk 398/452 (3654s)chunk 399/452 (3654s)chunk 400/452 (3761s)chunk 401/452 (3769s)chunk 402/452 (3777s)chunk 403/452 (3850s)chunk 404/452 (3928s)chunk 405/452 (3934s)chunk 406/452 (3934s)chunk 407/452 (3939s)chunk 408/452 (4030s)chunk 409/452 (4041s)chunk 410/452 (4202s)chunk 411/452 (4202s)chunk 412/452 (4207s)chunk 413/452 (4207s)chunk 414/452 (4363s)chunk 415/452 (4498s)chunk 416/452 (4498s)chunk 417/452 (4498s)chunk 418/452 (4630s)chunk 419/452 (4630s)chunk 420/452 (4630s)chunk 421/452 (4719s)chunk 422/452 (4733s)chunk 423/452 (4733s)chunk 424/452 (4879s)chunk 425/452 (5038s)chunk 426/452 (5038s)chunk 427/452 (5038s)chunk 428/452 (5050s)chunk 429/452 (5427s)chunk 430/452 (5427s)chunk 431/452 (5427s)chunk 432/452 (5427s)chunk 433/452 (5598s)chunk 434/452 (5630s)chunk 435/452 (5934s)chunk 436/452 (5934s)chunk 437/452 (5934s)chunk 438/452 (5981s)chunk 439/452 (6091s)chunk 440/452 (6345s)chunk 441/452 (6345s)chunk 442/452 (6345s)chunk 443/452 (6349s)chunk 444/452 (6489s)chunk 445/452 (6489s)chunk 446/452 (6556s)chunk 447/452 (6568s)chunk 448/452 (6577s)chunk 449/452 (6577s)chunk 450/452 (6577s)chunk 451/452 (6577s)chunk 452/452 (6577s)
+wrote /Users/bhavesh_maurya/SSWpaper/RWPM/gitskills/work_full_k410/features_all.pkl (9,022,502 rows) in 6583s
+=== Mon 18:31:00 : python 07_rq3.py
+9022502 candidate pairs scored, 4294954 predicted derived
+{
+ "hash": {
+  "units": 1586429,
+  "occurrences": 3341056,
+  "singleton_share": 0.7960097804566104,
+  "max_occurrences": 1409,
+  "gini": 0.49109870667255817,
+  "top1pct_share": 0.27012986313309323,
+  "cross_owner_units": 0.13422913978501402,
+  "cross_owner_occ": 0.5233138863880162
+ },
+ "family": {
+  "units": 1113186,
+  "occurrences": 3341056,
+  "singleton_share": 0.7446796851559399,
+  "max_occurrences": 10057,
+  "gini": 0.6289297202351407,
+  "top1pct_share": 0.42385311709830664,
+  "cross_owner_units": 0.16152556715589309,
+  "cross_owner_occ": 0.6569213446287641
+ },
+ "orient": 0.06507776334740721,
+ "largest_cc": 9090,
+ "largest_family": 3828
+}
+=== Mon 18:34:19 : python 07_rq3.py --same-name-only
+9022502 candidate pairs scored, 4294954 predicted derived
+{
+ "hash": {
+  "units": 1586429,
+  "occurrences": 3341056,
+  "singleton_share": 0.7960097804566104,
+  "max_occurrences": 1409,
+  "gini": 0.49109870667255817,
+  "top1pct_share": 0.27012986313309323,
+  "cross_owner_units": 0.13422913978501402,
+  "cross_owner_occ": 0.5233138863880162
+ },
+ "family": {
+  "units": 1174716,
+  "occurrences": 3341056,
+  "singleton_share": 0.7512249769305943,
+  "max_occurrences": 6367,
+  "gini": 0.6104469054508396,
+  "top1pct_share": 0.40126235537506705,
+  "cross_owner_units": 0.15958240119313946,
+  "cross_owner_occ": 0.6432568026396445
+ },
+ "orient": 0.06733779883527002,
+ "largest_cc": 1483,
+ "largest_family": 967
+}
+=== Mon 18:36:56 : python 07_rq3.py --hub-degree 50
+9022502 candidate pairs scored, 4294954 predicted derived
+hub limit 50: 43,057 hubs; dropping 526,656 different-name links through them
+same-name variant: 3768298 links kept
+{
+ "hash": {
+  "units": 1586429,
+  "occurrences": 3341056,
+  "singleton_share": 0.7960097804566104,
+  "max_occurrences": 1409,
+  "gini": 0.49109870667255817,
+  "top1pct_share": 0.27012986313309323,
+  "cross_owner_units": 0.13422913978501402,
+  "cross_owner_occ": 0.5233138863880162
+ },
+ "family": {
+  "units": 1118680,
+  "occurrences": 3341056,
+  "singleton_share": 0.7444371938355919,
+  "max_occurrences": 10057,
+  "gini": 0.6269225258747116,
+  "top1pct_share": 0.4197421414067887,
+  "cross_owner_units": 0.16184163478385238,
+  "cross_owner_occ": 0.6554568375986515
+ },
+ "orient": 0.06517292422202278,
+ "largest_cc": 5986,
+ "largest_family": 1058
+}
+=== Mon 18:40:08 : python 16_edge_diagnostics.py
+{
+  "candidates": 9022502,
+  "predicted_derived": 4294954,
+  "by_band": {
+    "B0": {
+      "candidates": 846557,
+      "derived": 253187
+    },
+    "B1": {
+      "candidates": 1772324,
+      "derived": 1601322
+    },
+    "B2": {
+      "candidates": 1636600,
+      "derived": 981812
+    },
+    "B3": {
+      "candidates": 2077973,
+      "derived": 702469
+    },
+    "B4": {
+      "candidates": 1883753,
+      "derived": 643998
+    },
+    "B5": {
+      "candidates": 805295,
+      "derived": 112166
+    }
+  },
+  "derived_same_name": 0.7720199098756354,
+  "derived_same_owner": 0.09017861425291167,
+  "derived_template_like": 8.149097755179683e-05,
+  "derived_proba_quantiles": {
+    "0.05": 0.9342977229946994,
+    "0.25": 0.9999812828593913,
+    "0.5": 0.9999994776612193,
+    "0.75": 0.9999999557564283
+  },
+  "derived_proba_ge_0.9": 0.9577520504294109,
+  "hubs": {
+    "max_degree_candidates": 5016,
+    "max_degree_derived": 944,
+    "share_of_derived_links_touching_top_0.1pct_skills": 0.11834678555346577
+  },
+  "largest_components": [
+    {
+      "size": 9090,
+      "links": 253335,
+      "distinct_names": 534,
+      "top_names": "gsd-complete-milestone, gsd-debug, gsd-progress, gsd-manager, gsd-review",
+      "share_same_name": 0.7970631772159393,
+      "share_template_like": 5.131545187202716e-05,
+      "median_proba": 0.9999987741342429,
+      "share_links_touching_hubs": 0.04777468569285728
+    },
+    {
+      "size": 4883,
+      "links": 186183,
+      "distinct_names": 275,
+      "top_names": "plan-eng-review, plan-ceo-review, review, office-hours, ship",
+      "share_same_name": 0.7727074974621743,
+      "share_template_like": 1.0742119312719206e-05,
+      "median_proba": 0.9999994565343042,
+      "share_links_touching_hubs": 0.017042372289629022
+    },
+    {
+      "size": 3931,
+      "links": 90488,
+      "distinct_names": 621,
+      "top_names": "frontend-design, ui-ux-pro-max, web-design-guidelines, design-taste-frontend, frontend-slides",
+      "share_same_name": 0.770610467686323,
+      "share_template_like": 0.0,
+      "median_proba": 0.9999980031726455,
+      "share_links_touching_hubs": 0.5405799664043851
+    },
+    {
+      "size": 2733,
+      "links": 126542,
+      "distinct_names": 223,
+      "top_names": "skill-creator, writing-skills, find-skills, skill-development, testing-skills-with-subagents",
+      "share_same_name": 0.7978299694962937,
+      "share_template_like": 0.0,
+      "median_proba": 0.999996605907819,
+      "share_links_touching_hubs": 0.7793301828641874
+    },
+    {
+      "size": 1739,
+      "links": 51521,
+      "distinct_names": 82,
+      "top_names": "impeccable, quieter, animate, colorize, distill",
+      "share_same_name": 0.7292366219599775,
+      "share_template_like": 0.0,
+      "median_proba": 0.9999997923069776,
+      "share_links_touching_hubs": 0.06872925603152112
+    }
+  ]
+}
+=== Mon 18:41:19 : python 17_copy_network.py --all-links --history /Users/bhavesh_maurya/SSWpaper/RWPM/gitskills/work_full/seddik_history.parquet
+4,294,954 predicted links (33s)
+history rows 16,222,844; edit edges 5,820,545; components 986,381 (259s)
+{
+ "gold_derived": {
+  "n": 82,
+  "dated": 71,
+  "connected": 10,
+  "median_gap_days": 34.95135416666667,
+  "same_day": 3
+ },
+ "gold_template": {
+  "n": 240,
+  "dated": 239,
+  "connected": 5,
+  "median_gap_days": 0.0,
+  "same_day": 178
+ },
+ "gold_unrelated": {
+  "n": 78,
+  "dated": 68,
+  "connected": 1,
+  "median_gap_days": 44.602048611111115,
+  "same_day": 2
+ },
+ "validation_predicted": {
+  "n": 80,
+  "dated": 77,
+  "connected": 10,
+  "median_gap_days": 32.07414351851852,
+  "same_day": 5
+ },
+ "validation_confirmed": {
+  "n": 79,
+  "dated": 76,
+  "connected": 10,
+  "median_gap_days": 32.12050925925926,
+  "same_day": 4
+ },
+ "validation_confirmed_diffname": {
+  "n": 19,
+  "dated": 17,
+  "connected": 0,
+  "median_gap_days": 34.39068287037037,
+  "same_day": 0
+ },
+ "all_links": {
+  "n": 4294954,
+  "dated": 3896692,
+  "connected": 606015,
+  "median_gap_days": 33.59212384259259,
+  "same_day": 265453
+ },
+ "all_links_samename": {
+  "n": 3315790,
+  "dated": 3009342,
+  "connected": 587118,
+  "median_gap_days": 34.83488425925926,
+  "same_day": 139553
+ },
+ "all_links_diffname": {
+  "n": 979164,
+  "dated": 887350,
+  "connected": 18897,
+  "median_gap_days": 28.7690625,
+  "same_day": 125900
+ }
+}
+wrote copy_network.json, macros_copy_network.tex, copy_network_examples.csv (269s)
+=== Phase 4 run finished Mon Nov 23 18:45:48 EST 2026
