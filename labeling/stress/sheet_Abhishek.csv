@@ -1,31 +1,31 @@
 pair_id,label,confidence,note
-S000,,,
-S002,,,
-S004,,,
-S006,,,
-S008,,,
-S010,,,
-S012,,,
-S014,,,
-S016,,,
-S018,,,
-S020,,,
-S022,,,
-S024,,,
-S026,,,
-S028,,,
-S030,,,
-S032,,,
-S034,,,
-S036,,,
-S038,,,
-S040,,,
-S042,,,
-S044,,,
-S046,,,
-S048,,,
-S050,,,
-S052,,,
-S054,,,
-S056,,,
-S058,,,
+S000,U,3,"Same name only: A is a uv CLI wrapper (gtex_cli.py subcommands, licence notice), B a python-requests API guide; no shared text"
+S002,U,3,"Same name only: systems-research feasibility review (clarifying questions, tier verdict, RESEARCH-IDEA.md) vs Chinese hypothesis pipeline with sub-skills; not a translation"
+S004,D,2,"Same name and verbatim description; A is a 'Local Skill' rework of Firebase's app-hosting skill: same Blaze-plan rule, App Hosting vs Hosting split, same references/configuration.md, cli_commands.md, emulation.md; no body line copied"
+S006,U,3,Same name only: English defect lifecycle with payroll P0 rule vs Chinese production RCA/5-Why analyst; not a translation
+S008,D,3,"A is a trimmed copy of the api-design skill: identical description, intro and URL-structure/status-code lines; B is the full version (strict subset)"
+S010,U,3,Same name only: Korean lateral doc/skill mirroring with user confirmation vs English symlink script making AGENTS.md the source of truth
+S012,U,3,Same name only: doc-drift audit prompt vs Japanese 5-step docs fix flow for one repo; no shared text
+S014,D,3,"B condenses ck:frontend-development: identical name/description, createFileRoute snippet, src/features/my-feature/api/myFeatureApi.ts layout and useSuspenseQuery example"
+S016,U,3,Same name only: KT transcript screenshot callouts vs Chinese legal-evidence keyframe extractor
+S018,U,3,Same topic (jj): share only a 'Key differences from Git' heading and two stock jj commands
+S020,U,3,Same API (Gamma): only the public-api.gamma.app generations URL is shared; different structure and auth handling
+S022,D,2,"Two versions of the youtube-to-markdown skill: same description and Step 0 check_existing.py flow with <YOUTUBE_URL> <output_directory>; A a 'combined variant' test, B adds channel browsing and subskills"
+S024,U,3,Both are placeholder skill templates but share no scaffold: Chinese multi-module template vs short English stub
+S026,D,3,"Same pollinations skill: shared 'Get free or paid keys at enter.pollinations.ai', 'Secret keys (sk_): server-side, no rate limits', scripts/chat.sh --model claude --temp 0.7"
+S028,D,2,B is a 13-line ClawHub install stub reusing A's name and the first clause of its description; nothing else (strict subset)
+S030,D,2,"Reworked Stitch enhance-prompt: same description clause ('enhances specificity, adds UI/UX keywords, injects design system context'), DESIGN.md step and prompting-guide URL; A restructured"
+S032,D,3,"Translated copy: kotlin-ktor-patterns with Chinese prose; 231 shared lines (project tree, Ktor code)"
+S034,D,3,"B is a cookiecutter launcher stub of the SnapLogic import-pipeline skill: identical description, 'agentic workflow' steps and required variables; A the full guide"
+S036,U,3,Same name only: SRD MDX codegen script vs Chinese Kitex/Hertz/Wire code generation
+S038,D,3,"Translated copy: security-review in Chinese; code examples identical (hardcoded sk-proj-xxxxx key, process.env lines)"
+S040,D,2,"Two catalog versions of managing-autonomous-development: description reworded (Claude to AI assistant), same /sugar-* commands and '--dry-run --once' advice; body regenerated"
+S042,D,3,Translated copy: host-header-injection testing in Chinese; curl Host-header payloads identical
+S044,U,3,Same name only: Chinese local sonar_client.py workflow vs generic SonarQube integration
+S046,U,3,Same name only: inference.sh HTML-to-image carousels vs generated-image carousel workflow
+S048,U,3,Same name only: pre-implementation 5-check confidence score vs Chinese answer self-review with confidence levels
+S050,U,3,Same API (Perplexity) only: OpenClaw search wrapper vs app-integration guide; no shared text
+S052,U,3,Same name only: Slack-to-Google-Sheets report (Chinese placeholders) vs Obsidian-to-PPTX weekly slide
+S054,U,3,Same name only: Chinese Why/Who/What/How design note for code changes vs English complexity-scaled design doc template
+S056,U,3,Same name only: photo intake pipeline step vs Japanese pre-commit code review
+S058,D,3,"Translated copy: Claude Code self-assessment in Chinese; same 10-area quiz, modes and trigger phrases ('where should I start')"

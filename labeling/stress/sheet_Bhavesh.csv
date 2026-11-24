@@ -1,31 +1,31 @@
 pair_id,label,confidence,note
-S000,,,
-S002,,,
-S004,,,
-S006,,,
-S008,,,
-S010,,,
-S012,,,
-S014,,,
-S016,,,
-S018,,,
-S020,,,
-S022,,,
-S024,,,
-S026,,,
-S028,,,
-S030,,,
-S032,,,
-S034,,,
-S036,,,
-S038,,,
-S040,,,
-S042,,,
-S044,,,
-S046,,,
-S048,,,
-S050,,,
-S052,,,
-S054,,,
-S056,,,
-S058,,,
+S000,U,2,"Same name/topic (GTEx); independently written, no shared text"
+S002,U,3,Same name; English systems-research evaluator vs Chinese hypothesis pipeline; different task
+S004,D,2,"Identical description; same Firebase App Hosting skill, body reworked"
+S006,U,3,Same name; lifecycle/triage skill vs Chinese RCA analyser; no shared text
+S008,D,3,"Same API-design skill; A is a trimmed version of B, shared URL structure and sections"
+S010,U,3,Same name; Korean harness sync vs symlink CLI script; different content
+S012,U,3,Same name; different method and wording; no shared text
+S014,D,3,Identical description and core principles/code; B is a condensed copy of A
+S016,U,3,Same name; KT-transcript screenshot callouts vs Chinese legal frame extraction
+S018,U,3,Same topic (jj) only; independent guides
+S020,U,2,Same Gamma API; only endpoint URL shared; independently written
+S022,D,2,Near-identical description and same extract/transcript step pipeline; variant of same skill
+S024,U,2,Both templates but no shared scaffolding (Chinese multi-module vs English minimal)
+S026,D,3,"Same Pollinations skill: shared API-key section, tips, script usage; A extended"
+S028,D,2,B is a stub keeping A's name and description; A is expanded
+S030,D,2,"Same Stitch prompt-enhancer: description reworded, same overview points and prompting guide link"
+S032,D,3,Near-verbatim copy (shingle Jaccard ~0.7)
+S034,D,3,"Identical description and same SnapLogic import skill; B agentic variant, A usage-table variant"
+S036,U,3,Same name; MDX data regeneration vs Kitex/Hertz codegen
+S038,D,3,Large verbatim overlap (security-review); copy with edits/translation of parts
+S040,D,2,"Same Sugar skill: description copied with wording swapped, overview reworded"
+S042,D,3,Same host-header-injection skill; B Chinese version with identical curl blocks
+S044,U,3,Same name; Chinese local-script tool vs Membrane CLI wrapper
+S046,U,3,Same name/topic; different structure and content
+S048,U,2,"Same name; criteria checklist vs self-review/uncertainty skill, no shared text"
+S050,U,3,Same API topic; SkillBoss wrapper vs Perplexity SDK guide
+S052,U,3,Same name; Slack-to-Sheets report vs Obsidian-to-PPTX report
+S054,U,3,Same name; Chinese Why/What/How doc vs English template doc
+S056,U,3,Same name; photo intake QA vs code quality review
+S058,D,3,"A is a Chinese translation of B (same description, triggers, 10-area quiz)"

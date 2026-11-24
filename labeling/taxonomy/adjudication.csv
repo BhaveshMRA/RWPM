@@ -1,0 +1,10 @@
+pair_id,ann1,v1,ann2,v2,final,reason
+P0278,Bhavesh,T-generator,Abhishek,T-series,T-series,different content on a shared skeleton (guide: series)
+P0284,Bhavesh,T-generator,Abhishek,T-series,T-series,different content on a shared skeleton (guide: series)
+P0019,Mahima,T-generator,Pratiksha,T-integration,T-integration,Composio/Rube catalog (guide: integration)
+P0039,Mahima,T-generator,Pratiksha,T-integration,T-integration,Composio/Rube catalog (guide: integration)
+P0061,Mahima,D-ported,Pratiksha,D-edited,D-ported,"agent-specific context paths rewritten (as P0092, P0108)"
+P0087,Mahima,D-ported,Pratiksha,D-renamed,D-renamed,"organisational adaptation, not a tool port; rename is the defining change"
+P0099,Mahima,T-preamble,Pratiksha,T-series,T-series,German legal practice skills are series throughout
+P0101,Mahima,D-edited,Pratiksha,D-ported,D-ported,"gsd-manager with rewritten paths (as P0060, P0169)"
+P0385,Mahima,T-preamble,Pratiksha,T-generator,T-generator,one framework with only the factor calculation filled in (slots)
