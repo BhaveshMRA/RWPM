@@ -15,10 +15,10 @@ S024,U,2,Both templates but no shared scaffolding (Chinese multi-module vs Engli
 S026,D,3,"Same Pollinations skill: shared API-key section, tips, script usage; A extended"
 S028,D,2,B is a stub keeping A's name and description; A is expanded
 S030,D,2,"Same Stitch prompt-enhancer: description reworded, same overview points and prompting guide link"
-S032,D,3,"Near-verbatim copy of kotlin-ktor-patterns; A's description is in Chinese, the body is the same English text and code, and the S038 note to Same security-review skill; B translates the description and part of the prose into Chinese, the code examples are identical"
+S032,D,3,"Near-verbatim copy of kotlin-ktor-patterns; A’s description is in Chinese, the body is the same English text and code"
 S034,D,3,"Identical description and same SnapLogic import skill; B agentic variant, A usage-table variant"
 S036,U,3,Same name; MDX data regeneration vs Kitex/Hertz codegen
-S038,D,3,"Same security-review skill; same sections, checklists and code examples, with small edits"
+S038,D,3,"Same security-review skill; B translates the description and part of the prose into Chinese, the code examples are identical"
 S040,D,2,"Same Sugar skill: description copied with wording swapped, overview reworded"
 S042,D,3,Same host-header-injection skill; B Chinese version with identical curl blocks
 S044,U,3,Same name; Chinese local-script tool vs Membrane CLI wrapper

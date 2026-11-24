@@ -15,7 +15,7 @@ S024,U,3,Both are placeholder skill templates but share no scaffold: Chinese mul
 S026,D,3,"Same pollinations skill: shared 'Get free or paid keys at enter.pollinations.ai', 'Secret keys (sk_): server-side, no rate limits', scripts/chat.sh --model claude --temp 0.7"
 S028,D,2,B is a 13-line ClawHub install stub reusing A's name and the first clause of its description; nothing else (strict subset)
 S030,D,2,"Reworked Stitch enhance-prompt: same description clause ('enhances specificity, adds UI/UX keywords, injects design system context'), DESIGN.md step and prompting-guide URL; A restructured"
-S032,D,3,"Translated copy: kotlin-ktor-patterns with Chinese prose; 231 shared lines (project tree, Ktor code)"
+S032,D,3,"Near-verbatim copy of kotlin-ktor-patterns; A’s description is in Chinese, the body is the same English text and code"
 S034,D,3,"B is a cookiecutter launcher stub of the SnapLogic import-pipeline skill: identical description, 'agentic workflow' steps and required variables; A the full guide"
 S036,U,3,Same name only: SRD MDX codegen script vs Chinese Kitex/Hertz/Wire code generation
 S038,D,3,"Translated copy: security-review in Chinese; code examples identical (hardcoded sk-proj-xxxxx key, process.env lines)"
