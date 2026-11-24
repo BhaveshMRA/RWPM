@@ -6,6 +6,7 @@
 The copy network (release data-v1.0, CC BY 4.0) lists every change to a SKILL.md in the git history of the GitSkills repositories, with the old and new git blob hash. GitSkills identifies a file by the same git blob hash, so our pairs join to it directly. Two skills are connected in the network when an edit path in that history joins their blobs; this is an upper bound on what its lineages link, because a lineage additionally keeps one front-matter name. Each skill is dated by the first commit that contains its blob. Writes results/copy_network.json, results/macros_copy_network.tex and results/copy_network_examples.csv.
 """
 import argparse
+import hashlib
 import json
 import time
 import urllib.request
@@ -32,11 +33,45 @@ def key(s):
     return int(s[:15], 16)
 
 
+SHA256 = "a8dae8c901c88b5802bd5528b146730630f757e325e8671f0dd4ce50a6b43787"  # published in the release's SHA256SUMS
+
+
+def sha256(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def download(target, tries=20):
+    """Download to <target>.part, resuming after interruptions, and keep the file only if its SHA-256 matches."""
+    part = target.with_name(target.name + ".part")
+    for attempt in range(1, tries + 1):
+        have = part.stat().st_size if part.exists() else 0
+        req = urllib.request.Request(URL, headers={"Range": f"bytes={have}-"} if have else {})
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r, open(part, "ab" if have and r.status == 206 else "wb") as f:
+                while block := r.read(1 << 20):
+                    f.write(block)
+            break
+        except OSError as e:
+            print(f"  download interrupted ({e}); resuming, attempt {attempt + 1} of {tries}")
+            time.sleep(5)
+    if sha256(part) != SHA256:
+        part.unlink()
+        raise SystemExit("downloaded history.parquet has the wrong SHA-256; deleted it, please run again")
+    part.rename(target)
+
+
 hist = Path(args.history)
+if hist.exists() and sha256(hist) != SHA256:
+    print(f"{hist} is incomplete or corrupt (SHA-256 mismatch); downloading it again")
+    hist.unlink()
 if not hist.exists():
     hist.parent.mkdir(parents=True, exist_ok=True)
     print(f"downloading {URL} (591 MB) ...")
-    urllib.request.urlretrieve(URL, hist)
+    download(hist)
 
 # pair sets
 gold = pd.read_csv(LABELS / "pairs.csv")[["pair_id", "sha_a", "sha_b", "band"]].merge(

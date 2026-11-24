@@ -48,13 +48,14 @@ if "sha_a" not in edges.columns:  # full-dataset run (step 13) stores row ids in
 print(f"{len(allp)} candidate pairs scored, {len(edges)} predicted derived")
 if args.same_name_only:
     edges = edges[edges.name_equal == 1]
+    print(f"same-name variant: {len(edges):,} links kept")
 if args.hub_degree:
     deg = pd.concat([edges.sha_a, edges.sha_b]).value_counts()
     hubs = set(deg.index[deg > args.hub_degree])
     through_hub = edges.sha_a.isin(hubs) | edges.sha_b.isin(hubs)
     print(f"hub limit {args.hub_degree}: {len(hubs):,} hubs; dropping {int((through_hub & (edges.name_equal == 0)).sum()):,} different-name links through them")
     edges = edges[~through_hub | (edges.name_equal == 1)]
-    print(f"same-name variant: {len(edges)} links kept")
+    print(f"hub variant: {len(edges):,} links kept")
 
 G = nx.Graph()
 G.add_nodes_from(skills.sha)
