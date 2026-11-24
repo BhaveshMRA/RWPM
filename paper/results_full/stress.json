@@ -1,0 +1,40 @@
+{
+  "kappa": 0.9662162162162162,
+  "pairs": 60,
+  "All": {
+    "n": 60,
+    "derived": 26,
+    "predicted": 27,
+    "true_positive": 23,
+    "recall": 0.8846153846153846,
+    "precision": 0.8518518518518519,
+    "recall_ci": [
+      0.7102409678828635,
+      0.9599675537638938
+    ]
+  },
+  "Cross": {
+    "n": 30,
+    "derived": 8,
+    "predicted": 9,
+    "true_positive": 8,
+    "recall": 1.0,
+    "precision": 0.8888888888888888,
+    "recall_ci": [
+      0.6755924351161198,
+      1.0
+    ]
+  },
+  "Rework": {
+    "n": 30,
+    "derived": 18,
+    "predicted": 18,
+    "true_positive": 15,
+    "recall": 0.8333333333333334,
+    "precision": 0.8333333333333334,
+    "recall_ci": [
+      0.6077796189608428,
+      0.9416342319413856
+    ]
+  }
+}
