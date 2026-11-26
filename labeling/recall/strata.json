@@ -1,0 +1,29 @@
+{
+  "strata": {
+    "B0": {
+      "population": 634175,
+      "sampled": 6
+    },
+    "B1": {
+      "population": 201085,
+      "sampled": 4
+    },
+    "B2": {
+      "population": 714056,
+      "sampled": 12
+    },
+    "B3": {
+      "population": 1439406,
+      "sampled": 12
+    },
+    "B4": {
+      "population": 1293065,
+      "sampled": 12
+    },
+    "B5": {
+      "population": 682517,
+      "sampled": 14
+    }
+  },
+  "predicted_links": 4058198
+}

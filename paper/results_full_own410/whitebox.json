@@ -1,0 +1,31 @@
+{
+  "lr_coef_derived": {
+    "jac_shingle": 0.7455792155614328,
+    "cont_shingle": 0.7142134237875906,
+    "tfidf_body": 0.5837003232732229,
+    "lev_ratio": -0.7553095493877665,
+    "jac_distinct_lines": 0.6079441911203366,
+    "cont_distinct_lines": 0.43022051737662337,
+    "jac_boiler_lines": 0.33630260735185186,
+    "frac_shared_boiler": 0.6476466948379195,
+    "name_equal": 0.9108782438353189,
+    "name_sim": 0.35828152061369634,
+    "desc_tfidf": 0.7334104909052847,
+    "code_jac": 0.05006804999787692,
+    "code_both": -0.4639820642219893,
+    "head_seq_sim": 0.11627649878217644,
+    "len_ratio": -0.24183346504095732,
+    "heads_ratio": -0.2704381004578064,
+    "same_owner": -0.8418670024689119,
+    "same_dirname": 0.16613209692158512,
+    "siblings_jac": 0.19769855676679188
+  },
+  "group_permutation_importance": {
+    "lexical": 0.24888620886162105,
+    "boilerplate": -0.0059986228084114605,
+    "metadata": 0.34129926557315543,
+    "code": 0.03128069158697962,
+    "structure": 0.01596992118149612,
+    "repository": 0.04541940180092048
+  }
+}
