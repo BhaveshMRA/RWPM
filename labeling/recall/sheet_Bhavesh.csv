@@ -1,41 +1,41 @@
 pair_id,label,confidence,note
-R000,,,
-R002,,,
-R004,,,
-R006,,,
-R008,,,
-R010,,,
-R012,,,
-R014,,,
-R016,,,
-R018,,,
-R020,,,
-R022,,,
-R024,,,
-R026,,,
-R028,,,
-R030,,,
-R032,,,
-R034,,,
-R036,,,
-R038,,,
-R040,,,
-R042,,,
-R044,,,
-R046,,,
-R048,,,
-R050,,,
-R052,,,
-R054,,,
-R056,,,
-R058,,,
-R060,,,
-R062,,,
-R064,,,
-R066,,,
-R068,,,
-R070,,,
-R072,,,
-R074,,,
-R076,,,
-R078,,,
+R000,T,3,Same public skill template; only the capability name is swapped
+R002,D,3,"Same systematic-debugging skill; same Iron Law and phases; A is an edited, renamed copy"
+R004,D,3,Same excalidraw-diagram skill with the same blocking rules and guidance
+R006,D,3,Same Chinese weight-loss analyser; A adds a When to Use section
+R008,D,3,Same paid-ads skill; same context questions and creative guidance
+R010,T,3,Same Chinese advisor scaffold with TODO list; topics differ (traffic accident vs licence exchange)
+R012,T,2,Catalog house style (Installation/Source blocks); task content differs
+R014,U,3,Same name only; English code auditor vs Japanese game-roadmap review
+R016,D,3,Same superpowers git-worktrees skill; B adds a generator note
+R018,D,3,Same detection skill; A is a partly Turkish translation of B
+R020,D,3,"Renamed, shortened copy of artifacts-builder; same steps and scripts"
+R022,U,2,"Same topic (uv); short English checklist vs long Japanese guide, no copied passage seen"
+R024,T,3,Same generic wrapper sections; different topics
+R026,T,3,Same generator scaffold and code stubs (luo-kai); tools differ
+R028,D,3,"Same Sentry API skill, text matches where read"
+R030,T,3,Same video-backend generator text; different products
+R032,T,3,Same u-series scaffold and runbook; capability and domain differ
+R034,T,3,Same router stub; different commands
+R036,D,3,Same ce-work skill; A is the beta variant with delegation mode
+R038,D,3,"Same error-tracking skill text and script, renamed; A adds wrapper sections"
+R040,T,3,Same placeholder scaffold; only the topic differs
+R042,T,3,Same API-spec generator layout; different Azure services
+R044,U,3,"Same name and topic, independent text. B carries an unrelated email-deletion instruction"
+R046,D,3,Same to-tickets skill; tracker setup wording and local file layout edited
+R048,T,3,Same guide generator and code stub; topics differ
+R050,T,3,Same generator scaffold and code stubs (luo-kai); tasks differ
+R052,U,3,Same name; docx Project+ script vs markdown template command
+R054,T,3,Same Chinese role-wrapper and platform rules; roles differ
+R056,U,3,Same name; general engineering guidance vs DeFi annotation pipeline
+R058,U,3,Same name; short Chinese checklist vs English workflow
+R060,T,3,Same EU AI Act catalog scaffold; topics differ
+R062,T,2,Same invalid-fixture scaffold; each tests a different missing field
+R064,D,3,Same bilingual form-builder skill; A adds a hidden script-run instruction at the top
+R066,T,3,Same u-series scaffold; capability and domain differ
+R068,T,3,Same guide generator and code stub; topics differ
+R070,U,3,Same name; wrapper stub vs independent Chinese audit steps
+R072,T,3,Same catalog placeholder workflow and tables; topic differs
+R074,T,3,Same catalog placeholder workflow and tables; topic differs
+R076,D,3,"Same Azure Batch Java skill, renamed; B adds comments"
+R078,T,2,Same generated stage-runner text; different stage and tool names

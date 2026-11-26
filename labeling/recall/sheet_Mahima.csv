@@ -1,41 +1,41 @@
 pair_id,label,confidence,note
-R001,,,
-R003,,,
-R005,,,
-R007,,,
-R009,,,
-R011,,,
-R013,,,
-R015,,,
-R017,,,
-R019,,,
-R021,,,
-R023,,,
-R025,,,
-R027,,,
-R029,,,
-R031,,,
-R033,,,
-R035,,,
-R037,,,
-R039,,,
-R041,,,
-R043,,,
-R045,,,
-R047,,,
-R049,,,
-R051,,,
-R053,,,
-R055,,,
-R057,,,
-R059,,,
-R061,,,
-R063,,,
-R065,,,
-R067,,,
-R069,,,
-R071,,,
-R073,,,
-R075,,,
-R077,,,
-R079,,,
+R001,T,3,"Same catalog boilerplate (When to Use, Best Practices) around different tasks"
+R003,D,3,"Renamed copy; description, persona and directives identical"
+R005,T,2,German legal scaffold and shared BRAO anchor list; topics differ
+R007,T,3,Shared rest_request.py wrapper rules; different APIs (Reactome vs BindingDB)
+R009,U,3,"Same name; Flowcraft vs PostHog, unrelated content"
+R011,U,3,Same name; different workflows and templates
+R013,T,2,Shared memory-ban and open-id/attachment scaffold; tasks differ. Mixed EN/ZH
+R015,D,3,"Same TDD skill-writing text, lightly adapted paths"
+R017,U,3,Same name and heading only; content differs
+R019,T,3,Shared German municipal-law Arbeitsweg scaffold; topics differ
+R021,T,3,Generated u-series scaffold with swapped topic/domain
+R023,T,3,Shared Before Starting / Core Expertise template; different subjects
+R025,T,3,Shared GSD Codex adapter preamble; different commands
+R027,T,3,Shared GSD Codex adapter preamble; different commands
+R029,D,3,Same GSD new-milestone skill text
+R031,U,3,Same name; different firmware/boards and workflows
+R033,U,3,Same name; different task-splitting procedures
+R035,T,2,Shared Report-First Approval Gate boilerplate; different research tasks
+R037,D,3,Same skill-builder text
+R039,T,3,Composio Rube MCP template; different toolkits
+R041,T,2,Same name and Direktstart scaffold; different legal domains
+R043,D,3,Same Iron Law verification skill; B lightly edited
+R045,D,2,Identical name/description/links; B is condensed version of A
+R047,T,3,Composio Rube MCP template; different toolkits
+R049,T,3,Shared generated SOP table scaffold; different tasks
+R051,T,3,Generic filler template with swapped topic
+R053,D,3,Same GSD complete-milestone body; different adapter
+R055,T,3,Compatibility-wrapper boilerplate; different targets
+R057,T,3,Generated u-series scaffold with swapped topic/domain
+R059,D,3,Same subagent-driven-development text; B adds agents.json
+R061,T,3,Shared gstack generated preamble; different skills
+R063,T,3,Shared Purpose/references scaffold; GCP vs AWS tasks differ
+R065,T,3,Shared TypeUI template; different design styles
+R067,D,3,Same autoresearch-agent text and commands
+R069,D,3,Same CIS 5.5.1 control text across benchmark versions
+R071,T,2,Shared robotik-recht deadline/norm scaffold; topics differ
+R073,T,3,Shared BMAD conventions scaffold; different personas
+R075,T,3,Same generated reference template; different tools
+R077,D,3,Same GSD new-milestone skill; different adapter
+R079,U,3,Same name; unrelated content

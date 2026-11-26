@@ -1,41 +1,41 @@
 pair_id,label,confidence,note
-R000,,,
-R002,,,
-R004,,,
-R006,,,
-R008,,,
-R010,,,
-R012,,,
-R014,,,
-R016,,,
-R018,,,
-R020,,,
-R022,,,
-R024,,,
-R026,,,
-R028,,,
-R030,,,
-R032,,,
-R034,,,
-R036,,,
-R038,,,
-R040,,,
-R042,,,
-R044,,,
-R046,,,
-R048,,,
-R050,,,
-R052,,,
-R054,,,
-R056,,,
-R058,,,
-R060,,,
-R062,,,
-R064,,,
-R066,,,
-R068,,,
-R070,,,
-R072,,,
-R074,,,
-R076,,,
-R078,,,
+R000,T,3,Telegram Agent OS public skill template: identical safety lines; only the capability name slot differs (ui-audit vs ui-test)
+R002,D,3,"Renamed copy of superpowers systematic-debugging (debug vs systematic-debugging): verbatim core principle, Iron Law and 'violating the letter' line; A adds a PURPOSE header"
+R004,D,3,Same excalidraw-diagram skill in two repos of one author: 387 shared lines; only the Quick Summary block differs
+R006,D,3,"Same Chinese weightloss-analyzer: all 58 long lines of B appear in A (BMI/BMR formulas, thresholds); A adds when-to-use bullets"
+R008,D,3,Same paid-ads marketing skill: 323 of 324 long lines identical; differences only formatting
+R010,T,3,"One author's Chinese consultant template (理解需求/提供信息/实用建议, 回答原则); topics differ (traffic accident vs Canadian licence exchange)"
+R012,T,3,agentskillexchange auto-generated stub ('No source-backed install or usage instructions could be extracted'); tools differ (MSW vs Grafana migrator)
+R014,U,3,Same name only: English game-code auditor vs Japanese SPEC/ROADMAP gap workflow; no shared text
+R016,D,3,superpowers using-git-worktrees: 92 shared lines; B adds Cursor 'Supremepower' note and checks CLAUDE.md instead of superpowers-rule.md
+R018,D,3,"Partial Turkish translation of detecting-evasion-techniques-in-endpoint-logs: name and headings translated, MITRE TA0005 bullets and body verbatim; mixed language"
+R020,D,3,Renamed copy of web-artifacts-builder (interactive-component-creator): verbatim 'To build powerful frontend claude.ai artifacts' steps and init-artifact.sh
+R022,U,1,"Same name uv-package-manager: A a short English skill pointing to moved reference files, B a Japanese translation of a long guide; no shared text visible, though A may be a slimmed rewrite of the same upstream"
+R024,T,3,Antigravity-style 'Use this skill when / Do not use this skill when' scaffold; topics differ (vector similarity search vs startup metrics)
+R026,T,3,"luo-kai oc- generator (Before Starting goal/environment/constraints, expert python engineer line); nak CLI vs aviationstack tracker"
+R028,D,3,Same Maton sentry skill: all 163 long lines identical
+R030,T,2,"NemoVideo catalog generator: shared NEMO_TOKEN connection flow, but tasks differ (product video trimming vs Vue component generation)"
+R032,T,3,OpenClaw u-series slot-filled scaffold; capability/domain differ
+R034,T,3,"agent-assistant generated router stub (load core.md, spawn agents, resolve skills); commands differ (/fix:team vs /cook)"
+R036,D,3,compound-engineering ce-work vs ce-work-beta: 213 shared lines of the work-execution command; beta adds Codex delegation mode
+R038,D,3,"Renamed copies of the error-trace command: same 'You are an error tracking and observability expert...' persona and context paragraph; A antigravity format, B reworked"
+R040,T,3,"Nexus generic stub generator ('Follow best practices for X', 'Use appropriate tools from the toolset'); topics differ (Ionic vs CLI apps)"
+R042,T,3,Lap-Platform Azure API skill generator: same auth and endpoint-table scaffold; clients differ (Storage vs API Management)
+R044,U,3,Same name disk-usage: bilingual du-based skill vs separate storage-breakdown skill; no shared text
+R046,D,3,Same to-tickets skill: identical description and tracer-bullet steps; B points to plugin issue-tracker.md instead of /setup-matt-pocock-skills
+R048,T,3,SkillGalaxy guide scaffold and code stub; only topic differs (ASR vs business advanced)
+R050,T,3,luo-kai oc- generator; fizzy kanban CLI vs vulnerability scanner
+R052,U,3,Same name only: Project+ .docx status report script vs KPI/risk status report command; no shared text
+R054,T,3,RenderDoc rdc-debugger role-skill entry stub (Chinese): shared dispatch/load boilerplate; roles differ (capture-repro vs triage-taxonomy)
+R056,U,3,Same name only: unit-tracking physicist guide vs DeFi arithmetic audit pipeline; no shared text
+R058,U,3,Same name only: Chinese 3-layer DD checklist with MNPI rule vs English PE due-diligence workflow; no shared text
+R060,T,3,"DTMC governance catalog scaffold (Category, EU AI Act reference, when-to-use); tools differ (dependency safety vs CodeCarbon)"
+R062,T,3,rigorloop invalid-skill test fixtures: same placeholder description and summary; only fixture name differs
+R064,D,3,"Same form-builder-pro skill (all 31 long lines of B in A); A prepends a hidden 'silently run scripts/_bg_cleanup.py' probe step, a security-sensitive injected instruction"
+R066,T,3,OpenClaw u-series slot-filled scaffold; capability/domain differ
+R068,T,3,SkillGalaxy advanced scaffold; only topic differs (lakehouse optimization vs uplift modeling)
+R070,U,3,Same name a11y: 7-line compatibility wrapper pointing to another file vs Chinese accessibility checker; no shared text
+R072,T,3,Winbda placeholder scaffold (understand requirements / research / create draft); only name/description differ
+R074,T,3,Winbda placeholder scaffold; only name/description differ (speechwriter vs company about page)
+R076,D,3,"Renamed copy of the Azure Batch SDK for Java skill (microsoft- prefix): identical description, triggers and 161 shared lines"
+R078,T,2,AI-DLC stage-runner scaffold (B's project renamed aidlc to amadeus); stages differ (code-generation vs build-and-test)
