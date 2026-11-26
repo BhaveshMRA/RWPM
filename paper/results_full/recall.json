@@ -1,0 +1,47 @@
+{
+  "kappa": 1.0,
+  "pairs": 80,
+  "precision": [
+    99,
+    100
+  ],
+  "bands": {
+    "B0": {
+      "population": 634175,
+      "sampled": 6,
+      "derived": 1
+    },
+    "B1": {
+      "population": 201085,
+      "sampled": 4,
+      "derived": 1
+    },
+    "B2": {
+      "population": 714056,
+      "sampled": 12,
+      "derived": 0
+    },
+    "B3": {
+      "population": 1439406,
+      "sampled": 12,
+      "derived": 0
+    },
+    "B4": {
+      "population": 1293065,
+      "sampled": 12,
+      "derived": 2
+    },
+    "B5": {
+      "population": 682517,
+      "sampled": 14,
+      "derived": 0
+    }
+  },
+  "tp_estimate": 4010439.853950076,
+  "fn_estimate": 532422.0929568834,
+  "recall": 0.8825419678939972,
+  "recall_ci": [
+    0.8028026489203506,
+    0.9447874453926558
+  ]
+}
