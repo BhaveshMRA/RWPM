@@ -109,11 +109,12 @@ macro3 = f1_score(yc_true, cls_preds[best_ours].astype(str), labels=labels, aver
 
 # RQ2: ablation by feature group
 abl = {"All features": res[best_ours]}
-abl_preds = {}
+abl_preds, abl_cm = {}, {}
 for g, cols in FEATURE_GROUPS.items():
     feats = [f for f in ALL_FEATURES if f not in cols]
-    abl_preds[f"without {g}"] = oof_model(OURS[best_ours], feats)[0]
+    abl_preds[f"without {g}"], abl_cls = oof_model(OURS[best_ours], feats)
     abl[f"without {g}"] = metrics(abl_preds[f"without {g}"])
+    abl_cm[f"without {g}"] = confusion_matrix(yc_true, abl_cls.astype(str), labels=labels).tolist()
 for g in ("lexical",):
     abl[f"{g} only"] = metrics(oof_model(OURS[best_ours], FEATURE_GROUPS[g])[0])
 drops = {k: abl["All features"]["F1"] - v["F1"] for k, v in abl.items() if k.startswith("without")}
@@ -185,7 +186,17 @@ if "semantic" in FEATURE_GROUPS:  # Phase 3 model vs Phase 2 feature set
     mac["ResSemanticGain"] = f"{res[best_ours]['F1'] - abl['without semantic']['F1']:+.2f}"
     print(f"Phase 2 features: F1={abl['without semantic']['F1']:.3f} | with semantic: F1={res[best_ours]['F1']:.3f}")
 (RESULTS / "macros_rq1.tex").write_text("\n".join(rf"\renewcommand{{\{k}}}{{{v}}}" for k, v in mac.items()) + "\n")
-json.dump({"best_ours": best_ours, "three_class": bool(three), "results": res, "ablation": abl, "confusion": cm.tolist(), "labels": labels}, open(RESULTS / "rq1_rq2.json", "w"), indent=2)
+if three and "repository" in FEATURE_GROUPS:  # Phase 3 feedback: effect of the same-owner shortcut
+    D, T = labels.index("derived"), labels.index("template")
+    nr = np.array(abl_cm["without repository"])
+    owner_mac = {"ResAllTemplateAsDerived": int(cm[T, D]), "ResAllDerivedAsTemplate": int(cm[D, T]),
+                 "ResNoRepoTemplateAsDerived": int(nr[T, D]), "ResNoRepoDerivedAsTemplate": int(nr[D, T]),
+                 "ResNoRepoTemplateCorrect": int(nr[T, T]), "ResNoRepoDerivedCorrect": int(nr[D, D])}
+    (RESULTS / "macros_owner_shortcut.tex").write_text("".join(f"\\renewcommand{{\\{k}}}{{{v}}}\n" for k, v in owner_mac.items()))
+    print("without repository group: template->derived", owner_mac["ResNoRepoTemplateAsDerived"], "| derived->template", owner_mac["ResNoRepoDerivedAsTemplate"],
+          "| (all features:", owner_mac["ResAllTemplateAsDerived"], "and", owner_mac["ResAllDerivedAsTemplate"], ")")
+json.dump({"best_ours": best_ours, "three_class": bool(three), "results": res, "ablation": abl, "confusion": cm.tolist(), "labels": labels,
+           "ablation_confusion": abl_cm}, open(RESULTS / "rq1_rq2.json", "w"), indent=2)
 out = F[["pair_id", "sha_a", "sha_b", "band", "label"]].copy()
 for k in preds:
     out[k] = preds[k]

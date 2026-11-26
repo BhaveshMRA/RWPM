@@ -22,6 +22,7 @@ ap.add_argument("--boiler-k", type=int, default=5)
 ap.add_argument("--num-perm", type=int, default=128)
 ap.add_argument("--chunk", type=int, default=5000)
 ap.add_argument("--boiler-only", action="store_true", help="recompute only the boilerplate lines (keeps minhash.npy untouched)")
+ap.add_argument("--boiler-by", choices=["name", "owner"], default="name", help="count a line's distinct front-matter names (default) or distinct owners")
 args = ap.parse_args()
 
 t0 = time.time()
@@ -35,21 +36,21 @@ def h64(text):
 
 
 line_parts, name_parts = [], []
-cur = con.execute("SELECT id, sha, nname, body FROM skills ORDER BY id")
+cur = con.execute("SELECT id, sha, nname, body, repo FROM skills ORDER BY id")
 done = 0
 while True:
     rows = cur.fetchmany(args.chunk)
     if not rows:
         break
     if sig is not None:
-        batch = [[x.encode("utf8") for x in shingles(body)] or [b""] for _, _, _, body in rows]
+        batch = [[x.encode("utf8") for x in shingles(body)] or [b""] for _, _, _, body, _ in rows]
         mhs = MinHash.bulk(batch, num_perm=args.num_perm, seed=SEED)
         ids = [r[0] for r in rows]
         sig[ids[0]:ids[-1] + 1] = np.vstack([m.hashvalues for m in mhs])
-    for _, sha, nname, body in rows:
+    for _, sha, nname, body, repo in rows:
         ls = norm_lines(body)
         if ls:
-            nk = h64(nname if nname else sha)
+            nk = h64(str(repo).split("/")[0]) if args.boiler_by == "owner" else h64(nname if nname else sha)
             line_parts.append(np.fromiter((h64(x) for x in ls), dtype=np.uint64, count=len(ls)))
             name_parts.append(np.full(len(ls), nk, dtype=np.uint64))
     done += len(rows)

@@ -68,12 +68,15 @@ G = nx.Graph()
 G.add_edges_from(zip(E.i.values, E.j.values))
 comps = sorted(nx.connected_components(G), key=len, reverse=True)[:5]
 nn = skills.nname.values
+occ = pd.read_pickle(WORK / "occurrences.pkl")[["sha", "owner"]]
 rows, samples = [], []
 for c, comp in enumerate(comps):
     m = np.isin(E.i.values, list(comp))
     Ec, pc = E[m], pE[m]
     names = pd.Series(nn[list(comp)]).value_counts()
+    shas = skills.sha.values[list(comp)]
     rows.append({"size": len(comp), "links": int(len(Ec)), "distinct_names": int(len(names)),
+                 "distinct_owners": int(occ[occ.sha.isin(shas)].owner.nunique()),
                  "top_names": ", ".join(names.index[:5]), "share_same_name": float((Ec.name_equal == 1).mean()),
                  "share_template_like": float(tlike(Ec).mean()), "median_proba": float(np.median(pc)),
                  "share_links_touching_hubs": float((np.isin(Ec.i.values, top) | np.isin(Ec.j.values, top)).mean())})
