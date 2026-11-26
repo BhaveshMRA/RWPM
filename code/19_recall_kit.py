@@ -164,8 +164,9 @@ if args.score:
     mac = {"ResRCPairs": len(K), "ResRCKappa": f"{kappa:.2f}", "ResRCNeg": int((K.stratum != 'pos').sum()),
            "ResRCNegDerived": int(K[K.stratum != 'pos'].derived.sum()), "ResRCPos": len(pos), "ResRCPosDerived": int(pos.derived.sum()),
            "ResRCRecall": f"{recall:.2f}", "ResRCRecallLo": f"{lo:.2f}", "ResRCRecallHi": f"{hi:.2f}", "ResRCMissed": f"{fn:,.0f}"}
+    words = {"B0": "Zero", "B1": "One", "B2": "Two", "B3": "Three", "B4": "Four", "B5": "Five"}  # LaTeX names cannot hold digits
     for b, r in rows.items():
-        mac[f"ResRC{b}Sampled"], mac[f"ResRC{b}Derived"] = r["sampled"], r["derived"]
+        mac[f"ResRCBand{words[b]}Sampled"], mac[f"ResRCBand{words[b]}Derived"] = r["sampled"], r["derived"]
     (RESULTS / f"macros_{args.kit}.tex").write_text("".join(f"\\renewcommand{{\\{k}}}{{{v}}}\n" for k, v in mac.items()))
     for b, r in rows.items():
         print(f"{b}: {r['derived']}/{r['sampled']} sampled pairs predicted not derived are derived (population {r['population']:,})")
