@@ -1,4 +1,5 @@
 {
+  "model": "Ours (gradient boosting)",
   "lr_coef_derived": {
     "jac_shingle": 0.5405357673229032,
     "cont_shingle": 1.0051505297071717,
@@ -21,11 +22,11 @@
     "siblings_jac": -0.10302357313566594
   },
   "group_permutation_importance": {
-    "lexical": 0.2246344784706399,
-    "boilerplate": 0.2590396660131902,
-    "metadata": 0.04646430166941264,
-    "code": 0.008116332962550982,
-    "structure": 0.0005591397849462365,
-    "repository": 0.014344523014990207
+    "lexical": 0.20366981554667551,
+    "boilerplate": 0.10074622389769168,
+    "metadata": 0.14658865008138386,
+    "code": 0.01329638476971255,
+    "structure": 0.00565377826286146,
+    "repository": 0.00986761661689359
   }
 }
