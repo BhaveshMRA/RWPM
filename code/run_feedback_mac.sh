@@ -7,7 +7,7 @@
 #     shortcut), step 16 counts the owners behind the largest components (small point)
 #  2. recall kit stratified by band (Fix 1), written to labeling/recall/
 #  3. boilerplate threshold sensitivity on the gold set (Fix 3): by name k = 50, by owner k = 5 and
-#     k = 410, each in its own folders; white-box importances for every threshold
+#     k = 410, each in its own folders; white-box importances of gradient boosting for every threshold
 set -euo pipefail
 REPO=$(cd "$(dirname "$0")/.." && pwd)
 BASE=${BASE_WORK:-$REPO/gitskills/work_full}
@@ -35,11 +35,11 @@ variant() {
   run python 11_full_index.py --boiler-only "$@"
   run python 13_full_features.py --pairs gold
   run python 06_rq1_rq2.py
-  run python 09_whitebox.py
+  run python 09_whitebox.py --model "Ours (gradient boosting)"
 }
 variant k50 --boiler-k 50
 variant own5 --boiler-by owner --boiler-k 5
 variant own410 --boiler-by owner --boiler-k 410
 export SKILL_WORK=$REPO/gitskills/work_full_k410 SKILL_RESULTS=$REPO/paper/results_full_k410
-run python 09_whitebox.py
+run python 09_whitebox.py --model "Ours (gradient boosting)"
 echo "=== feedback run finished $(date)" | tee -a "$LOG"

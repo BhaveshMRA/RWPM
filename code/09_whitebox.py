@@ -30,6 +30,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--pairs", default="P0206,P0087", help="two gold pair ids to draw")
 ap.add_argument("--boiler-k", type=int, default=5)
 ap.add_argument("--repeats", type=int, default=10)
+ap.add_argument("--model", default=None, help='explain this model, e.g. "Ours (gradient boosting)", instead of the best one')
 args = ap.parse_args()
 
 plt.rcParams.update({"font.size": 8, "font.family": "sans-serif", "pdf.fonttype": 42})
@@ -40,6 +41,7 @@ GROUP_OF = {f: g for g, fs in FEATURE_GROUPS.items() for f in fs}
 skills = pd.read_pickle(WORK / "skills.pkl")
 F = pd.read_pickle(WORK / "features_gold.pkl").reset_index(drop=True)
 info = json.load(open(RESULTS / "rq1_rq2.json"))
+MODEL = args.model or info["best_ours"]
 
 # Figure 1: one pair, line by line
 lines = [norm_lines(b) for b in skills.body]
@@ -106,7 +108,7 @@ folds = list(StratifiedGroupKFold(5, shuffle=True, random_state=SEED).split(F, y
 rng = np.random.default_rng(SEED)
 imp = {g: [] for g in FEATURE_GROUPS}
 for tr, te in folds:
-    m = MAKE[info["best_ours"]]().fit(X[tr], yc[tr])
+    m = MAKE[MODEL]().fit(X[tr], yc[tr])
     base = f1_score(yb[te], m.predict(X[te]) == "derived", zero_division=0)
     for g, cols in FEATURE_GROUPS.items():
         ci = [ALL_FEATURES.index(c) for c in cols]
@@ -126,13 +128,13 @@ gs = sorted(imp, key=imp.get)
 a2.barh(gs, [imp[g] for g in gs], color=[COLORS[g] for g in gs])
 a2.axvline(0, color="black", lw=0.6)
 a2.set_xlabel("drop in derived-class F1 when shuffled")
-a2.set_title(f"(b) {info['best_ours'].replace('Ours (', '').rstrip(')')}, held-out folds", fontsize=8)
+a2.set_title(f"(b) {MODEL.replace('Ours (', '').rstrip(')')}, held-out folds", fontsize=8)
 for ax in (a1, a2):
     for s in ("top", "right"):
         ax.spines[s].set_visible(False)
 fig.tight_layout()
 fig.savefig(RESULTS / "fig_model.pdf", bbox_inches="tight")
 plt.close(fig)
-json.dump({"lr_coef_derived": dict(zip(ALL_FEATURES, map(float, coef))), "group_permutation_importance": imp}, open(RESULTS / "whitebox.json", "w"), indent=2)
+json.dump({"model": MODEL, "lr_coef_derived": dict(zip(ALL_FEATURES, map(float, coef))), "group_permutation_importance": imp}, open(RESULTS / "whitebox.json", "w"), indent=2)
 print("group permutation importance:", {g: round(v, 3) for g, v in sorted(imp.items(), key=lambda kv: -kv[1])})
 print("wrote fig_pair_features.pdf, fig_model.pdf")

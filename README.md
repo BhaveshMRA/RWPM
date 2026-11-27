@@ -21,9 +21,13 @@ labeling/
   gold.csv               final labels used for training and evaluation
   html/                  side-by-side viewer, one complete page per pair
   validation/            kit for checking predicted links on the full dataset (created by step 15)
+  stress/                stress-test kit: cross-language and reworked same-name pairs (step 18)
+  recall/                recall kit: pairs predicted not derived, stratified by band, plus predicted links (step 19)
+  taxonomy/              why each gold pair looks alike: final sub-categories, the four checked sheets, adjudication, guide
 paper/
   results_full/          results of the full-dataset run: RQ1-RQ3, statistics, provenance, validation, copy-network comparison, figures
   results_full_k410/     Phase 4 variant: boilerplate threshold scaled to the corpus (k = 410)
+  results_full_k50/, results_full_own5/, results_full_own410/   threshold sensitivity on the gold set (50 names; 5 and 410 owners)
   results_sample_final/  final results of the sample-scale run (sample macros used in Sections 5-6 of the paper)
   results_phase3_semantic/  embedding experiment (Phase 3, not part of the final model)
   results/               tables, macros and figures the paper includes (copies from results_full/ and results_sample_final/)
@@ -146,6 +150,26 @@ GitSkills identifies files by their git blob hash (`file_sha` is the SHA-1 of th
 export SKILL_WORK=~/gitskills/work_full SKILL_RESULTS=../paper/results_full
 python find_relatives.py path/to/my-skill/ --top 20 --out relatives.csv
 ```
+
+## Part 4: response to the Phase 3 review
+
+`run_feedback_mac.sh` runs these on the full-dataset work folder (log in `gitskills/feedback_log.txt`, copied to `paper/results_full/feedback_run_log.txt`):
+
+| Step | Command | What it does |
+|---|---|---|
+| 6 | `python 06_rq1_rq2.py` | also saves the confusion matrix of every ablation; `macros_owner_shortcut.tex` reports the template/derived confusion without the repository group (same-owner signal) |
+| 16 | `python 16_edge_diagnostics.py` | also counts the distinct owners behind the largest components |
+| 19 | `python 19_recall_kit.py --make` / `--score` | recall of the predicted links: 60 pairs predicted not derived, stratified by band (B2-B4: 12 each, B5: 14, B0: 6, B1: 4), plus 20 predicted links for blinding; band sizes in `labeling/recall/strata.json`; recall within the candidates with a 95% interval (Jeffreys prior, 10,000 draws) in `recall.json` and `macros_recall.tex` |
+| 11, 13, 6, 9 | see the script | boilerplate threshold sensitivity on the gold set: 50 names, 5 owners and 410 owners (`--boiler-by owner`), each in its own folders; `09_whitebox.py --model "Ours (gradient boosting)"` explains the same model at every threshold |
+
+Two checks that need only a GitSkills database (the official sample is enough):
+
+```bash
+python 20_blob_hash_check.py --db ../gitskills-sample/agent_skills_sample.db    # file_sha is the git blob hash (200 of 200)
+python 21_taxonomy_suggest.py --db ../gitskills-sample/agent_skills_sample.db   # reproduces the 400 suggested sub-categories
+```
+
+`paper/results/` holds the files the compiled paper reads; they are copies of the files in `paper/results_full/` (full release) and, for the sample statistics, of the sample run.
 
 ## Labelling
 
